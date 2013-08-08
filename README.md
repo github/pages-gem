@@ -1,6 +1,6 @@
 # GitHub Pages Ruby Gem
 
-A simple gem to bootstrap dependencies for setting up and maintaining a local Jekyll environment in sync with GitHub Pages.
+A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a local Jekyll environment in sync with GitHub Pages.
 
 ## Usage
 
