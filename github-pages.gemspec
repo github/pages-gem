@@ -4,9 +4,9 @@ Gem::Specification.new do |s|
 
   s.name                  = "github-pages"
   s.version               = "0.0.1"
-  s.authors               = "GitHub"
   s.summary               = "Track GitHub Pages dependencies."
   s.description           = "Bootstrap the GitHub Pages Jekyll environment locally."
+  s.authors               = "GitHub, Inc."
   s.email                 = "support@github.com"
   s.homepage              = "http://pages.github.com"
   s.license               = "MIT"
