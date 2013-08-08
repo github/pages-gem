@@ -3,6 +3,7 @@
 
 require "rubygems"
 spec = Gem::Specification::load("github-pages.gemspec")
+
 system 'script/build'
 
 puts 'Installing the Gem locally...'

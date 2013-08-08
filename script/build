@@ -1,5 +1,5 @@
 #!/bin/sh
-# Build the Ruby gem
+# Build the Ruby Gem
 
 set -e
 
