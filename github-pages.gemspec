@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
 
   s.name                  = 'github-pages'
-  s.version               = '0.0.1'
+  s.version               = '1'
   s.date                  = '2013-08-08'
   s.summary               = 'GitHub Pages'
   s.description           = 'Bootstrap the GitHub Pages Jekyll environment locally'
