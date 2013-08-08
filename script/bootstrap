@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# Install the Gem locally
+
+require "rubygems"
+spec = Gem::Specification::load("github-pages.gemspec")
+system 'script/build'
+
+puts 'Installing the Gem locally...'
+system "gem install github-pages-#{spec.version}.gem"
+puts 'Gem installed!'

@@ -3,4 +3,6 @@
 
 set -e
 
+echo "Building the Gem..."
 gem build github-pages.gemspec
+echo "Gem built!"
