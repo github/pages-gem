@@ -6,7 +6,7 @@ A simple gem to bootstrap dependencies for setting up and maintaining a local Je
 
 Run the following command:
 
-`gem install github-page`
+`gem install github-pages`
 
 Alternatively, you can add the following to your project's Gemfile:
 
