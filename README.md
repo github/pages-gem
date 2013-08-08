@@ -17,3 +17,7 @@ Alternatively, you can add the following to your project's Gemfile:
 ## Building
 
 To build a new version of the gem, run `script/build`
+
+## License
+
+Distributed under the [MIT License](LICENSE).
