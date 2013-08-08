@@ -18,9 +18,9 @@ Alternatively, you can add the following to your project's Gemfile:
 
 To update to the latest version of Jekyll and associated dependencies, simply run `gem update github-pages`, or if you've installed via Bundler, `bundle update github-pages`.
 
-## Building
+## Releasing
 
-To build a new version of the gem, run `script/build`
+To release a new version of this gem, run `script/release` from the `master` branch.
 
 ## License
 

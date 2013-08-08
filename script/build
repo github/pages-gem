@@ -1,6 +1,0 @@
-#!/bin/sh
-# Build the Ruby gem
-
-set -e
-
-gem build github-pages.gemspec
