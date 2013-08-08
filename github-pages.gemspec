@@ -12,6 +12,9 @@ Gem::Specification.new do |s|
   s.homepage              = 'http://pages.github.com'
   s.license               = 'MIT'
 
+  # Note to future Hubbers: Update the help docs if you bump the dependency versions
+  # https://help.github.com/articles/using-jekyll-with-pages
+
   s.add_dependency('jekyll',     '=1.1.2')
   s.add_dependency('liquid',     '=2.5.1')
   s.add_dependency('redcarpet',  '=2.2.2')
