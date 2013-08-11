@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.description           = "Bootstrap the GitHub Pages Jekyll environment locally."
   s.authors               = "GitHub, Inc."
   s.email                 = "support@github.com"
-  s.homepage              = "http://pages.github.com"
+  s.homepage              = "https://github.com/github/pages-gem"
   s.license               = "MIT"
 
   # Note to future Hubbers: Update the help docs if you bump the dependency versions
