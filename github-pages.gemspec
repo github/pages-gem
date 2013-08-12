@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.rubygems_version      = "1.8.0"
-  s.required_ruby_version = "~> 1.9.3"
+  s.required_ruby_version = ">= 1.9.3"
 
   s.name                  = "github-pages"
   s.version               = "1"
