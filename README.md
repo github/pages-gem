@@ -2,6 +2,8 @@
 
 A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a local Jekyll environment in sync with GitHub Pages.
 
+[![Gem Version](https://badge.fury.io/rb/github-pages.png)](http://badge.fury.io/rb/github-pages)
+
 ## Usage
 
 Run the following command:
