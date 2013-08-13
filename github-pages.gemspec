@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.email                 = "support@github.com"
   s.homepage              = "https://github.com/github/pages-gem"
   s.license               = "MIT"
+  s.files                 = ["lib/github-pages.rb"]
 
   # Note to future Hubbers: Update the help docs if you bump the dependency versions
   # https://help.github.com/articles/using-jekyll-with-pages
