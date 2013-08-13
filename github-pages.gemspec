@@ -11,7 +11,8 @@ Gem::Specification.new do |s|
   s.homepage              = "https://github.com/github/pages-gem"
   s.license               = "MIT"
 
-  # Note to future Hubbers: Update the help docs if you bump the dependency versions
+  # Jekyll and related dependency versions as used by GitHub Pages. 
+  # For more information see:
   # https://help.github.com/articles/using-jekyll-with-pages
 
   s.add_dependency("RedCloth",   "= 4.2.9")
