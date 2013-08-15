@@ -6,13 +6,13 @@ Before contributing be sure to read [the project goals](https://github.com/githu
 
 Anything that would make the GitHub Pages experience better for users. A few examples:
 
-* Pull requests suggesting that decencies be bumped to new versions
+* Pull requests suggesting that dependencies be bumped to new versions
 * Tools to make publishing to GitHub Pages easier
 * Things that make the experience simpler for less-technical users
 
 ## What not to contribute
 
-* Features that belong in [Jekyll](http://jekllrb.com) core
+* Features that belong in [Jekyll](http://jekyllrb.com) core
 * Things that add complexity to the experience
 * Support questions, or general questions about Jekyll or GitHub pages (open an issue [On Jekyll](https://github.com/mojombo/jekyll/issues/new) or contact <support@github.com>)
 
