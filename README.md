@@ -30,11 +30,11 @@ Additional tools, such as tools that integrate with the GitHub API to make manag
 
 The GitHub Pages gem seeks to version two aspects of the build environment:
 
-1. Ruby
+### 1. Ruby
 
 The version of Ruby with which Jekyll is executed. Although Jekyll itself may be compatible with prior or future versions of Ruby, different execution environments yield different results. Ruby 1.8.7 parses YML differently than 1.9.3, for example, and Kramdown has trouble processing `mailto` links prior to 1.9.3. In order to ensure that building locally consistently results in a the same build as what appears when published, it's essential that Ruby itself is versioned along side the Gem, despite no known incompatibilities.
 
-2. Dependencies
+### 2. Dependencies
 
 This includes Markdown processors, and any other Jekyll dependency for which version inconguency may produce unexpected results. Traditionally, MaruKu, Kramdown, RedCloth, liquid, rdiscount, and redcarpet have been strictly maintained due to known breaking changes.
 
