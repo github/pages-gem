@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = "~> 2.0.0"
 
   s.name                  = "github-pages"
-  s.version               = "2"
+  s.version               = "3"
   s.summary               = "Track GitHub Pages dependencies."
   s.description           = "Bootstrap the GitHub Pages Jekyll environment locally."
   s.authors               = "GitHub, Inc."
@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
   s.add_dependency("liquid",     "= 2.5.2")
   s.add_dependency("maruku",     "= 0.6.1")
   s.add_dependency("rdiscount",  "= 1.6.8")
-  s.add_dependency("redcarpet",  "= 2.3.0")
+  s.add_dependency("redcarpet",  "= 2.2.2")
 end
