@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
   s.rubygems_version      = "1.8.0"
-  s.required_ruby_version = "~> 1.9.3"
+  s.required_ruby_version = "~> 2.0.0"
 
   s.name                  = "github-pages"
-  s.version               = "1"
+  s.version               = "3"
   s.summary               = "Track GitHub Pages dependencies."
   s.description           = "Bootstrap the GitHub Pages Jekyll environment locally."
   s.authors               = "GitHub, Inc."
@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency("RedCloth",   "= 4.2.9")
   s.add_dependency("jekyll",     "= 1.2.0")
   s.add_dependency("kramdown",   "= 1.0.2")
-  s.add_dependency("liquid",     "= 2.5.1")
+  s.add_dependency("liquid",     "= 2.5.2")
   s.add_dependency("maruku",     "= 0.6.1")
   s.add_dependency("rdiscount",  "= 1.6.8")
   s.add_dependency("redcarpet",  "= 2.2.2")
