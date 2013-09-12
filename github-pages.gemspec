@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.rubygems_version      = "1.8.0"
+  s.rubygems_version      = "~> 2.0.0"
   s.required_ruby_version = "~> 2.0.0"
 
   s.name                  = "github-pages"
