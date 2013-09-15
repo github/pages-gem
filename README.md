@@ -38,6 +38,10 @@ The version of Ruby with which Jekyll is executed. Although Jekyll itself may be
 
 This includes Markdown processors, and any other Jekyll dependency for which version inconguency may produce unexpected results. Traditionally, MaruKu, Kramdown, RedCloth, liquid, rdiscount, and redcarpet have been strictly maintained due to known breaking changes.
 
+## Changlog
+
+See [all releases](https://github.com/github/pages-gem/releases).
+
 ## Releasing
 
 To release a new version of this gem, run `script/release` from the `master` branch.
