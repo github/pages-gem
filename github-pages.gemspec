@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   # https://help.github.com/articles/using-jekyll-with-pages
 
   s.add_dependency("RedCloth",   "= 4.2.9")
-  s.add_dependency("jekyll",     "= 1.2.0")
+  s.add_dependency("jekyll",     "= 1.2.1")
   s.add_dependency("kramdown",   "= 1.0.2")
   s.add_dependency("liquid",     "= 2.5.1")
   s.add_dependency("maruku",     "= 0.6.1")
