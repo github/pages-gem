@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 1.9.3"
 
   s.name                  = "github-pages"
-  s.version               = "5"
+  s.version               = "6"
   s.summary               = "Track GitHub Pages dependencies."
   s.description           = "Bootstrap the GitHub Pages Jekyll environment locally."
   s.authors               = "GitHub, Inc."
