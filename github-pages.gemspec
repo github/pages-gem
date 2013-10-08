@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.add_dependency("liquid",     "= 2.5.1")
   s.add_dependency("maruku",     "= 0.6.1")
   s.add_dependency("rdiscount",  "= 1.6.8")
-  s.add_dependency("redcarpet",  "= 2.3.0")
+  s.add_dependency("redcarpet",  "= 2.2.2")
 end
