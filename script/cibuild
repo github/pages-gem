@@ -1,0 +1,8 @@
+#!/bin/sh
+# Test that all dependencies resolve
+
+set -e
+
+bundle update
+
+jekyll --version
