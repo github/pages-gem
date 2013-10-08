@@ -7,6 +7,10 @@ set -e
 
 cd $(dirname "$0")/..
 
+# Make sure the darn thing works
+
+bundle update
+
 # Build a new gem archive.
 
 rm -rf github-pages-*.gem
