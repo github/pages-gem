@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency("RedCloth",   "= 4.2.9")
   s.add_dependency("jekyll",     "= 1.3.0")
   s.add_dependency("kramdown",   "= 1.2.0")
-  s.add_dependency("liquid",     "= 2.5.3")
+  s.add_dependency("liquid",     "= 2.5.4")
   s.add_dependency("maruku",     "= 0.6.1")
   s.add_dependency("rdiscount",  "= 2.1.7")
   s.add_dependency("redcarpet",  "= 2.3.0")
