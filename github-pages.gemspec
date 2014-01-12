@@ -1,4 +1,4 @@
-require './lib/github-pages.rb'
+require './lib/version.rb'
 
 Gem::Specification.new do |s|
   s.required_ruby_version = ">= 1.9.3"
@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email                 = "support@github.com"
   s.homepage              = "https://github.com/github/pages-gem"
   s.license               = "MIT"
-  s.files                 = "lib/github-pages.rb"
+  s.files                 = ["lib/github-pages.rb", "lib/version.rb"]
 
   # Jekyll and related dependency versions as used by GitHub Pages.
   # For more information see:
