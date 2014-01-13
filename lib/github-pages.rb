@@ -1,3 +1,5 @@
+require_relative "version-check"
+
 class GitHubPages
   VERSION = 13
 
