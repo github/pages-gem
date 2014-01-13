@@ -8,7 +8,7 @@ class GitHubPages
     {
       "github-pages" => VERSION.to_s,
       "jekyll"       => "1.4.2",
-      "kramdown"     => "1.2.0",
+      "kramdown"     => "1.3.1",
       "liquid"       => "2.5.5",
       "maruku"       => "0.7.0",
       "rdiscount"    => "2.1.7",
