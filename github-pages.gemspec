@@ -1,4 +1,4 @@
-require './lib/github-pages.rb'
+require File.expand_path('../lib/github-pages', __FILE__)
 
 Gem::Specification.new do |s|
   s.required_ruby_version = ">= 1.9.3"

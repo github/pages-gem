@@ -5,4 +5,4 @@ set -e
 
 bundle update
 
-jekyll --version
+bundle exec jekyll --version
