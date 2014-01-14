@@ -1,5 +1,5 @@
 class GitHubPages
-  VERSION = 13
+  VERSION = 14
 
   # Jekyll and related dependency versions as used by GitHub Pages.
   # For more information see:
