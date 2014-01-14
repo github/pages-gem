@@ -7,7 +7,7 @@ class GitHubPages
   def self.gems
     {
       "github-pages" => VERSION.to_s,
-      "jekyll"       => "1.4.2",
+      "jekyll"       => "1.4.3",
       "kramdown"     => "1.3.1",
       "liquid"       => "2.5.5",
       "maruku"       => "0.7.0",
