@@ -14,6 +14,6 @@ Gem::Specification.new do |s|
   s.files                 = ["lib/github-pages.rb"]
 
   GitHubPages.gems.each do |gem, version|
-    s.add_dependency(gem, "= #{version}") unless gem == "github-pages"
+    s.add_dependency(gem, "= #{version}")
   end
 end
