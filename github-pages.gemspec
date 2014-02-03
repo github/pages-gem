@@ -16,4 +16,6 @@ Gem::Specification.new do |s|
   GitHubPages.gems.each do |gem, version|
     s.add_dependency(gem, "= #{version}")
   end
+
+  s.add_development_dependency("rspec", "~> 2.14")
 end
