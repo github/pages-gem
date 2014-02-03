@@ -21,4 +21,10 @@ describe(GitHubPages) do
       expect(described_class.gems[gem]).not_to be_empty
     end
   end
+
+  it "exposes versions as Strings only" do
+    described_class.versions.values.each do |version|
+      expect(version).to be_a(String)
+    end
+  end
 end
