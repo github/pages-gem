@@ -13,8 +13,8 @@ class GitHubPages
       "rdiscount"            => "2.1.7",
       "redcarpet"            => "2.3.0",
       "RedCloth"             => "4.2.9",
-      "jemoji"               => "0.0.10",
-      "jekyll-mentions"      => "0.0.5",
+      "jemoji"               => "0.1.0",
+      "jekyll-mentions"      => "0.0.6",
       "jekyll-redirect-from" => "0.3.1",
     }
   end
