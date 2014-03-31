@@ -1,4 +1,4 @@
-require './lib/github-pages.rb'
+require File.expand_path('../lib/github-pages', __FILE__)
 
 Gem::Specification.new do |s|
   s.required_ruby_version = ">= 1.9.3"
@@ -14,6 +14,8 @@ Gem::Specification.new do |s|
   s.files                 = ["lib/github-pages.rb"]
 
   GitHubPages.gems.each do |gem, version|
-    s.add_dependency(gem, "= #{version}") unless gem == "github-pages"
+    s.add_dependency(gem, "= #{version}")
   end
+
+  s.add_development_dependency("rspec", "~> 2.14")
 end
