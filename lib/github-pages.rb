@@ -14,7 +14,7 @@ class GitHubPages
       "redcarpet"             => "2.3.0",
       "RedCloth"              => "4.2.9",
       "jemoji"                => "0.2.0",
-      "jekyll-mentions"       => "0.0.6",
+      "jekyll-mentions"       => "0.1.0",
       "jekyll-redirect-from"  => "0.4.0",
       "jekyll-sitemap"        => "0.4.0",
       "jekyll-coffeescript"   => "1.0.0",
