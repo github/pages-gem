@@ -6,7 +6,7 @@ class GitHubPages
   # https://help.github.com/articles/using-jekyll-with-pages
   def self.gems
     {
-      "jekyll"                => "2.0.0",
+      "jekyll"                => "2.0.2",
       "kramdown"              => "1.3.1",
       "liquid"                => "2.5.5",
       "maruku"                => "0.7.0",
