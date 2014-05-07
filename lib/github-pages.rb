@@ -11,7 +11,7 @@ class GitHubPages
       "liquid"                => "2.5.5",
       "maruku"                => "0.7.0",
       "rdiscount"             => "2.1.7",
-      "redcarpet"             => "2.3.0",
+      "redcarpet"             => "3.1.2",
       "RedCloth"              => "4.2.9",
       "jemoji"                => "0.2.0",
       "jekyll-mentions"       => "0.1.0",
