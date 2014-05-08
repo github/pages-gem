@@ -17,6 +17,7 @@ class GitHubPages
       "jekyll-mentions"      => "0.0.6",
       "jekyll-redirect-from" => "0.3.1",
       "jekyll-sitemap"       => "0.2.0",
+      "jekyll-jsonball"      => "0.0.1",
     }
   end
 
