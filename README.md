@@ -26,7 +26,7 @@ Run the following command:
 
 ## Updating
 
-To update to the latest version of Jekyll and associated dependencies, simply run `bundle update github-pages`.
+To update to the latest version of Jekyll and associated dependencies, simply run `bundle update`.
 
 ## Project Goals
 
