@@ -1,6 +1,9 @@
 language: ruby
 rvm: 2.1.1
 script: "script/cibuild"
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 notifications:
   email: ben.balter@github.com
