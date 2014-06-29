@@ -3,5 +3,6 @@
 
 set -e
 
+bundle exec bin/github-pages
 bundle exec jekyll --version
 bundle exec rspec
