@@ -20,10 +20,6 @@ class GitHubPages
     }
   end
 
-  def self.gem_directives
-    gems.map { |g,v| "gem '#{g}', '#{v}'" }.join("\n")
-  end
-
   # Versions used by GitHub Pages, including github-pages gem and ruby version
   # Useful for programmatically querying for the current-running version
   def self.versions
