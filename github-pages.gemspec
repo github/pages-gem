@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.email                 = "support@github.com"
   s.homepage              = "https://github.com/github/pages-gem"
   s.license               = "MIT"
+  s.executables           = ["github-pages"]
   s.files                 = ["lib/github-pages.rb"]
 
   GitHubPages.gems.each do |gem, version|
