@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+command = ARGV[0].to_s.downcase
+
+case command
+when "versions"
+  require File.expand_path("../../lib/github-pages", __FILE__)
+  GitHubPages.gems.each { |g,v| puts "gem '#{g}', '#{v}'" }
+when "br"
+  puts [
+    "gem 'github-pages'",
+    ":branch => '#{ARGV[1]}'",
+    ":git => 'git://github.com/github/pages-gem'"
+  ].join(", ")
+else
+  abort "error: '#{command}' is an unrecognized command. options are: 'versions', 'br'."
+end
