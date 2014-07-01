@@ -6,17 +6,26 @@ class GitHubPages
   # https://help.github.com/articles/using-jekyll-with-pages
   def self.gems
     {
-      "jekyll"               => "1.5.1",
+      # Jekyll
+      "jekyll"               => "2.1.1",
+      "jekyll-coffeescript"  => "1.0.0",
+      "jekyll-sass-converter" => "1.0.0",
+
+      # Converters
       "kramdown"             => "1.3.1",
-      "liquid"               => "2.5.5",
       "maruku"               => "0.7.0",
       "rdiscount"            => "2.1.7",
-      "redcarpet"            => "2.3.0",
+      "redcarpet"            => "3.1.2",
       "RedCloth"             => "4.2.9",
-      "jemoji"               => "0.1.0",
-      "jekyll-mentions"      => "0.0.9",
-      "jekyll-redirect-from" => "0.3.1",
-      "jekyll-sitemap"       => "0.3.0",
+
+      # Liquid
+      "liquid"               => "2.6.1",
+
+      # Plugins
+      "jemoji"               => "0.2.0",
+      "jekyll-mentions"      => "0.1.2",
+      "jekyll-redirect-from" => "0.4.0",
+      "jekyll-sitemap"       => "0.4.0",
     }
   end
 
