@@ -21,6 +21,9 @@ class GitHubPages
       # Liquid
       "liquid"               => "2.6.1",
 
+      # Highlighters
+      "rouge"                => "1.5.1",
+
       # Plugins
       "jemoji"               => "0.2.0",
       "jekyll-mentions"      => "0.1.2",
