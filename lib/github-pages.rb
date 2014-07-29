@@ -7,7 +7,7 @@ class GitHubPages
   def self.gems
     {
       # Jekyll
-      "jekyll"               => "2.1.1",
+      "jekyll"               => "2.2.0",
       "jekyll-coffeescript"  => "1.0.0",
       "jekyll-sass-converter" => "1.1.0",
 
