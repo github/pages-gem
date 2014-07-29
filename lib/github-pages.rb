@@ -20,13 +20,13 @@ class GitHubPages
 
       # Liquid
       "liquid"               => "2.6.1",
-      
+
       # Highlighters
       "pygments.rb"          => "0.6.0",
       "rouge"                => "1.5.1",
 
       # Plugins
-      "jemoji"               => "0.2.0",
+      "jemoji"               => "0.3.0",
       "jekyll-mentions"      => "0.1.2",
       "jekyll-redirect-from" => "0.4.0",
       "jekyll-sitemap"       => "0.5.0",
