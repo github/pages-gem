@@ -7,28 +7,28 @@ class GitHubPages
   def self.gems
     {
       # Jekyll
-      "jekyll"               => "2.2.0",
-      "jekyll-coffeescript"  => "1.0.0",
+      "jekyll"                => "2.2.0",
+      "jekyll-coffeescript"   => "1.0.0",
       "jekyll-sass-converter" => "1.1.0",
 
       # Converters
-      "kramdown"             => "1.3.1",
-      "maruku"               => "0.7.0",
-      "rdiscount"            => "2.1.7",
-      "redcarpet"            => "3.1.2",
-      "RedCloth"             => "4.2.9",
+      "kramdown"              => "1.3.1",
+      "maruku"                => "0.7.0",
+      "rdiscount"             => "2.1.7",
+      "redcarpet"             => "3.1.2",
+      "RedCloth"              => "4.2.9",
 
       # Liquid
-      "liquid"               => "2.6.1",
+      "liquid"                => "2.6.1",
 
       # Highlighters
-      "pygments.rb"          => "0.6.0",
+      "pygments.rb"           => "0.6.0",
 
       # Plugins
-      "jemoji"               => "0.3.0",
-      "jekyll-mentions"      => "0.1.2",
-      "jekyll-redirect-from" => "0.4.0",
-      "jekyll-sitemap"       => "0.5.0",
+      "jemoji"                => "0.3.0",
+      "jekyll-mentions"       => "0.1.2",
+      "jekyll-redirect-from"  => "0.4.0",
+      "jekyll-sitemap"        => "0.5.0",
     }
   end
 
