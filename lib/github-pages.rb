@@ -7,9 +7,9 @@ class GitHubPages
   def self.gems
     {
       # Jekyll
-      "jekyll"               => "2.1.1",
+      "jekyll"               => "2.2.0",
       "jekyll-coffeescript"  => "1.0.0",
-      "jekyll-sass-converter" => "1.0.0",
+      "jekyll-sass-converter" => "1.1.0",
 
       # Converters
       "kramdown"             => "1.3.1",
@@ -23,7 +23,6 @@ class GitHubPages
 
       # Highlighters
       "pygments.rb"          => "0.6.0",
-      "rouge"                => "1.5.1",
 
       # Plugins
       "jemoji"               => "0.3.0",
