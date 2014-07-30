@@ -24,6 +24,9 @@ class GitHubPages
       # Highlighters
       "pygments.rb"           => "0.6.0",
 
+      # Highlighters
+      "rouge"                => "1.5.1",
+
       # Plugins
       "jemoji"                => "0.3.0",
       "jekyll-mentions"       => "0.1.3",
