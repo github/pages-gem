@@ -8,17 +8,25 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
 
 Run the following command:
 
-`gem install github-pages`
+`gem install bundler`
 
-Alternatively, you can add the following to your project's Gemfile:
+If your project doesn't have a Gemfile yet, add one consisting of the following line:
+
+`source 'https://rubygems.org'`
+
+Add the following to your Gemfile:
 
 `gem 'github-pages'`
 
-*Note: You are not required to install Jekyll separately. Once the `github-pages` gem is installed, you can build your site using `jekyll build`, or preview your site using `jekyll serve`.*
+Run the following command:
+
+`bundle install`
+
+*Note: You are not required to install Jekyll separately. Once the `github-pages` gem is installed, you can build your site using `bundle exec jekyll build`, or preview your site using `bundle exec jekyll serve`.*
 
 ## Updating
 
-To update to the latest version of Jekyll and associated dependencies, simply run `gem update github-pages`, or if you've installed via Bundler, `bundle update github-pages`.
+To update to the latest version of Jekyll and associated dependencies, simply run `bundle update`.
 
 ## Project Goals
 
