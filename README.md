@@ -2,7 +2,7 @@
 
 A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a local Jekyll environment in sync with GitHub Pages.
 
-[![Gem Version](https://badge.fury.io/rb/github-pages.png)](http://badge.fury.io/rb/github-pages) [![Build Status](https://travis-ci.org/github/pages-gem.png?branch=master)](https://travis-ci.org/github/pages-gem)
+[![Gem Version](https://badge.fury.io/rb/github-pages.svg)](http://badge.fury.io/rb/github-pages) [![Build Status](https://travis-ci.org/github/pages-gem.svg?branch=master)](https://travis-ci.org/github/pages-gem)
 
 ## Usage
 
