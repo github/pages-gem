@@ -27,7 +27,7 @@ class GitHubPages
       # Plugins
       "jemoji"                => "0.3.0",
       "jekyll-mentions"       => "0.1.3",
-      "jekyll-redirect-from"  => "0.6.1",
+      "jekyll-redirect-from"  => "0.6.2",
       "jekyll-sitemap"        => "0.6.0",
     }
   end
