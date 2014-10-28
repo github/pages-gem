@@ -1,17 +1,37 @@
 #!/usr/bin/env ruby
 
-command = ARGV[0].to_s.downcase
+require 'mercenary'
+require 'terminal-table'
+require_relative "../lib/github-pages"
 
-case command
-when "versions"
-  require File.expand_path("../../lib/github-pages", __FILE__)
-  GitHubPages.gems.each { |g,v| puts "gem '#{g}', '#{v}'" }
-when "br"
-  puts [
-    "gem 'github-pages'",
-    ":branch => '#{ARGV[1]}'",
-    ":git => 'git://github.com/github/pages-gem'"
-  ].join(", ")
-else
-  abort "error: '#{command}' is an unrecognized command. options are: 'versions', 'br'."
+Mercenary.program(:"github-pages") do |p|
+  p.version GitHubPages::VERSION
+  p.description
+  p.syntax "github-pages <subcommand> options"
+
+  p.command(:versions) do |c|
+    c.syntax "versions"
+    c.description "lists the current gem dependency versions"
+    c.option "gemfile", "--gemfile", "use Gemfile formatting"
+    c.action do |args, options|
+      if options["gemfile"]
+        GitHubPages.gems.each { |g,v| puts "gem '#{g}', '#{v}'" }
+      else
+        puts Terminal::Table.new :rows => GitHubPages.gems, :headings => ["Gem", "Version"]
+      end
+    end
+  end
+
+  p.command(:branch) do |c|
+    c.syntax "branch BRANCH"
+    c.description "Generates the gem dependency at given branch"
+    c.alias(:br)
+    c.action do |args, options|
+      puts [
+        "gem 'github-pages'",
+        ":branch => '#{args[0]}'",
+        ":git => 'git://github.com/github/pages-gem'"
+      ].join(", ")
+    end
+  end
 end
