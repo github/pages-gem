@@ -11,9 +11,6 @@ class GitHubPages
       "jekyll-coffeescript"   => "1.0.0",
       "jekyll-sass-converter" => "1.2.0",
 
-      # Pages
-      "github-pages-health-check" => "0.1.0",
-
       # Converters
       "kramdown"              => "1.3.1",
       "maruku"                => "0.7.0",

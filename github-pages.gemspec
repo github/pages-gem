@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
     s.add_dependency(gem, "= #{version}")
   end
 
+  s.add_dependency('github-pages-health-check', "~> 0.1")
   s.add_dependency('mercenary', "~> 0.3")
   s.add_dependency('terminal-table', "~> 1.4")
   s.add_development_dependency("rspec", "~> 2.14")

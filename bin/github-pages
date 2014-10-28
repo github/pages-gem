@@ -2,6 +2,7 @@
 
 require 'mercenary'
 require 'terminal-table'
+require 'github-pages-health-check'
 require_relative "../lib/github-pages"
 
 Mercenary.program(:"github-pages") do |p|
@@ -32,6 +33,23 @@ Mercenary.program(:"github-pages") do |p|
         ":branch => '#{args[0] || "master"}'",
         ":git => 'git://github.com/github/pages-gem'"
       ].join(", ")
+    end
+  end
+
+  p.command(:"health-check") do |c|
+    c.syntax "health-check"
+    c.description "Checks your GitHub Pages site for common DNS configuration issues"
+    c.action do |args, options|
+      cname_path = File.expand_path "CNAME", Dir.pwd
+      raise "No CNAME file found in current directory" unless File.exists?(cname_path)
+      cname = File.open(cname_path).read.strip
+      check = GitHubPages::HealthCheck.new(cname)
+      puts "Checking domain #{cname}..."
+      if check.valid?
+        puts "Everything looks a-okay! :)"
+      else
+        puts "Uh oh. Looks like something's fishy: #{check.reason}"
+      end
     end
   end
 end
