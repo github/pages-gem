@@ -29,7 +29,7 @@ Mercenary.program(:"github-pages") do |p|
     c.action do |args, options|
       puts [
         "gem 'github-pages'",
-        ":branch => '#{args[0]}'",
+        ":branch => '#{args[0] || "master"}'",
         ":git => 'git://github.com/github/pages-gem'"
       ].join(", ")
     end
