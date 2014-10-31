@@ -16,6 +16,48 @@ Alternatively, you can add the following to your project's Gemfile:
 
 *Note: You are not required to install Jekyll separately. Once the `github-pages` gem is installed, you can build your site using `jekyll build`, or preview your site using `jekyll serve`.* For more information about installing Jekyll locally, please see [the GitHub Help docs on the matter](https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll).
 
+### Command line usage
+
+The GitHub Pages gem also comes with several command-line tools, contained within the `github-pages` command.
+
+#### List dependency versions
+
+```
+$ github-pages versions
++-----------------------+---------+
+| Gem                   | Version |
++-----------------------+---------+
+| jekyll                | 2.4.0   |
+| jekyll-coffeescript   | 1.0.0   |
+| jekyll-sass-converter | 1.2.0   |
+| kramdown              | 1.3.1   |
+| maruku                | 0.7.0   |
+| rdiscount             | 2.1.7   |
+| redcarpet             | 3.1.2   |
+| RedCloth              | 4.2.9   |
+| liquid                | 2.6.1   |
+| pygments.rb           | 0.6.0   |
+| jemoji                | 0.3.0   |
+| jekyll-mentions       | 0.1.3   |
+| jekyll-redirect-from  | 0.6.2   |
+| jekyll-sitemap        | 0.6.0   |
++-----------------------+---------+
+```
+
+Note, you can also pass the `--gemfile` flag to get the dependencies listed in a valid Gemfile dependency format.
+
+#### Health check
+
+Checks your GitHub Pages site for common DNS configuration issues.
+
+```
+$ github-pages health-check
+Checking domain foo.invalid...
+Uh oh. Looks like something's fishy: A record points to deprecated IP address
+```
+
+See the [GitHub Pages Health Check](https://github.com/github/pages-health-check) documentation for more information.
+
 ## Updating
 
 To update to the latest version of Jekyll and associated dependencies, simply run `gem update github-pages`, or if you've installed via Bundler, `bundle update github-pages`.
