@@ -12,12 +12,12 @@ describe(GitHubPages) do
   end
 
   it "outputs the branch" do
-    expect(`github-pages branch`).to eql("gem 'github-pages', :branch => 'master', :git => 'git://github.com/github/pages-gem'\n")
+    expect(`./bin/github-pages branch`).to eql("gem 'github-pages', :branch => 'master', :git => 'git://github.com/github/pages-gem'\n")
   end
 
   it "detects the CNAME when running health check" do
     File.write("CNAME", "foo.invalid")
-    expect(`github-pages health-check`).to include("Checking domain foo.invalid...")
+    expect(`./bin/github-pages health-check`).to include("Checking domain foo.invalid...")
     File.delete("CNAME")
   end
 end
