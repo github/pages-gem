@@ -1,3 +1,4 @@
 *.gem
 *.lock
 .bundle
+CNAME

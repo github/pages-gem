@@ -3,7 +3,5 @@
 
 set -ex
 
-bundle exec bin/github-pages versions
-bundle exec bin/github-pages br my-branch
 bundle exec jekyll --version
 bundle exec rspec
