@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'mercenary'
-require 'terminal-table'
-require 'github-pages-health-check'
 require_relative "../lib/github-pages"
 
 Mercenary.program(:"github-pages") do |p|
@@ -18,6 +16,7 @@ Mercenary.program(:"github-pages") do |p|
       if options["gemfile"]
         GitHubPages.gems.each { |g,v| puts "gem '#{g}', '#{v}'" }
       else
+        require 'terminal-table'
         puts Terminal::Table.new :rows => GitHubPages.gems, :headings => ["Gem", "Version"]
       end
     end
@@ -40,6 +39,7 @@ Mercenary.program(:"github-pages") do |p|
     c.syntax "health-check"
     c.description "Checks your GitHub Pages site for common DNS configuration issues"
     c.action do |args, options|
+      require 'github-pages-health-check'
       cname_path = File.expand_path "CNAME", Dir.pwd
       raise "No CNAME file found in current directory" unless File.exists?(cname_path)
       cname = File.open(cname_path).read.strip
