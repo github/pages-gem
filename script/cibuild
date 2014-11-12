@@ -5,3 +5,5 @@ set -ex
 
 bundle exec jekyll --version
 bundle exec rspec
+bundle exec jekyll new test-site
+cd test-site && bundle exec jekyll build --trace
