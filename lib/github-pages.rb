@@ -8,7 +8,7 @@ class GitHubPages
     {
       # Jekyll
       "jekyll"                => "2.4.0",
-      "jekyll-coffeescript"   => "1.0.0",
+      "jekyll-coffeescript"   => "1.0.1",
       "jekyll-sass-converter" => "1.2.0",
 
       # Converters
