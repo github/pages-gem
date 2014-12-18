@@ -1,5 +1,5 @@
 class GitHubPages
-  VERSION = 29
+  VERSION = 30
 
   # Jekyll and related dependency versions as used by GitHub Pages.
   # For more information see:
@@ -25,8 +25,8 @@ class GitHubPages
       "pygments.rb"           => "0.6.0",
 
       # Plugins
-      "jemoji"                => "0.3.0",
-      "jekyll-mentions"       => "0.1.3",
+      "jemoji"                => "0.4.0",
+      "jekyll-mentions"       => "0.2.0",
       "jekyll-redirect-from"  => "0.6.2",
       "jekyll-sitemap"        => "0.6.3",
     }
