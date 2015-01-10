@@ -14,7 +14,7 @@ describe(GitHubPages) do
   it "outputs the branch" do
     output, status = Open3.capture2e("bundle", "exec", "ruby", "./bin/github-pages", "branch")
     expect(status.to_i).to eql(0)
-    expect(output).to eql("gem 'github-pages', :branch => 'master', :git => 'git://github.com/github/pages-gem'\n")
+    expect(output).to include("gem 'github-pages', :branch => 'master', :git => 'git://github.com/github/pages-gem'\n")
   end
 
   it "detects the CNAME when running health check" do

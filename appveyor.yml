@@ -11,7 +11,7 @@ test_script:
 
 environment:
   matrix:
-    - ruby_version: "21"
+    - ruby_version: "200"
 
 cache:
   - bundle
