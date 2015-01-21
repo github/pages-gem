@@ -27,24 +27,13 @@ $ github-pages versions
 +-----------------------+---------+
 | Gem                   | Version |
 +-----------------------+---------+
-| jekyll                | 2.4.0   |
-| jekyll-coffeescript   | 1.0.0   |
-| jekyll-sass-converter | 1.2.0   |
-| kramdown              | 1.5.0   |
-| maruku                | 0.7.0   |
-| rdiscount             | 2.1.7   |
-| redcarpet             | 3.1.2   |
-| RedCloth              | 4.2.9   |
-| liquid                | 2.6.1   |
-| pygments.rb           | 0.6.0   |
-| jemoji                | 0.3.0   |
-| jekyll-mentions       | 0.1.3   |
-| jekyll-redirect-from  | 0.6.2   |
-| jekyll-sitemap        | 0.6.0   |
+| jekyll                | 1.2.3   |
+| kramdown              | 4.5.6   |
+| ....                  | .....   |
 +-----------------------+---------+
 ```
 
-Note, you can also pass the `--gemfile` flag to get the dependencies listed in a valid Gemfile dependency format.
+Note, you can also pass the `--gemfile` flag to get the dependencies listed in a valid Gemfile dependency format. You can also see a list of the live dependency versions at [pages.github.com/versions](https://pages.github.com/versions/).
 
 #### Health check
 
