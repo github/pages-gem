@@ -25,10 +25,11 @@ class GitHubPages
       "pygments.rb"           => "0.6.1",
 
       # Plugins
-      "jemoji"                => "0.4.0",
-      "jekyll-mentions"       => "0.2.1",
-      "jekyll-redirect-from"  => "0.6.2",
-      "jekyll-sitemap"        => "0.6.3",
+      "jemoji"                  => "0.4.0",
+      "jekyll-mentions"         => "0.2.1",
+      "jekyll-redirect-from"    => "0.6.2",
+      "jekyll-sitemap"          => "0.6.3",
+      "jekyll-last-modified-at" => "0.3.4"
     }
   end
 
