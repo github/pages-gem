@@ -19,7 +19,7 @@ class GitHubPages
       "RedCloth"              => "4.2.9",
 
       # Liquid
-      "liquid"                => "2.6.1",
+      "liquid"                => "2.6.2",
 
       # Highlighters
       "pygments.rb"           => "0.6.1",
