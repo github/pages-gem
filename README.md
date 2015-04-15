@@ -2,17 +2,22 @@
 
 A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a local Jekyll environment in sync with GitHub Pages.
 
-[![Gem Version](https://badge.fury.io/rb/github-pages.svg)](http://badge.fury.io/rb/github-pages) [![Build Status](https://travis-ci.org/github/pages-gem.svg?branch=master)](https://travis-ci.org/github/pages-gem)
+[![Gem Version](https://img.shields.io/gem/v/github-pages.svg)](https://rubygems.org/gems/github-pages)
+[![Build Status](https://img.shields.io/travis/github/pages-gem/master.svg)](https://travis-ci.org/github/pages-gem)
 
 ## Usage
 
 Run the following command:
 
-`gem install github-pages`
+```
+gem install github-pages
+```
 
 Alternatively, you can add the following to your project's Gemfile:
 
-`gem 'github-pages'`
+```ruby
+gem 'github-pages'
+```
 
 *Note: You are not required to install Jekyll separately. Once the `github-pages` gem is installed, you can build your site using `jekyll build`, or preview your site using `jekyll serve`.* For more information about installing Jekyll locally, please see [the GitHub Help docs on the matter](https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll).
 
@@ -22,7 +27,7 @@ The GitHub Pages gem also comes with several command-line tools, contained withi
 
 #### List dependency versions
 
-```
+```console
 $ github-pages versions
 +-----------------------+---------+
 | Gem                   | Version |
@@ -39,7 +44,7 @@ Note, you can also pass the `--gemfile` flag to get the dependencies listed in a
 
 Checks your GitHub Pages site for common DNS configuration issues.
 
-```
+```console
 $ github-pages health-check
 Checking domain foo.invalid...
 Uh oh. Looks like something's fishy: A record points to deprecated IP address
