@@ -32,8 +32,11 @@ $ github-pages versions
 +-----------------------+---------+
 | Gem                   | Version |
 +-----------------------+---------+
-| jekyll                | 1.2.3   |
-| kramdown              | 4.5.6   |
+| jekyll                | 2.4.0   |
+| jekyll-coffeescript   | 1.0.1   |
+| jekyll-sass-converter | 1.2.0   |
+| kramdown              | 1.5.0   |
+| maruku                | 0.7.0   |
 | ....                  | .....   |
 +-----------------------+---------+
 ```
