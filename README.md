@@ -3,7 +3,8 @@
 A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a local Jekyll environment in sync with GitHub Pages.
 
 [![Gem Version](https://img.shields.io/gem/v/github-pages.svg)](https://rubygems.org/gems/github-pages)
-[![Build Status](https://img.shields.io/travis/github/pages-gem/master.svg)](https://travis-ci.org/github/pages-gem)
+[![Linux Build Status](https://img.shields.io/travis/github/pages-gem/master.svg?label=Linux%20build)](https://travis-ci.org/github/pages-gem)
+[![Windows Build status](https://img.shields.io/appveyor/ci/github/pages-gem/master.svg?label=Windows%20build)](https://ci.appveyor.com/project/github/pages-gem/branch/master)
 
 ## Usage
 
