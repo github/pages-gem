@@ -1,5 +1,5 @@
 class GitHubPages
-  VERSION = 35
+  VERSION = 36
 
   # Jekyll and related dependency versions as used by GitHub Pages.
   # For more information see:
@@ -7,27 +7,28 @@ class GitHubPages
   def self.gems
     {
       # Jekyll
-      "jekyll"                => "2.4.0",
+      "jekyll"                => "2.5.3",
       "jekyll-coffeescript"   => "1.0.1",
-      "jekyll-sass-converter" => "1.2.0",
+      "jekyll-sass-converter" => "1.3.0",
 
       # Converters
-      "kramdown"              => "1.5.0",
-      "maruku"                => "0.7.0",
-      "rdiscount"             => "2.1.7",
-      "redcarpet"             => "3.1.2",
+      "kramdown"              => "1.7.0",
+      "maruku"                => "0.7.2",
+      "rdiscount"             => "2.1.8",
+      "redcarpet"             => "3.2.3",
       "RedCloth"              => "4.2.9",
 
       # Liquid
-      "liquid"                => "2.6.2",
+      "liquid"                => "3.0.2",
 
       # Highlighters
-      "pygments.rb"           => "0.6.1",
+      "pygments.rb"           => "0.6.3",
+      "rouge"                 => "1.9.0",
 
       # Plugins
-      "jemoji"                => "0.4.0",
+      "jemoji"                => "0.5.0",
       "jekyll-mentions"       => "0.2.1",
-      "jekyll-redirect-from"  => "0.6.2",
+      "jekyll-redirect-from"  => "0.8.0",
       "jekyll-sitemap"        => "0.8.1",
     }
   end
