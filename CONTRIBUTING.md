@@ -22,3 +22,17 @@ Anything that would make the GitHub Pages experience better for users. A few exa
 2. Create a new, descriptively named branch
 3. Commit your proposed changes
 4. Submit a pull request
+
+## Testing with Bundler
+
+To test your Gem with [Bundler](http://bundler.io), you can:
+
+1. Create a directory
+2. Add a `Gemfile` like the following:
+
+    ```ruby
+    gem 'github-pages', :git => 'https://github.com/<you>/pages-gem.git', :branch => '<your branch name>', :require => 'gh-pages'
+    ```
+
+3. Execute `bundle install`
+4. Test

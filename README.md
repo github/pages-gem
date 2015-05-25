@@ -2,17 +2,23 @@
 
 A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a local Jekyll environment in sync with GitHub Pages.
 
-[![Gem Version](https://badge.fury.io/rb/github-pages.svg)](http://badge.fury.io/rb/github-pages) [![Build Status](https://travis-ci.org/github/pages-gem.svg?branch=master)](https://travis-ci.org/github/pages-gem) [![Build status](https://ci.appveyor.com/api/projects/status/n8wyjde4dp0uwxt2?svg=true)](https://ci.appveyor.com/project/benbalter/pages-gem)
+[![Gem Version](https://img.shields.io/gem/v/github-pages.svg)](https://rubygems.org/gems/github-pages)
+[![Build Status](https://img.shields.io/travis/github/pages-gem/master.svg)](https://travis-ci.org/github/pages-gem)
+![Windows build status](https://img.shields.io/appveyor/ci/github/pages-gem.svg)
 
 ## Usage
 
 Run the following command:
 
-`gem install github-pages`
+```
+gem install github-pages
+```
 
 Alternatively, you can add the following to your project's Gemfile:
 
-`gem 'github-pages'`
+```ruby
+gem 'github-pages'
+```
 
 *Note: You are not required to install Jekyll separately. Once the `github-pages` gem is installed, you can build your site using `jekyll build`, or preview your site using `jekyll serve`.* For more information about installing Jekyll locally, please see [the GitHub Help docs on the matter](https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll).
 
@@ -22,35 +28,27 @@ The GitHub Pages gem also comes with several command-line tools, contained withi
 
 #### List dependency versions
 
-```
+```console
 $ github-pages versions
 +-----------------------+---------+
 | Gem                   | Version |
 +-----------------------+---------+
 | jekyll                | 2.4.0   |
-| jekyll-coffeescript   | 1.0.0   |
+| jekyll-coffeescript   | 1.0.1   |
 | jekyll-sass-converter | 1.2.0   |
-| kramdown              | 1.3.1   |
+| kramdown              | 1.5.0   |
 | maruku                | 0.7.0   |
-| rdiscount             | 2.1.7   |
-| redcarpet             | 3.1.2   |
-| RedCloth              | 4.2.9   |
-| liquid                | 2.6.1   |
-| pygments.rb           | 0.6.0   |
-| jemoji                | 0.3.0   |
-| jekyll-mentions       | 0.1.3   |
-| jekyll-redirect-from  | 0.6.2   |
-| jekyll-sitemap        | 0.6.0   |
+| ....                  | .....   |
 +-----------------------+---------+
 ```
 
-Note, you can also pass the `--gemfile` flag to get the dependencies listed in a valid Gemfile dependency format.
+Note, you can also pass the `--gemfile` flag to get the dependencies listed in a valid Gemfile dependency format. You can also see a list of the live dependency versions at [pages.github.com/versions](https://pages.github.com/versions/).
 
 #### Health check
 
 Checks your GitHub Pages site for common DNS configuration issues.
 
-```
+```console
 $ github-pages health-check
 Checking domain foo.invalid...
 Uh oh. Looks like something's fishy: A record points to deprecated IP address
@@ -76,11 +74,11 @@ The GitHub Pages gem seeks to version two aspects of the build environment:
 
 The version of Ruby with which Jekyll is executed. Although Jekyll itself may be compatible with prior or future versions of Ruby, different execution environments yield different results. Ruby 1.8.7 parses YML differently than 1.9.3, for example, and Kramdown has trouble processing `mailto` links prior to 1.9.3. In order to ensure that building locally consistently results in the same build as what appears when published, it's essential that Ruby itself is versioned along side the Gem, despite no known incompatibilities.
 
-**Note**: If you're using `rbenv`, check out [ruby-build-github](https://github.com/parkr/ruby-build-github) for ruby-build, a collection of GitHub-shipped Ruby versions. If you clone down this repository and run ./install.sh support/2.1.0-github, it should install properly for you.
+**Note**: If you're using `rbenv`, check out [ruby-build-github](https://github.com/parkr/ruby-build-github) for ruby-build, a collection of GitHub-shipped Ruby versions. If you clone down this repository and run `./install.sh support/2.1.0-github`, it should install properly for you.
 
 ### 2. Dependencies
 
-This includes Markdown processors, and any other Jekyll dependency for which version incongruency may produce unexpected results. Traditionally, MaruKu, Kramdown, RedCloth, liquid, rdiscount, and redcarpet have been strictly maintained due to known breaking changes.
+This includes Markdown processors, and any other Jekyll dependency for which version incongruency may produce unexpected results. Traditionally, Maruku, Kramdown, RedCloth, liquid, rdiscount, and redcarpet have been strictly maintained due to known breaking changes.
 
 ## Changelog
 
