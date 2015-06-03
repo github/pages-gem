@@ -29,6 +29,7 @@ class GitHubPages
       "jekyll-mentions"       => "0.2.1",
       "jekyll-redirect-from"  => "0.8.0",
       "jekyll-sitemap"        => "0.8.1",
+      "jekyll-feed"           => "0.2.3",
     }
   end
 
