@@ -22,7 +22,7 @@ class GitHubPages
       "liquid"                => "2.6.2",
 
       # Highlighters
-      "pygments.rb"           => "0.6.1",
+      "pygments.rb"           => "0.6.3",
 
       # Plugins
       "jemoji"                => "0.4.0",
