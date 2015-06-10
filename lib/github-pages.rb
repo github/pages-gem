@@ -15,7 +15,7 @@ class GitHubPages
       "kramdown"              => "1.5.0",
       "maruku"                => "0.7.0",
       "rdiscount"             => "2.1.7",
-      "redcarpet"             => "3.3.0",
+      "redcarpet"             => "3.3.1",
       "RedCloth"              => "4.2.9",
 
       # Liquid
