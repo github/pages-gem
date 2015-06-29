@@ -9,7 +9,7 @@ class GitHubPages
       # Jekyll
       "jekyll"                => "2.4.0",
       "jekyll-coffeescript"   => "1.0.1",
-      "jekyll-sass-converter" => "1.2.0",
+      "jekyll-sass-converter" => "1.3.0",
 
       # Converters
       "kramdown"              => "1.5.0",
