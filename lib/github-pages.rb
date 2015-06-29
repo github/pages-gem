@@ -25,7 +25,7 @@ class GitHubPages
       "pygments.rb"           => "0.6.3",
 
       # Plugins
-      "jemoji"                => "0.4.0",
+      "jemoji"                => "0.5.0",
       "jekyll-mentions"       => "0.2.1",
       "jekyll-redirect-from"  => "0.8.0",
       "jekyll-sitemap"        => "0.8.1",
