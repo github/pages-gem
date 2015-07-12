@@ -1,5 +1,5 @@
 class GitHubPages
-  VERSION = 38
+  VERSION = 39
 
   # Jekyll and related dependency versions as used by GitHub Pages.
   # For more information see:
@@ -23,6 +23,7 @@ class GitHubPages
 
       # Highlighters
       "pygments.rb"           => "0.6.3",
+      "rouge"                 => "1.9.0",
 
       # Plugins
       "jemoji"                => "0.4.0",
