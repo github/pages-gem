@@ -71,7 +71,7 @@ The GitHub Pages gem seeks to version two aspects of the build environment:
 
 ### 1. Ruby
 
-The version of Ruby with which Jekyll is executed. Although Jekyll itself may be compatible with prior or future versions of Ruby, different execution environments yield different results. Ruby 1.8.7 parses YML differently than 1.9.3, for example, and Kramdown has trouble processing `mailto` links prior to 1.9.3. In order to ensure that building locally consistently results in the same build as what appears when published, it's essential that Ruby itself is versioned along side the Gem, despite no known incompatibilities.
+The version of Ruby with which Jekyll is executed. Although Jekyll itself may be compatible with prior or future versions of Ruby, different execution environments yield different results. Ruby 1.8.7 parses YAML differently than 1.9.3, for example, and Kramdown has trouble processing `mailto` links prior to 1.9.3. In order to ensure that building locally consistently results in the same build as what appears when published, it's essential that Ruby itself is versioned along side the Gem, despite no known incompatibilities.
 
 **Note**: If you're using `rbenv`, check out [ruby-build-github](https://github.com/parkr/ruby-build-github) for ruby-build, a collection of GitHub-shipped Ruby versions. If you clone down this repository and run `./install.sh support/2.1.0-github`, it should install properly for you.
 
