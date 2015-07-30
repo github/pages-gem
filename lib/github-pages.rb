@@ -36,9 +36,22 @@ class GitHubPages
   # Versions used by GitHub Pages, including github-pages gem and ruby version
   # Useful for programmatically querying for the current-running version
   def self.versions
-    gems.merge({
-      "github-pages" => VERSION.to_s,
-      "ruby"         => RUBY_VERSION
-    })
+    gems.merge deps_version_report
+  end
+
+  def self.deps_version_report
+    require 'html/pipeline/version'
+    require 'sass/version'
+    require 'safe_yaml/version'
+
+    {
+      "ruby" => RUBY_VERSION,
+
+      # Gem versions we're curious about
+      "github-pages"  => VERSION.to_s,
+      "html-pipeline" => HTML::Pipeline::VERSION,
+      "sass"          => Sass.version[:number],
+      "safe_yaml"     => SafeYAML::VERSION
+    }
   end
 end

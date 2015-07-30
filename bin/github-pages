@@ -11,13 +11,15 @@ Mercenary.program(:"github-pages") do |p|
   p.command(:versions) do |c|
     c.syntax "versions"
     c.description "lists the current gem dependency versions"
+    c.option "all", "--all", "Report all versions, not just ones we lock to (cannot be used with --gemfile)"
     c.option "gemfile", "--gemfile", "use Gemfile formatting"
     c.action do |args, options|
       if options["gemfile"]
         GitHubPages.gems.each { |g,v| puts "gem '#{g}', '#{v}'" }
       else
         require 'terminal-table'
-        puts Terminal::Table.new :rows => GitHubPages.gems, :headings => ["Gem", "Version"]
+        versions = options['all'] ? GitHubPages.versions : GitHubPages.gems
+        puts Terminal::Table.new :rows => versions, :headings => ["Gem", "Version"]
       end
     end
   end
