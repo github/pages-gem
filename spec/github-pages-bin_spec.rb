@@ -12,12 +12,16 @@ describe(GitHubPages) do
   end
 
   it "outputs the branch" do
-    expect(`./bin/github-pages branch`).to eql("gem 'github-pages', :branch => 'master', :git => 'git://github.com/github/pages-gem'\n")
+    output, status = Open3.capture2e("bundle", "exec", "ruby", "./bin/github-pages", "branch")
+    expect(status.to_i).to eql(0)
+    expect(output).to include("gem 'github-pages', :branch => 'master', :git => 'git://github.com/github/pages-gem'\n")
   end
 
   it "detects the CNAME when running health check" do
     File.write("CNAME", "foo.invalid")
-    expect(`./bin/github-pages health-check`).to include("Checking domain foo.invalid...")
+    output, status = Open3.capture2e("bundle", "exec", "ruby", "./bin/github-pages", "health-check")
+    expect(status.to_i).to eql(0)
+    expect(output).to include("Checking domain foo.invalid...")
     File.delete("CNAME")
   end
 end

@@ -1,0 +1,21 @@
+install:
+  - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
+  - gem install bundler --no-ri --no-rdoc
+  - gem install yajl-ruby --platform=ruby
+  - bundle install --jobs=3 --retry=3 --path=bundle
+  - ps: (gc Gemfile.lock).replace('1.1.0-x86-mingw32','1.2.0-x86-mingw32')|sc Gemfile.lock
+  - ps: (gc Gemfile.lock).replace('yajl-ruby (~> 1.1.0)','yajl-ruby (~> 1.2.0)')|sc Gemfile.lock
+  - bundle install --jobs=3 --retry=3 --path=bundle
+
+build_script:
+  - gem build github-pages.gemspec
+
+test_script:
+  - bash ./script/cibuild
+
+environment:
+  matrix:
+    - ruby_version: "200"
+
+cache:
+  - bundle

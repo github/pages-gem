@@ -4,6 +4,7 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
 
 [![Gem Version](https://img.shields.io/gem/v/github-pages.svg)](https://rubygems.org/gems/github-pages)
 [![Build Status](https://img.shields.io/travis/github/pages-gem/master.svg)](https://travis-ci.org/github/pages-gem)
+![Windows build status](https://img.shields.io/appveyor/ci/github/pages-gem.svg)
 
 ## Usage
 
