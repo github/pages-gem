@@ -49,8 +49,10 @@ Mercenary.program(:"github-pages") do |p|
       puts "Checking domain #{cname}..."
       if check.valid?
         puts "Everything looks a-okay! :)"
+        exit 0
       else
         puts "Uh oh. Looks like something's fishy: #{check.reason}"
+        exit 1
       end
     end
   end
