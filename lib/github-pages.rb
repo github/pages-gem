@@ -12,7 +12,7 @@ class GitHubPages
       "jekyll-sass-converter" => "1.3.0",
 
       # Converters
-      "kramdown"              => "1.5.0",
+      "kramdown"              => "1.9.0",
       "maruku"                => "0.7.0",
       "rdiscount"             => "2.1.7",
       "redcarpet"             => "3.3.2",
