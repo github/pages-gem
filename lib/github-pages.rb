@@ -14,7 +14,7 @@ class GitHubPages
       # Converters
       "kramdown"              => "1.9.0",
       "rdiscount"             => "2.1.8",
-      "redcarpet"             => "3.3.2",
+      "redcarpet"             => "3.3.3",
       "RedCloth"              => "4.2.9",
 
       # Liquid
