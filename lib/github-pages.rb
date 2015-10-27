@@ -7,7 +7,7 @@ class GitHubPages
   def self.gems
     {
       # Jekyll
-      "jekyll"                => "2.4.0",
+      "jekyll"                => "3.0.0",
       "jekyll-coffeescript"   => "1.0.1",
       "jekyll-sass-converter" => "1.3.0",
 
@@ -19,7 +19,7 @@ class GitHubPages
       "RedCloth"              => "4.2.9",
 
       # Liquid
-      "liquid"                => "2.6.2",
+      "liquid"                => "3.0.6",
 
       # Highlighters
       "pygments.rb"           => "0.6.3",
