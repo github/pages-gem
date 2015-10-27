@@ -13,7 +13,6 @@ class GitHubPages
 
       # Converters
       "kramdown"              => "1.9.0",
-      "maruku"                => "0.7.0",
       "rdiscount"             => "2.1.7",
       "redcarpet"             => "3.3.2",
       "RedCloth"              => "4.2.9",
