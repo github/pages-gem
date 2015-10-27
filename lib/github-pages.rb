@@ -21,7 +21,7 @@ class GitHubPages
       "liquid"                => "3.0.6",
 
       # Highlighters
-      "pygments.rb"           => "0.6.3",
+      "rouge"                 => "1.10.1",
 
       # Plugins
       "jemoji"                => "0.5.0",
