@@ -25,6 +25,7 @@ class GitHubPages
       "pygments.rb"           => "0.6.3",
 
       # Plugins
+      "jekyll-paginate"       => "1.1.0",
       "jekyll-mentions"       => "1.0.0",
       "jekyll-redirect-from"  => "0.9.0",
       "jekyll-sitemap"        => "0.9.0",
