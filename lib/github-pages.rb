@@ -10,6 +10,7 @@ class GitHubPages
       "jekyll"                => "3.0.0",
       "jekyll-coffeescript"   => "1.0.1",
       "jekyll-sass-converter" => "1.3.0",
+      "jekyll-paginate"       => "1.1.0",
 
       # Converters
       "kramdown"              => "1.9.0",
@@ -24,7 +25,7 @@ class GitHubPages
       "rouge"                 => "1.10.1",
 
       # Plugins
-      "jemoji"                => "0.5.0",
+      "jemoji"                => "0.5.1",
       "jekyll-mentions"       => "1.0.0",
       "jekyll-redirect-from"  => "0.9.0",
       "jekyll-sitemap"        => "0.9.0",
