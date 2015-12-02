@@ -31,6 +31,7 @@ class GitHubPages
       "jekyll-sitemap"            => "0.9.0",
       "jekyll-feed"               => "0.3.1",
       "jekyll-gist"               => "1.4.0",
+      "jekyll-paginate"           => "1.1.0",
       "github-pages-health-check" => "0.5.3",
     }
   end
