@@ -17,7 +17,7 @@ class GitHubPages
       "RedCloth"                  => "4.2.9",
 
       # Liquid
-      "liquid"                    => "2.6.2",
+      "liquid"                    => "3.0.6",
 
       # Highlighters
       "rouge"                     => "1.10.1",
