@@ -1,5 +1,5 @@
 class GitHubPages
-  VERSION = 40
+  VERSION = 41
 
   # Jekyll and related dependency versions as used by GitHub Pages.
   # For more information see:
@@ -32,6 +32,7 @@ class GitHubPages
       "jekyll-paginate"           => "1.1.0",
       "github-pages-health-check" => "0.5.3",
       "jekyll-coffeescript"       => "1.0.1",
+      "jekyll-seo-tag"            => "0.1.4"
     }
   end
 
