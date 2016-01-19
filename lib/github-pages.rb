@@ -17,11 +17,10 @@ class GitHubPages
       "redcarpet"                 => "3.3.3",
       "RedCloth"                  => "4.2.9",
 
-      # Liquid
+      # Misc
       "liquid"                    => "3.0.6",
-
-      # Highlighters
       "rouge"                     => "1.10.1",
+      "toml"                      => "0.1.2"
 
       # Plugins
       "jemoji"                    => "0.5.1",
