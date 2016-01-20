@@ -7,7 +7,7 @@ class GitHubPages
   def self.gems
     {
       # Jekyll
-      "jekyll"                    => "3.0.1",
+      "jekyll"                    => "3.0.2",
       "jekyll-sass-converter"     => "1.3.0",
       "jekyll-textile-converter"  => "0.1.0",
 
