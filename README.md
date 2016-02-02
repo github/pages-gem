@@ -29,16 +29,16 @@ The GitHub Pages gem also comes with several command-line tools, contained withi
 
 ```console
 $ github-pages versions
-+-----------------------+---------+
-| Gem                   | Version |
-+-----------------------+---------+
-| jekyll                | 2.4.0   |
-| jekyll-coffeescript   | 1.0.1   |
-| jekyll-sass-converter | 1.2.0   |
-| kramdown              | 1.5.0   |
-| maruku                | 0.7.0   |
-| ....                  | .....   |
-+-----------------------+---------+
++---------------------------+---------+
+| Gem                       | Version |
++---------------------------+---------+
+| jekyll                    | 3.0.2   |
+| jekyll-sass-converter     | 1.3.0   |
+| jekyll-textile-converter  | 0.1.0   |
+| kramdown                  | 1.9.0   |
+| rdiscount                 | 2.1.8   |
+| ....                      | .....   |
++---------------------------+---------+
 ```
 
 Note, you can also pass the `--gemfile` flag to get the dependencies listed in a valid Gemfile dependency format. You can also see a list of the live dependency versions at [pages.github.com/versions](https://pages.github.com/versions/).
