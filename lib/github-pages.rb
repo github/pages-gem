@@ -33,7 +33,7 @@ class GitHubPages
       "jekyll-paginate"           => "1.1.0",
       "github-pages-health-check" => "0.6.0",
       "jekyll-coffeescript"       => "1.0.1",
-      "jekyll-seo-tag"            => "0.1.4",
+      "jekyll-seo-tag"            => "1.0.0",
     }
   end
 
