@@ -27,7 +27,7 @@ class GitHubPages
       "jemoji"                    => "0.5.1",
       "jekyll-mentions"           => "1.0.0",
       "jekyll-redirect-from"      => "0.9.1",
-      "jekyll-sitemap"            => "0.9.0",
+      "jekyll-sitemap"            => "0.10.0",
       "jekyll-feed"               => "0.3.1",
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
