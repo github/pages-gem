@@ -18,7 +18,8 @@ gem build -q github-pages.gemspec
 
 # Make sure we're on the master branch.
 
-(git branch | grep -q '* master') || {
+(git branch | grep -q '
+master') || {
   echo "Only release from the master branch."
   exit 1
 }
