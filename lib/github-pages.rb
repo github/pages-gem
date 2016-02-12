@@ -34,6 +34,7 @@ class GitHubPages
       "github-pages-health-check" => "0.6.0",
       "jekyll-coffeescript"       => "1.0.1",
       "jekyll-seo-tag"            => "0.1.4",
+      "jekyll-github-metadata"    => "1.3.0"
     }
   end
 
