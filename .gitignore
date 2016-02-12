@@ -2,3 +2,4 @@
 *.lock
 .bundle
 CNAME
+test-site
