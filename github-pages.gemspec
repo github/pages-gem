@@ -1,4 +1,5 @@
-require File.expand_path('../lib/github-pages', __FILE__)
+require File.expand_path('../lib/github-pages/dependencies', __FILE__)
+require File.expand_path('../lib/github-pages/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.0.0"
@@ -13,17 +14,17 @@ Gem::Specification.new do |s|
   s.license               = "MIT"
   s.executables           = ["github-pages"]
   s.files                 = ["lib/github-pages.rb"]
-  
+
   s.post_install_message = <<-msg
 ---------------------------------------------------
 Thank you for installing github-pages!
-GitHub Pages recently upgraded to Jekyll 3.0, which 
+GitHub Pages recently upgraded to Jekyll 3.0, which
 includes some breaking changes. More information:
 https://github.com/blog/2100-github-pages-jekyll-3
 ---------------------------------------------------
 msg
 
-  GitHubPages.gems.each do |gem, version|
+  GitHubPages::Dependencies.gems.each do |gem, version|
     s.add_dependency(gem, "= #{version}")
   end
 
