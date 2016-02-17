@@ -52,6 +52,22 @@ module GitHubPages
       }
     }.freeze
 
+    # Options which should be honored *locally* for practical purposes
+    # These options are not honored when built by GitHub Pages
+    LOCAL_PASS_THROUGH = %w[
+      config
+      destination
+      source
+      future
+      limit_posts
+      watchforce_polling
+      show_drafts
+      unbpublished
+      quiet
+      verbose
+      incremental
+    ].freeze
+
     # Set the site's configuration as a user configuration sandwhich with
     # with our overrides overriding the user's specified values which themselves
     # override our defaults. Implemented as an `after_reset` hook.
@@ -62,11 +78,9 @@ module GitHubPages
       defaults = Jekyll::Utils.deep_merge_hashes(Jekyll::Configuration::DEFAULTS, DEFAULTS)
 
       # defaults < the site's existing source and destination
-      # so that Jekyll can find the user's config
-      passthrough = {
-        "source"      => site.config["source"],
-        "destination" => site.config["destination"]
-      }
+      # so that Jekyll can find the user's config, honor command line flags, etc.
+      passthrough = {}
+      LOCAL_PASS_THROUGH.each { |key| passthrough[key] = site.config[key] }
       defaults = Jekyll::Utils.deep_merge_hashes(defaults, passthrough)
 
       # defaults < _config.yml < OVERRIDES
