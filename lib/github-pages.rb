@@ -8,6 +8,5 @@ module GitHubPages
 end
 
 Jekyll::Hooks.register :site, :after_reset do |site|
-  puts "REGISTERING HOOK"
   GitHubPages::Configuration.set(site)
 end

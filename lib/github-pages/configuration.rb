@@ -27,9 +27,9 @@ module GitHubPages
       }
     }.freeze
 
+    # Note: "source" and "destination" are also overridden, but cannot be
+    # overridden locally, for practical purposes
     OVERRIDES = {
-      "source"      => Dir.pwd,
-      "destination" => File.expand_path("_site", Dir.pwd),
       "lsi"         => false,
       "safe"        => true,
       "plugins"     => SecureRandom.hex,
@@ -47,13 +47,29 @@ module GitHubPages
     }.freeze
 
     def self.set(site)
-      user_config_overridden = Jekyll.configuration(OVERRIDES)
-      config = Jekyll::Utils.deep_merge_hashes(DEFAULTS, user_config_overridden)
+      # Jekyll defaults < GitHub Pages defaults
+      defaults = Jekyll::Utils.deep_merge_hashes(Jekyll::Configuration::DEFAULTS, DEFAULTS)
+
+      # defaults < the site's existing source and destination
+      passthrough = {
+        "source"      => site.config["source"],
+        "destination" => site.config["destination"]
+      }
+      defaults = Jekyll::Utils.deep_merge_hashes(defaults, passthrough)
+
+      # defaults < _config.yml < OVERRIDES
+      config   = Jekyll::Configuration[defaults]
+      override = Jekyll::Configuration[OVERRIDES].stringify_keys
+      config = config.read_config_files(config.config_files(override))
+      config = Jekyll::Utils.deep_merge_hashes(config, override).stringify_keys
 
       site.instance_variable_set '@config', config
       config.keys.each do |key|
         site.send("#{key}=", config[key]) if site.respond_to?("#{key}=")
       end
+    end
+
+    def self.defaults
     end
   end
 end
