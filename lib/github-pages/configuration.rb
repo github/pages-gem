@@ -46,11 +46,17 @@ module GitHubPages
       }
     }.freeze
 
+    # Set the site's configuration as a user configuration sandwhich with
+    # with our overrides overriding the user's specified values which themselves
+    # override our defaults. Implemented as an `after_reset` hook.
+    #
+    # Note: this is roughly a modified version of Jekyll#configuration
     def self.set(site)
       # Jekyll defaults < GitHub Pages defaults
       defaults = Jekyll::Utils.deep_merge_hashes(Jekyll::Configuration::DEFAULTS, DEFAULTS)
 
       # defaults < the site's existing source and destination
+      # so that Jekyll can find the user's config
       passthrough = {
         "source"      => site.config["source"],
         "destination" => site.config["destination"]
@@ -60,16 +66,15 @@ module GitHubPages
       # defaults < _config.yml < OVERRIDES
       config   = Jekyll::Configuration[defaults]
       override = Jekyll::Configuration[OVERRIDES].stringify_keys
-      config = config.read_config_files(config.config_files(override))
-      config = Jekyll::Utils.deep_merge_hashes(config, override).stringify_keys
+      config   = config.read_config_files(config.config_files(override))
+      config   = Jekyll::Utils.deep_merge_hashes(config, override).stringify_keys
 
+      # Write the final config to the site object, noting that some values may
+      # have already been set as instancee variables when initialized
       site.instance_variable_set '@config', config
       config.keys.each do |key|
-        site.send("#{key}=", config[key]) if site.respond_to?("#{key}=")
+        site.public_send("#{key}=", config[key]) if site.respond_to?("#{key}=")
       end
-    end
-
-    def self.defaults
     end
   end
 end
