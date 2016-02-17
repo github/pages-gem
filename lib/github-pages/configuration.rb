@@ -24,17 +24,23 @@ module GitHubPages
       "kramdown" => {
         "input"     => "GFM",
         "hard_wrap" => false
-      }
+      },
+      "jailed"   => false
     }.freeze
 
-    # Note: "source" and "destination" are also overridden, but cannot be
-    # overridden locally, for practical purposes
+    # The following values are also overridden by GitHUb Pages, but are not
+    # overridden locally, for practical purposes:
+    # * source
+    # * destination
+    # * jailed
+    # * verbose
+    # * incremental
+    # * GH_ENV
     OVERRIDES = {
       "lsi"         => false,
       "safe"        => true,
       "plugins"     => SecureRandom.hex,
       "whitelist"   => PLUGIN_WHITELIST,
-      "incremental" => false,
       "highlighter" => "rouge",
       "kramdown"    => {
         "template"          => '',
