@@ -45,7 +45,7 @@ Mercenary.program(:"github-pages") do |p|
       cname_path = File.expand_path "CNAME", Dir.pwd
       raise "No CNAME file found in current directory" unless File.exists?(cname_path)
       cname = File.open(cname_path).read.strip
-      check = GitHubPages::HealthCheck.new(cname)
+      check = GitHubPages::HealthCheck.check(cname)
       puts "Checking domain #{cname}..."
       if check.valid?
         puts "Everything looks a-okay! :)"
