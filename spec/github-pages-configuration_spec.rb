@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 describe(GitHubPages::Configuration) do
-  let(:configuration) { Jekyll.configuration(source: fixture_dir, quiet: true)}
+  let(:test_config) { { "source" => fixture_dir, "quiet" => true } }
+  let(:configuration) { Jekyll.configuration(test_config)}
   let(:site) { Jekyll::Site.new(configuration) }
-  let(:effective_config) { described_class.effective_config(site) }
+  let(:effective_config) { described_class.effective_config(site.config, test_config) }
   let(:site_config) { site.config }
 
   %w[site effective].each do |type|
