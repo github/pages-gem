@@ -28,7 +28,7 @@ module GitHubPages
       "jailed"   => false
     }.freeze
 
-    # The following values are also overridden by GitHUb Pages, but are not
+    # The following values are also overridden by GitHub Pages, but are not
     # overridden locally, for practical purposes:
     # * source
     # * destination
