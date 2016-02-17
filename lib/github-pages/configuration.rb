@@ -94,6 +94,10 @@ module GitHubPages
       config   = config.read_config_files(config.config_files(override))
       config   = Jekyll::Utils.deep_merge_hashes(config, override).stringify_keys
 
+      # Jekyll's native deep_merge_hashes doesn't merge arrays.
+      # Include default Gems, even if not requested, to avoid breaking pre 3.0 sites
+      config["gems"] = config["gems"].concat(DEFAULT_PLUGINS).uniq
+
       # Write the final config to the site object, noting that some values may
       # have already been set as instancee variables when initialized
       site.instance_variable_set '@config', config
