@@ -49,7 +49,7 @@ module GitHubPages
       "highlighter" => "rouge",
       "kramdown"    => {
         "template"          => '',
-        'math_engine'       => 'mathajx',
+        'math_engine'       => 'mathjax',
         'syntax_highligher' => 'rouge'
       },
       "gist"        => {
