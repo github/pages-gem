@@ -1,12 +1,14 @@
 module GitHubPages
   class Configuration
 
+    # Plugins which are activated by default
     DEFAULT_PLUGINS = %w[
       jekyll-coffeescript
       jekyll-gist
       jekyll-paginate
     ].freeze
 
+    # Plugins allowed by GitHub Pages
     PLUGIN_WHITELIST = %w[
       jekyll-redirect-from
       jekyll-mentions
@@ -19,6 +21,7 @@ module GitHubPages
       jemoji
     ].freeze
 
+    # Default, user overwritable options
     DEFAULTS = {
       "gems"     => DEFAULT_PLUGINS,
       "kramdown" => {
@@ -28,6 +31,8 @@ module GitHubPages
       "jailed"   => false
     }.freeze
 
+    # Options which GitHub Pages sets, regardless of the user-specified value
+    #
     # The following values are also overridden by GitHub Pages, but are not
     # overridden locally, for practical purposes:
     # * source
@@ -52,8 +57,8 @@ module GitHubPages
       }
     }.freeze
 
-    # Options which should be honored *locally* for practical purposes
-    # These options are not honored when built by GitHub Pages
+    # Options which should be honored *locally* for practical purposes, however
+    # these options are not honored when built by GitHub Pages
     LOCAL_PASS_THROUGH = %w[
       config
       destination
