@@ -73,12 +73,14 @@ module GitHubPages
       incremental
     ].freeze
 
-    # Set the site's configuration as a user configuration sandwhich with
-    # with our overrides overriding the user's specified values which themselves
-    # override our defaults. Implemented as an `after_reset` hook.
+    # Given a site, determines the effective configuration by building a user
+    # configuration sandwhich with our overrides overriding the user's specified
+    # values which themselves override our defaults.
     #
-    # Note: this is roughly a modified version of Jekyll#configuration
-    def self.set(site)
+    # Returns the effective Configuration
+    #
+    # Note: this is a highly modified version of Jekyll#configuration
+    def self.effective_config(site)
       # Jekyll defaults < GitHub Pages defaults
       defaults = Jekyll::Utils.deep_merge_hashes(Jekyll::Configuration::DEFAULTS, DEFAULTS)
 
@@ -97,6 +99,13 @@ module GitHubPages
       # Jekyll's native deep_merge_hashes doesn't merge arrays.
       # Include default Gems, even if not requested, to avoid breaking pre 3.0 sites
       config["gems"] = config["gems"].concat(DEFAULT_PLUGINS).uniq
+
+      config
+    end
+
+    # Set the site's configuration  Implemented as an `after_reset` hook.
+    def self.set(site)
+      config = Configuration.effective_config(site)
 
       # Write the final config to the site object, noting that some values may
       # have already been set as instancee variables when initialized
