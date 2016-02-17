@@ -1,4 +1,4 @@
-class GitHubPages
+module GitHubPages
   VERSION = 48
 
   # Jekyll and related dependency versions as used by GitHub Pages.
