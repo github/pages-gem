@@ -1,2 +1,4 @@
 some_key: some_value
 safe: false
+gem:
+  - jekyll-sitemap

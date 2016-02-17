@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe(GitHubPages::Configuration) do
-  let(:configuration) { Jekyll.configuration(source: fixture_dir)}
+  let(:configuration) { Jekyll.configuration(source: fixture_dir, quiet: true)}
   let(:site) { Jekyll::Site.new(configuration) }
 
   it "sets configuration defaults" do
@@ -10,6 +10,10 @@ describe(GitHubPages::Configuration) do
 
   it "sets default gems" do
     expect(site.config["gems"]).to include("jekyll-coffeescript")
+  end
+
+  it "lets the user specify additional gems" do
+    expect(site.config["gems"]).to include("jekyll-sitemap")
   end
 
   it "honors the user's config" do
