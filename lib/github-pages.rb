@@ -1,5 +1,5 @@
-class GitHubPages
-  VERSION = 48
+module GitHubPages
+  VERSION = 50
 
   # Jekyll and related dependency versions as used by GitHub Pages.
   # For more information see:
@@ -25,13 +25,13 @@ class GitHubPages
 
       # Plugins
       "jemoji"                    => "0.5.1",
-      "jekyll-mentions"           => "1.0.0",
+      "jekyll-mentions"           => "1.0.1",
       "jekyll-redirect-from"      => "0.9.1",
       "jekyll-sitemap"            => "0.10.0",
-      "jekyll-feed"               => "0.3.1",
+      "jekyll-feed"               => "0.4.0",
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
-      "github-pages-health-check" => "0.6.1",
+      "github-pages-health-check" => "1.0.1",
       "jekyll-coffeescript"       => "1.0.1",
       "jekyll-seo-tag"            => "1.0.0",
       "jekyll-github-metadata"    => "1.3.0",
