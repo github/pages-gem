@@ -1,5 +1,5 @@
 module GitHubPages
-  VERSION = 49
+  VERSION = 50
 
   # Jekyll and related dependency versions as used by GitHub Pages.
   # For more information see:
