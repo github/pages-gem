@@ -75,12 +75,11 @@ module GitHubPages
 
     # Configuration options that should override the user's config
     #
-    # environment_overrides - a hash of environment specific overrides which
-    #                         can be added at runtime
-    def self.overrides(environment_overrides={})
+    # local_overrides - Hash of environment specific overrides added at runtime
+    def self.overrides(local_overrides={})
       overrides = Jekyll::Configuration[OVERRIDES].stringify_keys
-      environment_overrides = Jekyll::Configuration[environment_overrides].stringify_keys
-      Jekyll::Utils.deep_merge_hashes(overrides, environment_overrides)
+      local_overrides = Jekyll::Configuration[local_overrides].stringify_keys
+      Jekyll::Utils.deep_merge_hashes(overrides, local_overrides)
     end
 
     # Given a user's config, determines the effective configuration by building a user
@@ -90,7 +89,7 @@ module GitHubPages
     # Returns the effective Configuration
     #
     # Note: this is a highly modified version of Jekyll#configuration
-    def self.effective_config(user_config, environment_overrides={})
+    def self.effective_config(user_config, local_overrides={})
       # Jekyll defaults < GitHub Pages defaults
       defaults = Jekyll::Utils.deep_merge_hashes(Jekyll::Configuration::DEFAULTS, DEFAULTS)
 
@@ -108,9 +107,9 @@ module GitHubPages
 
     # Set the site's configuration  Implemented as an `after_reset` hook.
     def self.set(site)
-      environment_overrides = {}
-      LOCAL_PASS_THROUGH.each { |key| environment_overrides[key] = site.config[key] }
-      config = Configuration.effective_config(site.config, environment_overrides)
+      local_overrides = {}
+      LOCAL_PASS_THROUGH.each { |key| local_overrides[key] = site.config[key] }
+      config = Configuration.effective_config(site.config, local_overrides)
 
       # Write the final config to the site object, noting that some values may
       # have already been set as instancee variables when initialized
