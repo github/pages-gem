@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe(GitHubPages::Configuration) do
-  let(:test_config) { { "source" => fixture_dir, "quiet" => true } }
+  let(:test_config) { { "source" => fixture_dir, "quiet" => true, "testing" => "123" } }
   let(:configuration) { Jekyll.configuration(test_config)}
   let(:site) { Jekyll::Site.new(configuration) }
   let(:effective_config) { described_class.effective_config(site.config, test_config) }
@@ -39,6 +39,10 @@ describe(GitHubPages::Configuration) do
 
       it "overrides user's values" do
         expect(config["safe"]).to eql(true)
+      end
+
+      it "accepts local configs" do
+        expect(config["testing"]).to eql("123")
       end
     end
   end
