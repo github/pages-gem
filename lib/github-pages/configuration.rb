@@ -73,6 +73,16 @@ module GitHubPages
       incremental
     ].freeze
 
+    # Configuration options that should override the user's config
+    #
+    # environment_overrides - a hash of environment specific overrides which
+    #                         can be added at runtime
+    def self.overrides(environment_overrides={})
+      overrides = Jekyll::Configuration[OVERRIDES].stringify_keys
+      environment_overrides = Jekyll::Configuration[environment_overrides].stringify_keys
+      Jekyll::Utils.deep_merge_hashes(overrides, environment_overrides)
+    end
+
     # Given a user's config, determines the effective configuration by building a user
     # configuration sandwhich with our overrides overriding the user's specified
     # values which themselves override our defaults.
@@ -84,14 +94,9 @@ module GitHubPages
       # Jekyll defaults < GitHub Pages defaults
       defaults = Jekyll::Utils.deep_merge_hashes(Jekyll::Configuration::DEFAULTS, DEFAULTS)
 
-      # Our overrides, optionally with environment-specific overrides passed at runtime
-      overrides = Jekyll::Configuration[OVERRIDES].stringify_keys
-      environment_overrides = Jekyll::Configuration[environment_overrides].stringify_keys
-      overrides = Jekyll::Utils.deep_merge_hashes(overrides, environment_overrides)
-
       # defaults < _config.yml < OVERRIDES
       config = Jekyll::Configuration[defaults]
-      config = config.read_config_files(config.config_files(overrides))
+      config = config.read_config_files(config.config_files(Configuration.overrides))
       config = Jekyll::Utils.deep_merge_hashes(config, overrides).stringify_keys
 
       # Jekyll's native deep_merge_hashes doesn't merge arrays.
