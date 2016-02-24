@@ -39,6 +39,7 @@ describe(GitHubPages::Configuration) do
 
       it "overrides user's values" do
         expect(config["safe"]).to eql(true)
+        expect(config["quiet"]).to eql(true)
       end
 
       it "passes passthroughs" do
