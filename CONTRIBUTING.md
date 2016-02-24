@@ -1,5 +1,7 @@
 # Contributing to the GitHub Pages Gem
 
+Hi there! We're glad you're interested in contributing to the GitHub Pages Gem. Before you do, please be sure to read the following:
+
 ## Where to get help or report an issue
 
 ### Bugs
