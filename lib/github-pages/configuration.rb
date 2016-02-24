@@ -94,9 +94,10 @@ module GitHubPages
       defaults = Jekyll::Utils.deep_merge_hashes(Jekyll::Configuration::DEFAULTS, DEFAULTS)
 
       # defaults < _config.yml < OVERRIDES
-      config = Jekyll::Configuration[defaults]
-      config = config.read_config_files(config.config_files(Configuration.overrides))
-      config = Jekyll::Utils.deep_merge_hashes(config, overrides).stringify_keys
+      config    = Jekyll::Configuration[defaults]
+      overrides = Configuration.overrides(local_overrides)
+      config    = config.read_config_files(config.config_files(overrides))
+      config    = Jekyll::Utils.deep_merge_hashes(config, overrides).stringify_keys
 
       # Jekyll's native deep_merge_hashes doesn't merge arrays.
       # Include default Gems, even if not requested, to avoid breaking pre 3.0 sites

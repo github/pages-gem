@@ -41,9 +41,30 @@ describe(GitHubPages::Configuration) do
         expect(config["safe"]).to eql(true)
       end
 
-      it "accepts local configs" do
-        expect(config["testing"]).to eql("123")
+      it "passes passthroughs" do
+        expect(config["quiet"]).to eql(true)
+        expect(config["source"]).to eql(fixture_dir)
       end
+
+      if type == "effective"
+        it "accepts local configs" do
+          expect(config["testing"]).to eql("123")
+        end
+      end
+    end
+  end
+
+  context "overrides" do
+    let(:overrides) { described_class.overrides(test_config) }
+
+    it "sets the default overrides" do
+      expect(overrides["lsi"]).to eql(false)
+      expect(overrides["safe"]).to eql(true)
+    end
+
+    it "accepts local overrides" do
+      expect(overrides["testing"]).to eql("123")
+      expect(overrides["quiet"]).to eql(true)
     end
   end
 end
