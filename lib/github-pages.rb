@@ -1,5 +1,5 @@
 module GitHubPages
-  VERSION = 51
+  VERSION = 52
 
   # Jekyll and related dependency versions as used by GitHub Pages.
   # For more information see:
@@ -33,7 +33,7 @@ module GitHubPages
       "jekyll-paginate"           => "1.1.0",
       "github-pages-health-check" => "1.0.1",
       "jekyll-coffeescript"       => "1.0.1",
-      "jekyll-seo-tag"            => "1.2.0",
+      "jekyll-seo-tag"            => "1.3.0",
     }
   end
 
