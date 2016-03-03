@@ -12,7 +12,7 @@ module GitHubPages
       "jekyll-textile-converter"  => "0.1.0",
 
       # Converters
-      "kramdown"                  => "1.9.0",
+      "kramdown"                  => "1.10.0",
       "rdiscount"                 => "2.1.8",
       "redcarpet"                 => "3.3.3",
       "RedCloth"                  => "4.2.9",
