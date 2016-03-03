@@ -31,7 +31,7 @@ module GitHubPages
       "jekyll-feed"               => "0.4.0",
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
-      "github-pages-health-check" => "1.0.1",
+      "github-pages-health-check" => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
       "jekyll-seo-tag"            => "1.3.1",
     }
