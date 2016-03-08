@@ -24,7 +24,7 @@ module GitHubPages
       "rouge"                     => "1.10.1",
 
       # Plugins
-      "jemoji"                    => "0.5.1",
+      "jemoji"                    => "0.6.0",
       "jekyll-mentions"           => "1.0.1",
       "jekyll-redirect-from"      => "0.9.1",
       "jekyll-sitemap"            => "0.10.0",
