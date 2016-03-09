@@ -2,7 +2,7 @@
 # For more information see:
 # https://help.github.com/articles/using-jekyll-with-pages
 module GitHubPages
-  VERSION = 54
+  VERSION = 55
 
   def self.gems
     {
