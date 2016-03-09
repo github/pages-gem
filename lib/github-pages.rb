@@ -2,7 +2,7 @@
 # For more information see:
 # https://help.github.com/articles/using-jekyll-with-pages
 module GitHubPages
-  VERSION = 54
+  VERSION = 55
 
   def self.gems
     {
@@ -24,7 +24,7 @@ module GitHubPages
       "rouge"                     => "1.10.1",
 
       # Plugins
-      "jemoji"                    => "0.5.1",
+      "jemoji"                    => "0.6.1",
       "jekyll-mentions"           => "1.1.1",
       "jekyll-redirect-from"      => "0.9.1",
       "jekyll-sitemap"            => "0.10.0",
