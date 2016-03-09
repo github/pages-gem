@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe(GitHubPages) do
   it "lists the dependency versions" do

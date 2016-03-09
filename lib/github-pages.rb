@@ -1,9 +1,9 @@
+# Jekyll and related dependency versions as used by GitHub Pages.
+# For more information see:
+# https://help.github.com/articles/using-jekyll-with-pages
 module GitHubPages
-  VERSION = 51
+  VERSION = 56
 
-  # Jekyll and related dependency versions as used by GitHub Pages.
-  # For more information see:
-  # https://help.github.com/articles/using-jekyll-with-pages
   def self.gems
     {
       # Jekyll
@@ -24,16 +24,16 @@ module GitHubPages
       "rouge"                     => "1.10.1",
 
       # Plugins
-      "jemoji"                    => "0.5.1",
-      "jekyll-mentions"           => "1.0.1",
+      "jemoji"                    => "0.6.1",
+      "jekyll-mentions"           => "1.1.1",
       "jekyll-redirect-from"      => "0.9.1",
       "jekyll-sitemap"            => "0.10.0",
       "jekyll-feed"               => "0.4.0",
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
-      "github-pages-health-check" => "1.0.1",
+      "github-pages-health-check" => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
-      "jekyll-seo-tag"            => "1.2.0",
+      "jekyll-seo-tag"            => "1.3.2",
       "jekyll-github-metadata"    => "1.4.0",
     }
   end
@@ -45,9 +45,9 @@ module GitHubPages
   end
 
   def self.deps_version_report
-    require 'html/pipeline/version'
-    require 'sass/version'
-    require 'safe_yaml/version'
+    require "html/pipeline/version"
+    require "sass/version"
+    require "safe_yaml/version"
 
     {
       "ruby" => RUBY_VERSION,
