@@ -25,7 +25,7 @@ module GitHubPages
 
       # Plugins
       "jemoji"                    => "0.5.1",
-      "jekyll-mentions"           => "1.0.1",
+      "jekyll-mentions"           => "0.1.0",
       "jekyll-redirect-from"      => "0.9.1",
       "jekyll-sitemap"            => "0.10.0",
       "jekyll-feed"               => "0.4.0",
