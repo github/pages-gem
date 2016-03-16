@@ -34,7 +34,7 @@ module GitHubPages
       "github-pages-health-check" => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
       "jekyll-seo-tag"            => "1.3.2",
-      "jekyll-github-metadata"    => "1.8.0"
+      "jekyll-github-metadata"    => "1.9.0"
     }
   end
 
