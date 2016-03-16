@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe(GitHubPages::Dependencies) do
   it "exposes its gem versions" do
@@ -11,7 +11,7 @@ describe(GitHubPages::Dependencies) do
     expect(described_class.versions).to include("github-pages")
   end
 
-  %w[jekyll kramdown liquid rouge rdiscount redcarpet RedCloth].each do |gem|
+  %w(jekyll kramdown liquid rouge rdiscount redcarpet RedCloth).each do |gem|
     it "exposes #{gem} dependency version" do
       expect(described_class.gems[gem]).to be_a(String)
       expect(described_class.gems[gem]).not_to be_empty

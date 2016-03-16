@@ -1,9 +1,14 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'jekyll'
+require "jekyll"
 
+# Top-level namespace for all GitHub Pages-related concerns.
 module GitHubPages
   autoload :Configuration, "github-pages/configuration"
   autoload :Dependencies,  "github-pages/dependencies"
+
+  def self.versions
+    Dependencies.versions
+  end
 end
 
 Jekyll::Hooks.register :site, :after_reset do |site|

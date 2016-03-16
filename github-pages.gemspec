@@ -1,5 +1,5 @@
-require File.expand_path('../lib/github-pages/dependencies', __FILE__)
-require File.expand_path('../lib/github-pages/version', __FILE__)
+require File.expand_path("../lib/github-pages/dependencies", __FILE__)
+require File.expand_path("../lib/github-pages/version", __FILE__)
 
 Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.0.0"

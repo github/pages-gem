@@ -1,35 +1,45 @@
 module GitHubPages
+  #
   class Configuration
-
     # Plugins which are activated by default
-    DEFAULT_PLUGINS = %w[
+    DEFAULT_PLUGINS = %w(
       jekyll-coffeescript
       jekyll-gist
+      jekyll-github-metadata
       jekyll-paginate
-    ].freeze
+      jekyll-textile-converter
+    ).freeze
 
     # Plugins allowed by GitHub Pages
-    PLUGIN_WHITELIST = %w[
-      jekyll-redirect-from
-      jekyll-mentions
-      jekyll-sitemap
-      jekyll-feed
+    PLUGIN_WHITELIST = %w(
       jekyll-coffeescript
-      jekyll-paginate
-      jekyll-seo-tag
+      jekyll-feed
       jekyll-gist
+      jekyll-github-metadata
+      jekyll-mentions
+      jekyll-paginate
+      jekyll-redirect-from
+      jekyll-seo-tag
+      jekyll-sitemap
+      jekyll-textile-converter
       jemoji
-    ].freeze
+    ).freeze
 
     # Default, user overwritable options
     DEFAULTS = {
+      "jailed"   => false,
       "gems"     => DEFAULT_PLUGINS,
       "kramdown" => {
         "input"     => "GFM",
         "hard_wrap" => false
-      },
-      "jailed"   => false
+      }
     }.freeze
+
+    # Jekyll defaults merged with Pages defaults.
+    MERGED_DEFAULTS = Jekyll::Utils.deep_merge_hashes(
+      Jekyll::Configuration::DEFAULTS,
+      DEFAULTS
+    ).freeze
 
     # Options which GitHub Pages sets, regardless of the user-specified value
     #
@@ -48,39 +58,21 @@ module GitHubPages
       "whitelist"   => PLUGIN_WHITELIST,
       "highlighter" => "rouge",
       "kramdown"    => {
-        "template"          => '',
-        'math_engine'       => 'mathjax',
-        'syntax_highligher' => 'rouge'
+        "template"          => "",
+        "math_engine"       => "mathjax",
+        "syntax_highligher" => "rouge"
       },
       "gist"        => {
         "noscript"  => false
       }
     }.freeze
 
-    # Options which should be honored *locally* for practical purposes, however
-    # these options are not honored when built by GitHub Pages
-    LOCAL_PASS_THROUGH = %w[
-      config
-      destination
-      source
-      future
-      limit_posts
-      watchforce_polling
-      show_drafts
-      unbpublished
-      quiet
-      verbose
-      incremental
-    ].freeze
-
-    # Configuration options that should override the user's config
-    #
-    # local_overrides - Hash of environment specific overrides added at runtime
-    def self.overrides(local_overrides={})
-      overrides = Jekyll::Configuration[OVERRIDES].stringify_keys
-      local_overrides = Jekyll::Configuration[local_overrides].stringify_keys
-      Jekyll::Utils.deep_merge_hashes(overrides, local_overrides)
-    end
+    # These configuration settings have corresponding instance variables on
+    # Jekyll::Site and need to be set properly when the config is updated.
+    CONFIGS_WITH_METHODS = %w(
+      safe lsi highlighter baseurl exclude include future unpublished
+      show_drafts limit_posts keep_files gems
+    ).freeze
 
     # Given a user's config, determines the effective configuration by building a user
     # configuration sandwhich with our overrides overriding the user's specified
@@ -89,35 +81,35 @@ module GitHubPages
     # Returns the effective Configuration
     #
     # Note: this is a highly modified version of Jekyll#configuration
-    def self.effective_config(user_config, local_overrides={})
-      # Jekyll defaults < GitHub Pages defaults
-      defaults = Jekyll::Utils.deep_merge_hashes(Jekyll::Configuration::DEFAULTS, DEFAULTS)
+    def self.effective_config(user_config)
+      # Merge user config into defaults
+      config = Jekyll::Utils.deep_merge_hashes(MERGED_DEFAULTS, user_config)
+        .fix_common_issues
+        .add_default_collections
 
-      # defaults < _config.yml < OVERRIDES
-      config    = Jekyll::Configuration[defaults]
-      overrides = Configuration.overrides(local_overrides)
-      config    = config.read_config_files(config.config_files(overrides))
-      config    = Jekyll::Utils.deep_merge_hashes(config, overrides).stringify_keys
+      # Merge overwrites into user config
+      Jekyll::Utils.deep_merge_hashes! config, OVERRIDES
 
-      # Jekyll's native deep_merge_hashes doesn't merge arrays.
-      # Include default Gems, even if not requested, to avoid breaking pre 3.0 sites
-      config["gems"] = (config["gems"] | DEFAULT_PLUGINS).uniq
+      # Ensure we have those gems we want.
+      config["gems"] = Array(config["gems"]) | DEFAULT_PLUGINS
 
       config
     end
 
     # Set the site's configuration  Implemented as an `after_reset` hook.
     def self.set(site)
-      local_overrides = {}
-      LOCAL_PASS_THROUGH.each { |key| local_overrides[key] = site.config[key] }
-      config = Configuration.effective_config(site.config, local_overrides)
+      return if site.config["_github_pages_processed"] == true
+      config = effective_config(site.config)
 
-      # Write the final config to the site object, noting that some values may
-      # have already been set as instancee variables when initialized
-      site.instance_variable_set '@config', config
-      config.keys.each do |key|
-        site.public_send("#{key}=", config[key]) if site.respond_to?("#{key}=")
+      # Assign everything to the site
+      Jekyll::Utils.deep_merge_hashes! site.config, config
+
+      # Ensure all
+      CONFIGS_WITH_METHODS.each do |opt|
+        site.public_send("#{opt}=", site.config[opt])
       end
+
+      site.config["_github_pages_processed"] = true
     end
   end
 end
