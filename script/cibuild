@@ -5,6 +5,7 @@ set -ex
 
 bundle exec jekyll --version
 bundle exec rspec
+script/fmt --display-style-guide
 
 rm -Rf ./test-site
 bundle exec jekyll new test-site

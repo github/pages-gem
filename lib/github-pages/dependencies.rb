@@ -11,7 +11,7 @@ module GitHubPages
         "jekyll-textile-converter"  => "0.1.0",
 
         # Converters
-        "kramdown"                  => "1.9.0",
+        "kramdown"                  => "1.10.0",
         "rdiscount"                 => "2.1.8",
         "redcarpet"                 => "3.3.3",
         "RedCloth"                  => "4.2.9",
@@ -33,6 +33,7 @@ module GitHubPages
         "github-pages-health-check" => "1.1.0",
         "jekyll-coffeescript"       => "1.0.1",
         "jekyll-seo-tag"            => "1.3.2",
+        "jekyll-github-metadata"    => "1.8.0"
       }
     end
 
