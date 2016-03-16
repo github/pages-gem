@@ -74,42 +74,59 @@ module GitHubPages
       show_drafts limit_posts keep_files gems
     ).freeze
 
-    # Given a user's config, determines the effective configuration by building a user
-    # configuration sandwhich with our overrides overriding the user's specified
-    # values which themselves override our defaults.
-    #
-    # Returns the effective Configuration
-    #
-    # Note: this is a highly modified version of Jekyll#configuration
-    def self.effective_config(user_config)
-      # Merge user config into defaults
-      config = Jekyll::Utils.deep_merge_hashes(MERGED_DEFAULTS, user_config)
-        .fix_common_issues
-        .add_default_collections
-
-      # Merge overwrites into user config
-      Jekyll::Utils.deep_merge_hashes! config, OVERRIDES
-
-      # Ensure we have those gems we want.
-      config["gems"] = Array(config["gems"]) | DEFAULT_PLUGINS
-
-      config
-    end
-
-    # Set the site's configuration  Implemented as an `after_reset` hook.
-    def self.set(site)
-      return if site.config["_github_pages_processed"] == true
-      config = effective_config(site.config)
-
-      # Assign everything to the site
-      Jekyll::Utils.deep_merge_hashes! site.config, config
-
-      # Ensure all
-      CONFIGS_WITH_METHODS.each do |opt|
-        site.public_send("#{opt}=", site.config[opt])
+    class << self
+      def processed?(site)
+        site.instance_variable_get(:@_github_pages_processed) == true
       end
 
-      site.config["_github_pages_processed"] = true
+      def processed(site)
+        site.instance_variable_set :@_github_pages_processed, true
+      end
+
+      # Given a user's config, determines the effective configuration by building a user
+      # configuration sandwhich with our overrides overriding the user's specified
+      # values which themselves override our defaults.
+      #
+      # Returns the effective Configuration
+      #
+      # Note: this is a highly modified version of Jekyll#configuration
+      def effective_config(user_config)
+        # Merge user config into defaults
+        config = Jekyll::Utils.deep_merge_hashes(MERGED_DEFAULTS, user_config)
+          .fix_common_issues
+          .add_default_collections
+
+        # Merge overwrites into user config
+        config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
+
+        # Ensure we have those gems we want.
+        config["gems"] = Array(config["gems"]) | DEFAULT_PLUGINS
+
+        config
+      end
+
+      # Set the site's configuration. Implemented as an `after_reset` hook.
+      # Equivalent #set! function contains the code of interest. This function
+      # guards against double-processing via the value in #processed.
+      def set(site)
+        return if processed? site
+        set!(site)
+        processed(site)
+      end
+
+      # Set the site's configuration with all the proper defaults and overrides.
+      # Should be called by #set to protect against multiple processings.
+      def set!(site)
+        config = effective_config(site.config)
+
+        # Assign everything to the site
+        site.instance_variable_set :@config, config
+
+        # Ensure all
+        CONFIGS_WITH_METHODS.each do |opt|
+          site.public_send("#{opt}=", site.config[opt])
+        end
+      end
     end
   end
 end
