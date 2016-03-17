@@ -1,4 +1,5 @@
-require File.expand_path("../lib/github-pages", __FILE__)
+require File.expand_path("../lib/github-pages/dependencies", __FILE__)
+require File.expand_path("../lib/github-pages/version", __FILE__)
 
 Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.0.0"
@@ -23,7 +24,7 @@ https://github.com/blog/2100-github-pages-jekyll-3
 ---------------------------------------------------
 msg
 
-  GitHubPages.gems.each do |gem, version|
+  GitHubPages::Dependencies.gems.each do |gem, version|
     s.add_dependency(gem, "= #{version}")
   end
 

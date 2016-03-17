@@ -10,3 +10,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+
+def fixture_dir
+  File.expand_path "./fixtures", File.dirname(__FILE__)
+end
