@@ -15,11 +15,10 @@ module GitHubPages
       "redcarpet"                 => "3.3.3",
       "RedCloth"                  => "4.2.9",
 
-      # Liquid
+      # Misc
       "liquid"                    => "3.0.6",
-
-      # Highlighters
       "rouge"                     => "1.10.1",
+      "github-pages-health-check" => "1.1.0",
 
       # Plugins
       "jemoji"                    => "0.5.1",
@@ -29,7 +28,6 @@ module GitHubPages
       "jekyll-feed"               => "0.4.0",
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
-      "github-pages-health-check" => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
       "jekyll-seo-tag"            => "1.3.2",
       "jekyll-github-metadata"    => "1.9.0"
