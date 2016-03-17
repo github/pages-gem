@@ -58,9 +58,9 @@ module GitHubPages
       "whitelist"   => PLUGIN_WHITELIST,
       "highlighter" => "rouge",
       "kramdown"    => {
-        "template"          => "",
-        "math_engine"       => "mathjax",
-        "syntax_highligher" => "rouge"
+        "template"           => "",
+        "math_engine"        => "mathjax",
+        "syntax_highlighter" => "rouge"
       },
       "gist"        => {
         "noscript"  => false
