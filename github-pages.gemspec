@@ -12,13 +12,10 @@ Gem::Specification.new do |s|
   s.email                 = "support@github.com"
   s.homepage              = "https://github.com/github/pages-gem"
   s.license               = "MIT"
-  s.executables           = ["github-pages"]
-  s.files                 = [
-    "lib/github-pages.rb",
-    "lib/github-pages/configuration.rb",
-    "lib/github-pages/version.rb",
-    "lib/github-pages/dependencies.rb"
-  ]
+
+  all_files               = `git ls-files -z`.split("\x0")
+  s.files                 = all_files.grep(%r{^(bin|lib)/|^.rubocop.yml$})
+  s.executables           = all_files.grep(%r{^bin/}) { |f| File.basename(f) }
 
   s.post_install_message = <<-msg
 ---------------------------------------------------
