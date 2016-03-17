@@ -13,7 +13,12 @@ Gem::Specification.new do |s|
   s.homepage              = "https://github.com/github/pages-gem"
   s.license               = "MIT"
   s.executables           = ["github-pages"]
-  s.files                 = ["lib/github-pages.rb"]
+  s.files                 = [
+    "lib/github-pages.rb",
+    "lib/github-pages/configuration.rb",
+    "lib/github-pages/version.rb",
+    "lib/github-pages/dependencies.rb"
+  ]
 
   s.post_install_message = <<-msg
 ---------------------------------------------------
