@@ -35,5 +35,4 @@ msg
   s.add_development_dependency("rspec", "~> 3.3")
   s.add_development_dependency("rubocop", "~> 0.35")
   s.add_development_dependency("pry", "~> 0.10")
-
 end
