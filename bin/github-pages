@@ -15,10 +15,10 @@ Mercenary.program(:"github-pages") do |p|
     c.option "gemfile", "--gemfile", "use Gemfile formatting"
     c.action do |args, options|
       if options["gemfile"]
-        GitHubPages.gems.each { |g,v| puts "gem '#{g}', '#{v}'" }
+        GitHubPages::Dependencies.gems.each { |g,v| puts "gem '#{g}', '#{v}'" }
       else
         require 'terminal-table'
-        versions = options['all'] ? GitHubPages.versions : GitHubPages.gems
+        versions = options['all'] ? GitHubPages::Dependencies.versions : GitHubPages::Dependencies.gems
         puts Terminal::Table.new :rows => versions, :headings => ["Gem", "Version"]
       end
     end

@@ -1,4 +1,5 @@
-require File.expand_path("../lib/github-pages", __FILE__)
+require File.expand_path("../lib/github-pages/dependencies", __FILE__)
+require File.expand_path("../lib/github-pages/version", __FILE__)
 
 Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.0.0"
@@ -11,8 +12,10 @@ Gem::Specification.new do |s|
   s.email                 = "support@github.com"
   s.homepage              = "https://github.com/github/pages-gem"
   s.license               = "MIT"
-  s.executables           = ["github-pages"]
-  s.files                 = ["lib/github-pages.rb"]
+
+  all_files               = `git ls-files -z`.split("\x0")
+  s.files                 = all_files.grep(%r{^(bin|lib)/|^.rubocop.yml$})
+  s.executables           = all_files.grep(%r{^bin/}) { |f| File.basename(f) }
 
   s.post_install_message = <<-msg
 ---------------------------------------------------
@@ -23,7 +26,7 @@ https://github.com/blog/2100-github-pages-jekyll-3
 ---------------------------------------------------
 msg
 
-  GitHubPages.gems.each do |gem, version|
+  GitHubPages::Dependencies.gems.each do |gem, version|
     s.add_dependency(gem, "= #{version}")
   end
 
