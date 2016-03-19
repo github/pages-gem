@@ -2,4 +2,6 @@ some_key: some_value
 safe: false
 gems:
   - jekyll-sitemap
+  - jekyll_test_plugin_malicious
 quiet: false
+repository: "github/pages-gem"

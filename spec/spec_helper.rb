@@ -14,3 +14,7 @@ end
 def fixture_dir
   File.expand_path "./fixtures", File.dirname(__FILE__)
 end
+
+def tmp_dir
+  File.expand_path "./test-site", File.dirname(__FILE__)
+end
