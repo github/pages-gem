@@ -11,8 +11,8 @@ describe(GitHubPages::Configuration) do
   let(:configuration) { Jekyll.configuration(test_config) }
   let(:site)          { Jekyll::Site.new(configuration) }
   let(:effective_config) { described_class.effective_config(site.config) }
-  before { ENV.delete("DISABLE_WHITELIST") }
-  before { ENV["JEKYLL_ENV"] = "test" }
+  before(:each) { ENV.delete("DISABLE_WHITELIST") }
+  before(:each) { ENV["JEKYLL_ENV"] = "test" }
 
   context "#effective_config" do
     it "sets configuration defaults" do
