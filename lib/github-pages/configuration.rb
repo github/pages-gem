@@ -84,7 +84,7 @@ module GitHubPages
       end
 
       def disable_whitelist?
-        Jekyll.env == "development" && ENV["DISABLE_WHITELIST"] == "1"
+        Jekyll.env == "development" && !ENV["DISABLE_WHITELIST"].to_s.empty?
       end
 
       # Given a user's config, determines the effective configuration by building a user
