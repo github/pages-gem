@@ -1,10 +1,18 @@
 require "spec_helper"
 
 describe(GitHubPages::Configuration) do
-  let(:test_config)   { { "source" => fixture_dir, "quiet" => true, "testing" => "123" } }
+  let(:test_config) do
+    {
+      "source" => fixture_dir,
+      "quiet" => true,
+      "testing" => "123",
+      "destination" => tmp_dir }
+  end
   let(:configuration) { Jekyll.configuration(test_config) }
   let(:site)          { Jekyll::Site.new(configuration) }
   let(:effective_config) { described_class.effective_config(site.config) }
+  before(:each) { ENV.delete("DISABLE_WHITELIST") }
+  before(:each) { ENV["JEKYLL_ENV"] = "test" }
 
   context "#effective_config" do
     it "sets configuration defaults" do
@@ -91,6 +99,62 @@ describe(GitHubPages::Configuration) do
       GitHubPages::Configuration::PLUGIN_WHITELIST.each do |plugin|
         it "versions the #{plugin} plugin" do
           expect(GitHubPages::Dependencies::VERSIONS.keys).to include(plugin)
+        end
+      end
+    end
+
+    context "in development" do
+      before { ENV["JEKYLL_ENV"] = "development" }
+
+      context "without the DISABLE_WHITELIST flag" do
+        it "doesn't include additional whitelisted plugins" do
+          expect(site.config["whitelist"]).not_to include("jekyll_test_plugin_malicious")
+        end
+
+        it "knows not to disable the whitelist" do
+          expect(described_class.disable_whitelist?).to eql(false)
+        end
+      end
+
+      context "with the DISABLE_WHITELIST flag" do
+        before { ENV["DISABLE_WHITELIST"] = "1" }
+
+        it "includes additional plugins in the whitelist" do
+          expect(site.config["whitelist"]).to include("jekyll_test_plugin_malicious")
+        end
+
+        it "fires additional non-whitelisted plugins" do
+          expect { site.process }.to raise_error "ALL YOUR COMPUTER ARE BELONG TO US"
+        end
+
+        it "knows to disable the whitelist" do
+          expect(described_class.disable_whitelist?).to eql(true)
+        end
+      end
+    end
+
+    context "in production" do
+      before { ENV["JEKYLL_ENV"] = "production" }
+
+      context "without the DISABLE_WHITELIST flag" do
+        it "doesn't include additional whitelisted plugins" do
+          expect(site.config["whitelist"]).not_to include("jekyll_test_plugin_malicious")
+        end
+
+        it "knows not to disable the whitelist" do
+          expect(described_class.disable_whitelist?).to eql(false)
+        end
+      end
+
+      context "with the DISABLE_WHITELIST flag" do
+        before { ENV["DISABLE_WHITELIST"] = "1" }
+
+        it "doesn't include additional whitelisted plugins" do
+          expect(site.config["whitelist"]).not_to include("jekyll_test_plugin_malicious")
+        end
+
+        it "knows not to disable the whitelist" do
+          expect(described_class.disable_whitelist?).to eql(false)
         end
       end
     end
