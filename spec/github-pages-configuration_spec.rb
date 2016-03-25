@@ -134,7 +134,7 @@ describe(GitHubPages::Configuration) do
     end
 
     context "in production" do
-      before { ENV["JEKYLL_ENV"] = "produciton" }
+      before { ENV["JEKYLL_ENV"] = "production" }
 
       context "without the DISABLE_WHITELIST flag" do
         it "doesn't include additional whitelisted plugins" do
