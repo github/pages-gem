@@ -12,7 +12,7 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
   ```ruby
   gem 'github-pages', group: :jekyll_plugins
   ```
-  
+
 2. Run `bundle install`
 
 *Note: You are not required to install Jekyll separately. Once the `github-pages` gem is installed, you can build your site using `jekyll build`, or preview your site using `jekyll serve`.* For more information about installing Jekyll locally, please see [the GitHub Help docs on the matter](https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll).
@@ -50,6 +50,10 @@ Uh oh. Looks like something's fishy: A record points to deprecated IP address
 ```
 
 See the [GitHub Pages Health Check](https://github.com/github/pages-health-check) documentation for more information.
+
+### Bypassing the plugin whitelist
+
+If you'd like to run a Jekyll plugin locally that's not whitelisted for use on GitHub Pages, you can do so by prefixing the `jekyll build` or `jekyll serve` command with `DISABLE_WHITELIST=true`. This will allow your site to use any plugin listed in your site's `gems` configuration flag. Please note, however, this option is only available when previewing your Jekyll site locally.
 
 ## Updating
 
