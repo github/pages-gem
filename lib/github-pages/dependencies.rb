@@ -29,13 +29,8 @@ module GitHubPages
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
-<<<<<<< HEAD
       "jekyll-seo-tag"            => "1.3.3",
-      "jekyll-github-metadata"    => "1.9.0"
-=======
-      "jekyll-seo-tag"            => "1.3.2",
       "jekyll-github-metadata"    => "1.10.0"
->>>>>>> master
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
