@@ -7,7 +7,6 @@ module GitHubPages
       jekyll-gist
       jekyll-github-metadata
       jekyll-paginate
-      jekyll-textile-converter
     ).freeze
 
     # Plugins allowed by GitHub Pages
