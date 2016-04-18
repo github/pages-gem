@@ -20,7 +20,6 @@ module GitHubPages
       jekyll-redirect-from
       jekyll-seo-tag
       jekyll-sitemap
-      jekyll-textile-converter
       jemoji
     ).freeze
 
