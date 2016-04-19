@@ -54,7 +54,7 @@ module GitHubPages
     OVERRIDES = {
       "lsi"         => false,
       "safe"        => true,
-      "plugins"     => SecureRandom.hex,
+      "plugins_dir" => SecureRandom.hex,
       "whitelist"   => PLUGIN_WHITELIST,
       "highlighter" => "rouge",
       "kramdown"    => {
@@ -98,10 +98,11 @@ module GitHubPages
         # Merge user config into defaults
         config = Jekyll::Utils.deep_merge_hashes(MERGED_DEFAULTS, user_config)
           .fix_common_issues
+          .backwards_compatibilize
           .add_default_collections
 
-        # Merge overwrites into user config
-        config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
+        # Merge overwrites into user config & ensure fully compatible
+        config = Jekyll::Utils.deep_merge_hashes(config, OVERRIDES)
 
         # Ensure we have those gems we want.
         config["gems"] = Array(config["gems"]) | DEFAULT_PLUGINS
