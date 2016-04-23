@@ -1,3 +1,5 @@
+require 'securerandom'
+
 module GitHubPages
   #
   class Configuration
