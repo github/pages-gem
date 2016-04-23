@@ -54,6 +54,7 @@ module GitHubPages
     OVERRIDES = {
       "lsi"         => false,
       "safe"        => true,
+      "plugins"     => SecureRandom.hex,
       "plugins_dir" => SecureRandom.hex,
       "whitelist"   => PLUGIN_WHITELIST,
       "highlighter" => "rouge",
@@ -98,11 +99,10 @@ module GitHubPages
         # Merge user config into defaults
         config = Jekyll::Utils.deep_merge_hashes(MERGED_DEFAULTS, user_config)
           .fix_common_issues
-          .backwards_compatibilize
           .add_default_collections
 
-        # Merge overwrites into user config & ensure fully compatible
-        config = Jekyll::Utils.deep_merge_hashes(config, OVERRIDES)
+        # Merge overwrites into user config
+        config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
 
         # Ensure we have those gems we want.
         config["gems"] = Array(config["gems"]) | DEFAULT_PLUGINS
@@ -116,12 +116,14 @@ module GitHubPages
       # guards against double-processing via the value in #processed.
       def set(site)
         return if processed? site
-        print_debug_versions
+        debug_print_versions
         set!(site)
         processed(site)
       end
 
-      def print_debug_versions
+      # Print the versions for github-pages and jekyll to the debug
+      # stream for debugging purposes. See by running Jekyll with '--verbose'
+      def debug_print_versions
         Jekyll.logger.debug "GitHub Pages:", "github-pages v#{GitHubPages::VERSION}"
         Jekyll.logger.debug "GitHub Pages:", "jekyll v#{Jekyll::VERSION}"
       end
