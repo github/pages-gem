@@ -55,6 +55,7 @@ module GitHubPages
       "lsi"         => false,
       "safe"        => true,
       "plugins"     => SecureRandom.hex,
+      "plugins_dir" => SecureRandom.hex,
       "whitelist"   => PLUGIN_WHITELIST,
       "highlighter" => "rouge",
       "kramdown"    => {
