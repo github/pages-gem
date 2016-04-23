@@ -12,6 +12,8 @@ module GitHubPages
   end
 end
 
+Jekyll.logger.debug "GitHub Pages:", "github-pages v#{GitHubPages::VERSION}"
+Jekyll.logger.debug "GitHub Pages:", "jekyll v#{Jekyll::VERSION}"
 Jekyll::Hooks.register :site, :after_reset do |site|
   GitHubPages::Configuration.set(site)
 end

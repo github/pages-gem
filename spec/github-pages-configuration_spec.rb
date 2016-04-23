@@ -1,13 +1,11 @@
 require "spec_helper"
 
 describe(GitHubPages::Configuration) do
-  let(:plugins_dir) { "_pluginz/are/fun" }
   let(:test_config) do
     {
       "source" => fixture_dir,
       "quiet" => true,
       "testing" => "123",
-      "plugins" => plugins_dir,
       "destination" => tmp_dir }
   end
   let(:configuration) { Jekyll.configuration(test_config) }
@@ -50,12 +48,6 @@ describe(GitHubPages::Configuration) do
     it "accepts local configs" do
       expect(effective_config["testing"]).to eql("123")
     end
-
-    it "backwards-compatibilizes" do
-      expect(effective_config["plugins"]).to be nil
-      expect(effective_config["plugins_dir"]).not_to eql(plugins_dir)
-      expect(effective_config["plugins_dir"]).to match(/[a-f0-9]{32}/)
-    end
   end
 
   context "#set being called via the hook" do
@@ -91,12 +83,6 @@ describe(GitHubPages::Configuration) do
 
     it "accepts local configs" do
       expect(site.config["testing"]).to eql("123")
-    end
-
-    it "backwards-compatibilizes" do
-      expect(effective_config["plugins"]).to be nil
-      expect(effective_config["plugins_dir"]).not_to eql(plugins_dir)
-      expect(effective_config["plugins_dir"]).to match(/[a-f0-9]{32}/)
     end
   end
 
