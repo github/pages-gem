@@ -116,8 +116,16 @@ module GitHubPages
       # guards against double-processing via the value in #processed.
       def set(site)
         return if processed? site
+        debug_print_versions
         set!(site)
         processed(site)
+      end
+
+      # Print the versions for github-pages and jekyll to the debug
+      # stream for debugging purposes. See by running Jekyll with '--verbose'
+      def debug_print_versions
+        Jekyll.logger.debug "GitHub Pages:", "github-pages v#{GitHubPages::VERSION}"
+        Jekyll.logger.debug "GitHub Pages:", "jekyll v#{Jekyll::VERSION}"
       end
 
       # Set the site's configuration with all the proper defaults and overrides.
