@@ -1,4 +1,4 @@
-require 'securerandom'
+require "securerandom"
 
 module GitHubPages
   #
