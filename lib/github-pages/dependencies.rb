@@ -29,7 +29,7 @@ module GitHubPages
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
-      "jekyll-seo-tag"            => "1.3.3",
+      "jekyll-seo-tag"            => "1.4.0",
       "jekyll-github-metadata"    => "1.11.1",
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
