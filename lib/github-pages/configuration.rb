@@ -9,7 +9,6 @@ module GitHubPages
       jekyll-gist
       jekyll-github-metadata
       jekyll-paginate
-      jekyll-textile-converter
     ).freeze
 
     # Plugins allowed by GitHub Pages
@@ -23,7 +22,6 @@ module GitHubPages
       jekyll-redirect-from
       jekyll-seo-tag
       jekyll-sitemap
-      jekyll-textile-converter
       jemoji
     ).freeze
 

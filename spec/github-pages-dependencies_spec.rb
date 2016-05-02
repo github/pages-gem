@@ -2,8 +2,8 @@ require "spec_helper"
 
 describe(GitHubPages::Dependencies) do
   CORE_DEPENDENCIES = %w(
-    jekyll kramdown liquid rouge rdiscount redcarpet RedCloth
-    jekyll-sass-converter github-pages-health-check listen
+    jekyll kramdown liquid rouge jekyll-sass-converter
+    github-pages-health-check listen
   ).freeze
   PLUGINS = described_class::VERSIONS.keys - CORE_DEPENDENCIES
 

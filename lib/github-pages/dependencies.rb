@@ -7,13 +7,9 @@ module GitHubPages
       # Jekyll
       "jekyll"                    => "3.0.5",
       "jekyll-sass-converter"     => "1.3.0",
-      "jekyll-textile-converter"  => "0.1.0",
 
       # Converters
       "kramdown"                  => "1.10.0",
-      "rdiscount"                 => "2.1.8",
-      "redcarpet"                 => "3.3.3",
-      "RedCloth"                  => "4.2.9",
 
       # Misc
       "liquid"                    => "3.0.6",
