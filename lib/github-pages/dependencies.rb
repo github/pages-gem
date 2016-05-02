@@ -5,7 +5,7 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.0.3",
+      "jekyll"                    => "3.0.5",
       "jekyll-sass-converter"     => "1.3.0",
 
       # Converters
@@ -21,12 +21,16 @@ module GitHubPages
       "jekyll-mentions"           => "1.1.2",
       "jekyll-redirect-from"      => "0.10.0",
       "jekyll-sitemap"            => "0.10.0",
-      "jekyll-feed"               => "0.4.0",
+      "jekyll-feed"               => "0.5.1",
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
-      "jekyll-seo-tag"            => "1.3.3",
-      "jekyll-github-metadata"    => "1.11.0"
+      "jekyll-seo-tag"            => "1.4.0",
+      "jekyll-github-metadata"    => "1.11.1",
+
+      # Pin listen because it's broken on 2.1 & that's what we recommend.
+      # https://github.com/guard/listen/pull/371
+      "listen"                    => "3.0.6"
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
