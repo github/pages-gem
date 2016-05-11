@@ -1,3 +1,5 @@
+require "securerandom"
+
 module GitHubPages
   #
   class Configuration
@@ -7,7 +9,6 @@ module GitHubPages
       jekyll-gist
       jekyll-github-metadata
       jekyll-paginate
-      jekyll-textile-converter
     ).freeze
 
     # Plugins allowed by GitHub Pages
@@ -21,7 +22,6 @@ module GitHubPages
       jekyll-redirect-from
       jekyll-seo-tag
       jekyll-sitemap
-      jekyll-textile-converter
       jemoji
     ).freeze
 
@@ -55,6 +55,7 @@ module GitHubPages
       "lsi"         => false,
       "safe"        => true,
       "plugins"     => SecureRandom.hex,
+      "plugins_dir" => SecureRandom.hex,
       "whitelist"   => PLUGIN_WHITELIST,
       "highlighter" => "rouge",
       "kramdown"    => {
@@ -115,8 +116,16 @@ module GitHubPages
       # guards against double-processing via the value in #processed.
       def set(site)
         return if processed? site
+        debug_print_versions
         set!(site)
         processed(site)
+      end
+
+      # Print the versions for github-pages and jekyll to the debug
+      # stream for debugging purposes. See by running Jekyll with '--verbose'
+      def debug_print_versions
+        Jekyll.logger.debug "GitHub Pages:", "github-pages v#{GitHubPages::VERSION}"
+        Jekyll.logger.debug "GitHub Pages:", "jekyll v#{Jekyll::VERSION}"
       end
 
       # Set the site's configuration with all the proper defaults and overrides.
