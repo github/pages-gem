@@ -25,8 +25,13 @@ module GitHubPages
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
+<<<<<<< HEAD
       "jekyll-seo-tag"            => "2.0.0",
       "jekyll-github-metadata"    => "1.11.1",
+=======
+      "jekyll-seo-tag"            => "1.4.0",
+      "jekyll-github-metadata"    => "2.0.0",
+>>>>>>> master
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
