@@ -9,7 +9,7 @@ module GitHubPages
       "jekyll-sass-converter"     => "1.3.0",
 
       # Converters
-      "kramdown"                  => "1.10.0",
+      "kramdown"                  => "1.11.1",
 
       # Misc
       "liquid"                    => "3.0.6",
