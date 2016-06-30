@@ -29,6 +29,7 @@ module GitHubPages
     DEFAULTS = {
       "jailed"   => false,
       "gems"     => DEFAULT_PLUGINS,
+      "future"   => true,
       "kramdown" => {
         "input"     => "GFM",
         "hard_wrap" => false
