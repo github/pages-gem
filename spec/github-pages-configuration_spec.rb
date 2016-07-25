@@ -18,6 +18,7 @@ describe(GitHubPages::Configuration) do
   context "#effective_config" do
     it "sets configuration defaults" do
       expect(effective_config["kramdown"]["input"]).to eql("GFM")
+      expect(effective_config["future"]).to eql(false)
     end
 
     it "sets default gems" do
@@ -52,6 +53,16 @@ describe(GitHubPages::Configuration) do
   end
 
   context "#set being called via the hook" do
+    let(:test_config) do
+      {
+        "source" => fixture_dir,
+        "quiet" => true,
+        "testing" => "123",
+        "destination" => tmp_dir,
+        "future" => true
+      }
+    end
+
     it "sets configuration defaults" do
       expect(site.config["kramdown"]["input"]).to eql("GFM")
     end
@@ -66,6 +77,7 @@ describe(GitHubPages::Configuration) do
 
     it "honors the user's config" do
       expect(site.config["some_key"]).to eql("some_value")
+      expect(site.config["future"]).to eql(true)
     end
 
     it "sets overrides" do
