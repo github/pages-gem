@@ -17,7 +17,7 @@ module GitHubPages
       "github-pages-health-check" => "1.1.0",
 
       # Plugins
-      "jemoji"                    => "0.6.2",
+      "jemoji"                    => "0.7.0",
       "jekyll-mentions"           => "1.1.3",
       "jekyll-redirect-from"      => "0.11.0",
       "jekyll-sitemap"            => "0.10.0",
