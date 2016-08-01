@@ -13,13 +13,8 @@ module GitHubPages
 
       # Misc
       "liquid"                    => "3.0.6",
-<<<<<<< HEAD
-      "rouge"                     => "1.10.1",
-      "github-pages-health-check" => "1.1.2",
-=======
       "rouge"                     => "1.11.1",
-      "github-pages-health-check" => "1.1.0",
->>>>>>> master
+      "github-pages-health-check" => "1.1.2",
 
       # Plugins
       "jemoji"                    => "0.7.0",
