@@ -9,28 +9,36 @@ module GitHubPages
       "jekyll-sass-converter"     => "1.3.0",
 
       # Converters
-      "kramdown"                  => "1.10.0",
+      "kramdown"                  => "1.11.1",
 
       # Misc
       "liquid"                    => "3.0.6",
+<<<<<<< HEAD
       "rouge"                     => "1.10.1",
       "github-pages-health-check" => "1.1.2",
+=======
+      "rouge"                     => "1.11.1",
+      "github-pages-health-check" => "1.1.0",
+>>>>>>> master
 
       # Plugins
-      "jemoji"                    => "0.6.2",
-      "jekyll-mentions"           => "1.1.2",
-      "jekyll-redirect-from"      => "0.10.0",
+      "jemoji"                    => "0.7.0",
+      "jekyll-mentions"           => "1.1.3",
+      "jekyll-redirect-from"      => "0.11.0",
       "jekyll-sitemap"            => "0.10.0",
       "jekyll-feed"               => "0.5.1",
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
       "jekyll-seo-tag"            => "2.0.0",
-      "jekyll-github-metadata"    => "2.0.0",
+      "jekyll-github-metadata"    => "2.0.2",
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
-      "listen"                    => "3.0.6"
+      "listen"                    => "3.0.6",
+
+      # Pin activesupport because 5.0 is broken on 2.1
+      "activesupport"             => "4.2.7"
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
