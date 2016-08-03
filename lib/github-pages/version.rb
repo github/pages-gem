@@ -1,3 +1,3 @@
 module GitHubPages
-  VERSION = "90b"
+  VERSION = "90.beta"
 end
