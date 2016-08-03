@@ -9,4 +9,6 @@ script/fmt --display-style-guide
 
 rm -Rf ./test-site
 bundle exec jekyll new test-site
-cd test-site && bundle exec jekyll build --trace
+cd test-site
+bundle install
+bundle exec jekyll build --trace --verbose
