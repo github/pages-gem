@@ -1,14 +1,9 @@
 #!/bin/sh
-# Test that all dependencies resolve
+# Run all tests
 
 set -ex
 
 bundle exec jekyll --version
 bundle exec rspec
 script/fmt --display-style-guide
-
-rm -Rf ./test-site
-bundle exec jekyll new test-site
-cd test-site
-bundle install
-bundle exec jekyll build --trace --verbose
+script/test-site
