@@ -20,7 +20,8 @@ AllCops:
     - 'bin/**/*'
     - 'script/**/*'
     - 'vendor/**/*'
-
+    - 'test-site/**/*'
+    
 Lint/EndAlignment:
   Severity: error
 
