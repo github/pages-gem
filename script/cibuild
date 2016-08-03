@@ -1,9 +1,15 @@
 #!/bin/sh
 # Run all tests
 
-set -ex
+set -e
 
-bundle exec jekyll --version
+echo "Jekyll version: $(bundle exec jekyll --version)"
+
+echo "Running Ruby tests..."
 bundle exec rspec
+
+echo "Running Ruby style tests..."
 script/fmt --display-style-guide
+
+echo "Building the default site..."
 script/test-site

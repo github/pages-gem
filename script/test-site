@@ -1,7 +1,7 @@
 #!/bin/sh
 # Test that the default Jekyll site builds
 
-set -ex
+set -e
 
 rm -Rf ./test-site
 bundle exec jekyll new test-site
@@ -10,6 +10,7 @@ cd test-site && bundle install
 bundle exec jekyll build --trace --verbose
 
 grep --quiet "Your awesome title" ./_site/index.html
+echo "Site built!"
 
 cd ..
 rm -Rf ./test-site
