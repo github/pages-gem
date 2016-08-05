@@ -1,3 +1,3 @@
 module GitHubPages
-  VERSION = "91.beta"
+  VERSION = 91
 end
