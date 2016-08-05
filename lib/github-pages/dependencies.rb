@@ -14,7 +14,7 @@ module GitHubPages
       # Misc
       "liquid"                    => "3.0.6",
       "rouge"                     => "1.11.1",
-      "github-pages-health-check" => "1.1.0",
+      "github-pages-health-check" => "1.1.2",
 
       # Plugins
       "jemoji"                    => "0.7.0",
