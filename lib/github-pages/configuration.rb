@@ -25,6 +25,11 @@ module GitHubPages
       jemoji
     ).freeze
 
+    # Plugins only allowed locally
+    DEVELOPMENT_PLUGINS = %w(
+      jekyll-admin
+    ).freeze
+
     # Default, user overwritable options
     DEFAULTS = {
       "jailed"   => false,
@@ -89,6 +94,10 @@ module GitHubPages
         Jekyll.env == "development" && !ENV["DISABLE_WHITELIST"].to_s.empty?
       end
 
+      def development?
+        Jekyll.env == "development"
+      end
+
       # Given a user's config, determines the effective configuration by building a user
       # configuration sandwhich with our overrides overriding the user's specified
       # values which themselves override our defaults.
@@ -108,6 +117,7 @@ module GitHubPages
         # Ensure we have those gems we want.
         config["gems"] = Array(config["gems"]) | DEFAULT_PLUGINS
         config["whitelist"] = config["whitelist"] | config["gems"] if disable_whitelist?
+        config["whitelist"] = config["whitelist"] | DEVELOPMENT_PLUGINS if development?
 
         config
       end
