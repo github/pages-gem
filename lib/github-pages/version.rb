@@ -1,3 +1,3 @@
 module GitHubPages
-  VERSION = 92
+  VERSION = 93
 end
