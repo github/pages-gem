@@ -91,7 +91,7 @@ module GitHubPages
       end
 
       def disable_whitelist?
-        Jekyll.env == "development" && !ENV["DISABLE_WHITELIST"].to_s.empty?
+        development? && !ENV["DISABLE_WHITELIST"].to_s.empty?
       end
 
       def development?
