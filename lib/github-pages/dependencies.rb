@@ -5,8 +5,11 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.1.6",
+      "jekyll"                    => "3.2.1",
       "jekyll-sass-converter"     => "1.3.0",
+
+      # Themes
+      "minima"                    => "1.0.1",
 
       # Converters
       "kramdown"                  => "1.11.1",
