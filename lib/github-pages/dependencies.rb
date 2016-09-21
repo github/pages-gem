@@ -10,6 +10,7 @@ module GitHubPages
 
       # Themes
       "minima"                    => "1.2.0",
+      "jekyll-swiss"              => "0.4.0",
 
       # Converters
       "kramdown"                  => "1.11.1",
