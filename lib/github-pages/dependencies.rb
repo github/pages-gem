@@ -8,9 +8,6 @@ module GitHubPages
       "jekyll"                    => "3.2.1",
       "jekyll-sass-converter"     => "1.3.0",
 
-      # Themes
-      "minima"                    => "1.2.0",
-
       # Converters
       "kramdown"                  => "1.11.1",
 
@@ -39,11 +36,17 @@ module GitHubPages
       "activesupport"             => "4.2.7"
     }.freeze
 
+    # Themes
+    THEMES = {
+      "minima"                    => "1.2.0",
+      "jekyll-swiss"              => "0.4.0"
+    }.freeze
+
     # Jekyll and related dependency versions as used by GitHub Pages.
     # For more information see:
     # https://help.github.com/articles/using-jekyll-with-pages
     def self.gems
-      VERSIONS
+      VERSIONS.merge(THEMES)
     end
 
     # Versions used by GitHub Pages, including github-pages gem and ruby version
