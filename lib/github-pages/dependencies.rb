@@ -38,7 +38,7 @@ module GitHubPages
 
     # Themes
     THEMES = {
-      "minima"                    => "1.2.0",
+      "minima"                    => "2.0.0",
       "jekyll-swiss"              => "0.4.0"
     }.freeze
 
