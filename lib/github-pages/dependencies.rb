@@ -5,7 +5,7 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.2.1",
+      "jekyll"                    => "3.3.0",
       "jekyll-sass-converter"     => "1.3.0",
 
       # Converters
@@ -38,7 +38,7 @@ module GitHubPages
 
     # Themes
     THEMES = {
-      "minima"                    => "1.2.0",
+      "minima"                    => "2.0.0",
       "jekyll-swiss"              => "0.4.0"
     }.freeze
 
