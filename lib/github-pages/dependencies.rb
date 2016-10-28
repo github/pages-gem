@@ -20,7 +20,7 @@ module GitHubPages
       "jemoji"                    => "0.7.0",
       "jekyll-mentions"           => "1.2.0",
       "jekyll-redirect-from"      => "0.11.0",
-      "jekyll-sitemap"            => "0.10.0",
+      "jekyll-sitemap"            => "0.11.0",
       "jekyll-feed"               => "0.7.2",
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
