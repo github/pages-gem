@@ -1,7 +1,7 @@
 ### Before submitting an issue, please be sure to
 
 - [ ] Read [the contributing instructions](https://github.com/github/pages-gem/blob/master/CONTRIBUTING.md#contributing-to-the-github-pages-gem)
-- [ ] Update to the latest Gem version (either `gem update pages-gem` or `bundle update pages-gem`)
+- [ ] Update to the latest Gem version (either `gem update github-pages` or `bundle update github-pages`)
 
 ### This issue affects
 
