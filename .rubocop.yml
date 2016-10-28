@@ -21,7 +21,7 @@ AllCops:
     - 'script/**/*'
     - 'vendor/**/*'
     - 'test-site/**/*'
-    
+
 Lint/EndAlignment:
   Severity: error
 
@@ -75,6 +75,11 @@ Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     '%w': '{}'
     '%r': '{}'
+
+Metrics/BlockLength:
+  Exclude:
+    - github-pages.gemspec
+    - !ruby/regexp /spec\/.*.rb/
 
 Metrics/LineLength:
   Max: 90
