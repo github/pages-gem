@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require File.expand_path("../lib/github-pages/dependencies", __FILE__)
 require File.expand_path("../lib/github-pages/version", __FILE__)
 
