@@ -23,7 +23,6 @@ module GitHubPages
       "jekyll-redirect-from"      => "0.11.0",
       "jekyll-sitemap"            => "0.12.0",
       "jekyll-feed"               => "0.8.0",
-      "jekyll-feed"               => "0.7.2",
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
