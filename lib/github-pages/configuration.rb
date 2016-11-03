@@ -23,6 +23,7 @@ module GitHubPages
       jekyll-redirect-from
       jekyll-seo-tag
       jekyll-sitemap
+      jekyll-avatar
       jemoji
     ).freeze
 
