@@ -7,10 +7,11 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
 
 ## Usage
 
-1. Add the following to your project's Gemfile:
+1. Add the following to your project's Gemfile:  
+_Note: Forcing the version with `'>=104'` is a temporary workaround to avoid #351._
 
   ```ruby
-  gem 'github-pages', group: :jekyll_plugins
+  gem 'github-pages', '>=104', group: :jekyll_plugins
   ```
 
 2. Run `bundle install`
@@ -24,16 +25,17 @@ The GitHub Pages gem also comes with several command-line tools, contained withi
 #### List dependency versions
 
 ```console
-$ github-pages versions
+$ bundle exec github-pages versions
 +---------------------------+---------+
 | Gem                       | Version |
 +---------------------------+---------+
-| jekyll                    | 3.0.2   |
+| jekyll                    | 3.3.0   |
 | jekyll-sass-converter     | 1.3.0   |
-| jekyll-textile-converter  | 0.1.0   |
-| kramdown                  | 1.9.0   |
-| rdiscount                 | 2.1.8   |
-| ....                      | .....   |
+| kramdown                  | 1.11.1  |
+| liquid                    | 3.0.6   |
+| rouge                     | 1.11.1  |
+| github-pages-health-check | 1.2.0   |
+| ....                      | ....    |
 +---------------------------+---------+
 ```
 
