@@ -8,7 +8,7 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
 ## Usage
 
 1. Add the following to your project's Gemfile:  
-_Note: Forcing the version with `'>=104'` is a temporary workaround to avoid #351._
+_Note: Forcing the version with `'>=104'` is a temporary workaround to avoid [this Bundler issue](https://github.com/bundler/bundler/issues/5154)._
 
   ```ruby
   gem 'github-pages', '>=104', group: :jekyll_plugins
