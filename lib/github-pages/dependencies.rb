@@ -6,7 +6,7 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.2.1",
+      "jekyll"                    => "3.3.0",
       "jekyll-sass-converter"     => "1.3.0",
 
       # Converters
@@ -21,13 +21,14 @@ module GitHubPages
       "jemoji"                    => "0.7.0",
       "jekyll-mentions"           => "1.2.0",
       "jekyll-redirect-from"      => "0.11.0",
-      "jekyll-sitemap"            => "0.11.0",
-      "jekyll-feed"               => "0.7.2",
+      "jekyll-sitemap"            => "0.12.0",
+      "jekyll-feed"               => "0.8.0",
       "jekyll-gist"               => "1.4.0",
       "jekyll-paginate"           => "1.1.0",
       "jekyll-coffeescript"       => "1.0.1",
-      "jekyll-seo-tag"            => "2.0.0",
+      "jekyll-seo-tag"            => "2.1.0",
       "jekyll-github-metadata"    => "2.2.0",
+      "jekyll-avatar"             => "0.4.2",
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
@@ -39,7 +40,7 @@ module GitHubPages
 
     # Themes
     THEMES = {
-      "minima"                    => "1.2.0",
+      "minima"                    => "2.0.0",
       "jekyll-swiss"              => "0.4.0"
     }.freeze
 
