@@ -10,6 +10,7 @@ module GitHubPages
       jekyll-gist
       jekyll-github-metadata
       jekyll-paginate
+      jekyll-relative-links
     ).freeze
 
     # Plugins allowed by GitHub Pages
@@ -24,6 +25,7 @@ module GitHubPages
       jekyll-seo-tag
       jekyll-sitemap
       jekyll-avatar
+      jekyll-relative-links
       jemoji
     ).freeze
 
