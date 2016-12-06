@@ -11,6 +11,10 @@ module GitHubPages
       jekyll-github-metadata
       jekyll-paginate
       jekyll-relative-links
+      jekyll-optional-front-matter
+      jekyll-readme-index
+      jekyll-default-layout
+      jekyll-titles-from-headings
     ).freeze
 
     # Plugins allowed by GitHub Pages
@@ -19,14 +23,18 @@ module GitHubPages
       jekyll-feed
       jekyll-gist
       jekyll-github-metadata
-      jekyll-mentions
       jekyll-paginate
       jekyll-redirect-from
       jekyll-seo-tag
       jekyll-sitemap
       jekyll-avatar
-      jekyll-relative-links
       jemoji
+      jekyll-mentions
+      jekyll-relative-links
+      jekyll-optional-front-matter
+      jekyll-readme-index
+      jekyll-default-layout
+      jekyll-titles-from-headings
     ).freeze
 
     # Plugins only allowed locally

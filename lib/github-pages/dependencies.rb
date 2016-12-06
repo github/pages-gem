@@ -18,18 +18,24 @@ module GitHubPages
       "github-pages-health-check" => "1.2.0",
 
       # Plugins
-      "jemoji"                    => "0.7.0",
-      "jekyll-mentions"           => "1.2.0",
-      "jekyll-redirect-from"      => "0.11.0",
-      "jekyll-sitemap"            => "0.12.0",
-      "jekyll-feed"               => "0.8.0",
-      "jekyll-gist"               => "1.4.0",
-      "jekyll-paginate"           => "1.1.0",
-      "jekyll-coffeescript"       => "1.0.1",
-      "jekyll-seo-tag"            => "2.1.0",
-      "jekyll-github-metadata"    => "2.2.0",
-      "jekyll-avatar"             => "0.4.2",
-      "jekyll-relative-links"     => "0.2.1",
+      "jekyll-redirect-from"   => "0.11.0",
+      "jekyll-sitemap"         => "0.12.0",
+      "jekyll-feed"            => "0.8.0",
+      "jekyll-gist"            => "1.4.0",
+      "jekyll-paginate"        => "1.1.0",
+      "jekyll-coffeescript"    => "1.0.1",
+      "jekyll-seo-tag"         => "2.1.0",
+      "jekyll-github-metadata" => "2.2.0",
+      "jekyll-avatar"          => "0.4.2",
+
+      # Plugins to match GitHub.com Markdown
+      "jemoji"                       => "0.7.0",
+      "jekyll-mentions"              => "1.2.0",
+      "jekyll-relative-links"        => "0.2.1",
+      "jekyll-optional-front-matter" => "0.1.2",
+      "jekyll-readme-index"          => "0.0.2",
+      "jekyll-default-layout"        => "0.1.3",
+      "jekyll-titles-from-headings"  => "0.1.1",
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
