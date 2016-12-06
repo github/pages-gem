@@ -47,6 +47,7 @@ module GitHubPages
       "jailed"   => false,
       "gems"     => DEFAULT_PLUGINS,
       "future"   => true,
+      "theme"    => "jekyll-theme-primer",
       "kramdown" => {
         "input"     => "GFM",
         "hard_wrap" => false
