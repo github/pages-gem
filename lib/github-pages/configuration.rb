@@ -39,6 +39,7 @@ module GitHubPages
       "jailed"   => false,
       "gems"     => DEFAULT_PLUGINS,
       "future"   => true,
+      "exclude"  => %w{node_modules},
       "kramdown" => {
         "input"     => "GFM",
         "hard_wrap" => false
