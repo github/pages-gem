@@ -4,6 +4,7 @@ require "jekyll"
 
 # Top-level namespace for all GitHub Pages-related concerns.
 module GitHubPages
+  autoload :Plugins,       "github-pages/plugins"
   autoload :Configuration, "github-pages/configuration"
   autoload :Dependencies,  "github-pages/dependencies"
   autoload :VERSION,       "github-pages/version"
