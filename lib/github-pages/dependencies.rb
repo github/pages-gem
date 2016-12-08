@@ -45,17 +45,11 @@ module GitHubPages
       "activesupport"             => "4.2.7"
     }.freeze
 
-    # Themes
-    THEMES = {
-      "minima"                    => "2.0.0",
-      "jekyll-swiss"              => "0.4.0"
-    }.freeze
-
     # Jekyll and related dependency versions as used by GitHub Pages.
     # For more information see:
     # https://help.github.com/articles/using-jekyll-with-pages
     def self.gems
-      VERSIONS.merge(THEMES)
+      VERSIONS.merge(GitHubPages::Plugins::THEMES)
     end
 
     # Versions used by GitHub Pages, including github-pages gem and ruby version

@@ -101,22 +101,6 @@ describe(GitHubPages::Configuration) do
   end
 
   context "plugins" do
-    context "whitelists all default plugins" do
-      GitHubPages::Configuration::DEFAULT_PLUGINS.each do |plugin|
-        it "whitelists the #{plugin} plugin" do
-          expect(GitHubPages::Configuration::PLUGIN_WHITELIST).to include(plugin)
-        end
-      end
-    end
-
-    context "versions all whitelisted plugins" do
-      GitHubPages::Configuration::PLUGIN_WHITELIST.each do |plugin|
-        it "versions the #{plugin} plugin" do
-          expect(GitHubPages::Dependencies::VERSIONS.keys).to include(plugin)
-        end
-      end
-    end
-
     context "in development" do
       before { ENV["JEKYLL_ENV"] = "development" }
 

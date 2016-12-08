@@ -2,50 +2,18 @@
 require "securerandom"
 
 module GitHubPages
-  #
+  # Sets and manages Jekyll configuration defaults and overrides
   class Configuration
-    # Plugins which are activated by default
-    DEFAULT_PLUGINS = %w(
-      jekyll-coffeescript
-      jekyll-gist
-      jekyll-github-metadata
-      jekyll-paginate
-      jekyll-relative-links
-      jekyll-optional-front-matter
-      jekyll-readme-index
-      jekyll-default-layout
-      jekyll-titles-from-headings
-    ).freeze
-
-    # Plugins allowed by GitHub Pages
-    PLUGIN_WHITELIST = %w(
-      jekyll-coffeescript
-      jekyll-feed
-      jekyll-gist
-      jekyll-github-metadata
-      jekyll-paginate
-      jekyll-redirect-from
-      jekyll-seo-tag
-      jekyll-sitemap
-      jekyll-avatar
-      jemoji
-      jekyll-mentions
-      jekyll-relative-links
-      jekyll-optional-front-matter
-      jekyll-readme-index
-      jekyll-default-layout
-      jekyll-titles-from-headings
-    ).freeze
-
-    # Plugins only allowed locally
-    DEVELOPMENT_PLUGINS = %w(
-      jekyll-admin
-    ).freeze
+    # Backward compatability of constants
+    DEFAULT_PLUGINS     = GitHubPages::Plugins::DEFAULT_PLUGINS
+    PLUGIN_WHITELIST    = GitHubPages::Plugins::PLUGIN_WHITELIST
+    DEVELOPMENT_PLUGINS = GitHubPages::Plugins::DEVELOPMENT_PLUGINS
+    THEMES              = GitHubPages::Plugins::THEMES
 
     # Default, user overwritable options
     DEFAULTS = {
       "jailed"   => false,
-      "gems"     => DEFAULT_PLUGINS,
+      "gems"     => GitHubPages::Plugins::DEFAULT_PLUGINS,
       "future"   => true,
       "theme"    => "jekyll-theme-primer",
       "kramdown" => {
@@ -75,7 +43,7 @@ module GitHubPages
       "safe"        => true,
       "plugins"     => SecureRandom.hex,
       "plugins_dir" => SecureRandom.hex,
-      "whitelist"   => PLUGIN_WHITELIST,
+      "whitelist"   => GitHubPages::Plugins::PLUGIN_WHITELIST,
       "highlighter" => "rouge",
       "kramdown"    => {
         "template"           => "",
