@@ -44,7 +44,7 @@ module GitHubPages
     THEMES = {
       "minima"                     => "2.0.0",
       "jekyll-swiss"               => "0.4.0",
-      "jekyll-theme-primer"        => "0.1.4",
+      "jekyll-theme-primer"        => "0.1.5",
       "jekyll-theme-architect"     => "0.0.3",
       "jekyll-theme-cayman"        => "0.0.3",
       "jekyll-theme-dinky"         => "0.0.3",
