@@ -44,19 +44,19 @@ module GitHubPages
     THEMES = {
       "minima"                     => "2.0.0",
       "jekyll-swiss"               => "0.4.0",
-      "jekyll-theme-primer"        => "0.1.1",
-      "jekyll-theme-architect"     => "0.0.1",
-      "jekyll-theme-cayman"        => "0.0.1",
-      "jekyll-theme-dinky"         => "0.0.1",
-      "jekyll-theme-hacker"        => "0.0.1",
-      "jekyll-theme-leap-day"      => "0.0.1",
-      "jekyll-theme-merlot"        => "0.0.1",
-      "jekyll-theme-midnight"      => "0.0.1",
-      "jekyll-theme-minimal"       => "0.0.1",
-      "jekyll-theme-modernist"     => "0.0.1",
-      "jekyll-theme-slate"         => "0.0.1",
-      "jekyll-theme-tactile"       => "0.0.1",
-      "jekyll-theme-time-machine"  => "0.0.1"
+      "jekyll-theme-primer"        => "0.1.3",
+      "jekyll-theme-architect"     => "0.0.2",
+      "jekyll-theme-cayman"        => "0.0.2",
+      "jekyll-theme-dinky"         => "0.0.2",
+      "jekyll-theme-hacker"        => "0.0.2",
+      "jekyll-theme-leap-day"      => "0.0.2",
+      "jekyll-theme-merlot"        => "0.0.2",
+      "jekyll-theme-midnight"      => "0.0.2",
+      "jekyll-theme-minimal"       => "0.0.2",
+      "jekyll-theme-modernist"     => "0.0.2",
+      "jekyll-theme-slate"         => "0.0.2",
+      "jekyll-theme-tactile"       => "0.0.2",
+      "jekyll-theme-time-machine"  => "0.0.2"
     }.freeze
   end
 end
