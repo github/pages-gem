@@ -23,7 +23,7 @@ module GitHubPages
       "jekyll-feed"            => "0.8.0",
       "jekyll-gist"            => "1.4.0",
       "jekyll-paginate"        => "1.1.0",
-      "jekyll-coffeescript"    => "1.0.1",
+      "jekyll-coffeescript"    => "1.0.2",
       "jekyll-seo-tag"         => "2.1.0",
       "jekyll-github-metadata" => "2.2.0",
       "jekyll-avatar"          => "0.4.2",
