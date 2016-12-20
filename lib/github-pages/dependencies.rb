@@ -35,7 +35,7 @@ module GitHubPages
       "jekyll-optional-front-matter" => "0.1.2",
       "jekyll-readme-index"          => "0.0.3",
       "jekyll-default-layout"        => "0.1.4",
-      "jekyll-titles-from-headings"  => "0.1.2",
+      "jekyll-titles-from-headings"  => "0.1.3",
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
