@@ -33,6 +33,7 @@ module GitHubPages
       jekyll-readme-index
       jekyll-default-layout
       jekyll-titles-from-headings
+      jekyll-include-cache
     ).freeze
 
     # Plugins only allowed locally
