@@ -129,6 +129,7 @@ Style/FirstParameterIndentation: { EnforcedStyle: consistent }
 Style/StringLiterals: { EnforcedStyle: double_quotes }
 Style/IndentArray: { EnforcedStyle: consistent }
 Style/ExtraSpacing: { AllowForAlignment: true }
+Style/TrailingCommaInLiteral: { EnforcedStyleForMultiline: consistent_comma }
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
