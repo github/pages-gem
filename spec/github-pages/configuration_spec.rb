@@ -7,7 +7,7 @@ describe(GitHubPages::Configuration) do
       "source" => fixture_dir,
       "quiet" => true,
       "testing" => "123",
-      "destination" => tmp_dir
+      "destination" => tmp_dir,
     }
   end
   let(:configuration) { Jekyll.configuration(test_config) }
@@ -60,7 +60,7 @@ describe(GitHubPages::Configuration) do
         "quiet" => true,
         "testing" => "123",
         "destination" => tmp_dir,
-        "future" => true
+        "future" => true,
       }
     end
 

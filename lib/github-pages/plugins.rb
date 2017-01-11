@@ -57,7 +57,7 @@ module GitHubPages
       "jekyll-theme-modernist"     => "0.0.3",
       "jekyll-theme-slate"         => "0.0.3",
       "jekyll-theme-tactile"       => "0.0.3",
-      "jekyll-theme-time-machine"  => "0.0.3"
+      "jekyll-theme-time-machine"  => "0.0.3",
     }.freeze
   end
 end

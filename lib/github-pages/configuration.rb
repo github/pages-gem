@@ -18,8 +18,8 @@ module GitHubPages
       "theme"    => "jekyll-theme-primer",
       "kramdown" => {
         "input"     => "GFM",
-        "hard_wrap" => false
-      }
+        "hard_wrap" => false,
+      },
     }.freeze
 
     # Jekyll defaults merged with Pages defaults.
@@ -48,11 +48,11 @@ module GitHubPages
       "kramdown"    => {
         "template"           => "",
         "math_engine"        => "mathjax",
-        "syntax_highlighter" => "rouge"
+        "syntax_highlighter" => "rouge",
       },
       "gist"        => {
-        "noscript"  => false
-      }
+        "noscript"  => false,
+      },
     }.freeze
 
     # These configuration settings have corresponding instance variables on

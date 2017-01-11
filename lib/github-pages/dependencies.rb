@@ -42,7 +42,7 @@ module GitHubPages
       "listen"                    => "3.0.6",
 
       # Pin activesupport because 5.0 is broken on 2.1
-      "activesupport"             => "4.2.7"
+      "activesupport"             => "4.2.7",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
@@ -70,7 +70,7 @@ module GitHubPages
         "github-pages"  => VERSION.to_s,
         "html-pipeline" => HTML::Pipeline::VERSION,
         "sass"          => Sass.version[:number],
-        "safe_yaml"     => SafeYAML::VERSION
+        "safe_yaml"     => SafeYAML::VERSION,
       }
     end
   end
