@@ -73,7 +73,7 @@ module GitHubPages
         "github-pages"  => VERSION.to_s,
         "html-pipeline" => HTML::Pipeline::VERSION,
         "sass"          => Sass.version[:number],
-        "safe_yaml"     => SafeYAML::VERSION
+        "safe_yaml"     => SafeYAML::VERSION,
       }
     end
   end
