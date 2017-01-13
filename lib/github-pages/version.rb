@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module GitHubPages
-  VERSION = 113
+  VERSION = 114
 end
