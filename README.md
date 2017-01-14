@@ -7,17 +7,14 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
 
 ## Usage
 
-Run the following command:
+1. Add the following to your project's Gemfile:  
+_Note: Forcing the version with `'109'` is a temporary workaround to avoid [this Bundler issue](https://github.com/bundler/bundler/issues/5154)._
 
-```
-gem install github-pages
-```
+  ```ruby
+  gem 'github-pages', '109', group: :jekyll_plugins
+  ```
 
-Alternatively, you can add the following to your project's Gemfile:
-
-```ruby
-gem 'github-pages'
-```
+2. Run `bundle install`
 
 *Note: You are not required to install Jekyll separately. Once the `github-pages` gem is installed, you can build your site using `jekyll build`, or preview your site using `jekyll serve`.* For more information about installing Jekyll locally, please see [the GitHub Help docs on the matter](https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll).
 
@@ -28,17 +25,18 @@ The GitHub Pages gem also comes with several command-line tools, contained withi
 #### List dependency versions
 
 ```console
-$ github-pages versions
-+-----------------------+---------+
-| Gem                   | Version |
-+-----------------------+---------+
-| jekyll                | 2.4.0   |
-| jekyll-coffeescript   | 1.0.1   |
-| jekyll-sass-converter | 1.2.0   |
-| kramdown              | 1.5.0   |
-| maruku                | 0.7.0   |
-| ....                  | .....   |
-+-----------------------+---------+
+$ bundle exec github-pages versions
++---------------------------+---------+
+| Gem                       | Version |
++---------------------------+---------+
+| jekyll                    | 3.3.0   |
+| jekyll-sass-converter     | 1.3.0   |
+| kramdown                  | 1.11.1  |
+| liquid                    | 3.0.6   |
+| rouge                     | 1.11.1  |
+| github-pages-health-check | 1.2.0   |
+| ....                      | ....    |
++---------------------------+---------+
 ```
 
 Note, you can also pass the `--gemfile` flag to get the dependencies listed in a valid Gemfile dependency format. You can also see a list of the live dependency versions at [pages.github.com/versions](https://pages.github.com/versions/).
@@ -54,6 +52,10 @@ Uh oh. Looks like something's fishy: A record points to deprecated IP address
 ```
 
 See the [GitHub Pages Health Check](https://github.com/github/pages-health-check) documentation for more information.
+
+### Bypassing the plugin whitelist
+
+If you'd like to run a Jekyll plugin locally that's not whitelisted for use on GitHub Pages, you can do so by prefixing the `jekyll build` or `jekyll serve` command with `DISABLE_WHITELIST=true`. This will allow your site to use any plugin listed in your site's `gems` configuration flag. Please note, however, this option is only available when previewing your Jekyll site locally.
 
 ## Updating
 
@@ -72,8 +74,6 @@ The GitHub Pages gem seeks to version two aspects of the build environment:
 ### 1. Ruby
 
 The version of Ruby with which Jekyll is executed. Although Jekyll itself may be compatible with prior or future versions of Ruby, different execution environments yield different results. Ruby 1.8.7 parses YAML differently than 1.9.3, for example, and Kramdown has trouble processing `mailto` links prior to 1.9.3. In order to ensure that building locally consistently results in the same build as what appears when published, it's essential that Ruby itself is versioned along side the Gem, despite no known incompatibilities.
-
-**Note**: If you're using `rbenv`, check out [ruby-build-github](https://github.com/parkr/ruby-build-github) for ruby-build, a collection of GitHub-shipped Ruby versions. If you clone down this repository and run `./install.sh support/2.1.0-github`, it should install properly for you.
 
 ### 2. Dependencies
 

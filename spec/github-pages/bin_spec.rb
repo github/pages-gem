@@ -1,11 +1,12 @@
-require 'spec_helper'
+# frozen_string_literal: true
+require "spec_helper"
 
 describe(GitHubPages) do
   it "lists the dependency versions" do
     output = `github-pages versions`
     expect(output).to include("Gem")
     expect(output).to include("Version")
-    GitHubPages.gems.each do |name, version|
+    GitHubPages::Dependencies.gems.each do |name, version|
       expect(output).to include("| #{name}")
       expect(output).to include("| #{version}")
     end

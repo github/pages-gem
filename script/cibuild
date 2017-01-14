@@ -1,9 +1,15 @@
 #!/bin/sh
-# Test that all dependencies resolve
+# Run all tests
 
-set -ex
+set -e
 
-bundle exec jekyll --version
+echo "Jekyll version: $(bundle exec jekyll --version)"
+
+echo "Running Ruby tests..."
 bundle exec rspec
-bundle exec jekyll new test-site
-cd test-site && bundle exec jekyll build --trace
+
+echo "Running Ruby style tests..."
+script/fmt --display-style-guide
+
+echo "Building the default site..."
+script/test-site
