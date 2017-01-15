@@ -15,10 +15,10 @@ Mercenary.program(:"github-pages") do |p|
     c.option "gemfile", "--gemfile", "use Gemfile formatting"
     c.action do |args, options|
       if options["gemfile"]
-        GitHubPages.gems.each { |g,v| puts "gem '#{g}', '#{v}'" }
+        GitHubPages::Dependencies.gems.each { |g,v| puts "gem '#{g}', '#{v}'" }
       else
         require 'terminal-table'
-        versions = options['all'] ? GitHubPages.versions : GitHubPages.gems
+        versions = options['all'] ? GitHubPages::Dependencies.versions : GitHubPages::Dependencies.gems
         puts Terminal::Table.new :rows => versions, :headings => ["Gem", "Version"]
       end
     end
@@ -45,7 +45,7 @@ Mercenary.program(:"github-pages") do |p|
       cname_path = File.expand_path "CNAME", Dir.pwd
       raise "No CNAME file found in current directory" unless File.exists?(cname_path)
       cname = File.open(cname_path).read.strip
-      check = GitHubPages::HealthCheck.new(cname)
+      check = GitHubPages::HealthCheck.check(cname)
       puts "Checking domain #{cname}..."
       if check.valid?
         puts "Everything looks a-okay! :)"

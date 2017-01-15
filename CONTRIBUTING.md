@@ -1,20 +1,32 @@
 # Contributing to the GitHub Pages Gem
 
-Before contributing be sure to read [the project goals](https://github.com/github/pages-gem/blob/master/README.md#project-goals).
+Hi there! We're glad you're interested in contributing to the GitHub Pages Gem. Before you do, please be sure to read the following:
 
-## What to contribute
+## Where to get help or report an issue
 
-Anything that would make the GitHub Pages experience better for users. A few examples:
+### Bugs
 
-* Pull requests suggesting that dependencies be bumped to new versions
-* Tools to make publishing to GitHub Pages easier
-* Things that make the experience simpler for less-technical users
+* If your think you may have found a bug in a particular plugin, please open an issue against that plugin's repository directly.
 
-## What not to contribute
+* If your think you may have found a bug in Jekyll itself, please [open an issue in the Jekyll repository](https://github.com/jekyll/jekyll/issues/new).
 
-* Features that belong in [Jekyll](http://jekyllrb.com) core
-* Things that add complexity to the experience
-* Support questions, or general questions about Jekyll or GitHub pages (open an issue [On Jekyll](https://github.com/mojombo/jekyll/issues/new) or contact <support@github.com>)
+* If you think you may have found a bug with how the GitHub Pages Gem bootstraps your local development environment, please [open an issue in this repository](https://github.com/github/pages-gem/issues/new).
+
+### Questions
+
+If you have a general question about Jekyll or GitHub Pages (e.g., a configuration question, a question specific to your site, upgrading, etc.) you have two options:
+
+1. [Contact GitHub Support](https://github.com/contact?form%5Bsubject%5D=GitHub%20Pages), or
+
+2. Ask your question of the Jekyll community on [talk.jekyllrb.com](https://talk.jekyllrb.com/)
+
+### Feature requests
+
+General GitHub Pages feature requests, including requests to add additional plugins should be made via [GitHub Support](https://github.com/contact?form%5Bsubject%5D=GitHub%20Pages%20Feature%20Request).
+
+## Contributing
+
+Interested in contributing? Great. We'd love you to. Before contributing be sure to read and understand [the project goals](https://github.com/github/pages-gem/blob/master/README.md#project-goals).
 
 ## How to contribute
 

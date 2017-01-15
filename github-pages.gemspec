@@ -1,4 +1,7 @@
-require File.expand_path('../lib/github-pages', __FILE__)
+# frozen_string_literal: true
+require File.expand_path("../lib/github-pages/dependencies", __FILE__)
+require File.expand_path("../lib/github-pages/plugins", __FILE__)
+require File.expand_path("../lib/github-pages/version", __FILE__)
 
 Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.0.0"
@@ -11,15 +14,20 @@ Gem::Specification.new do |s|
   s.email                 = "support@github.com"
   s.homepage              = "https://github.com/github/pages-gem"
   s.license               = "MIT"
-  s.executables           = ["github-pages"]
-  s.files                 = ["lib/github-pages.rb"]
 
-  GitHubPages.gems.each do |gem, version|
+  all_files               = `git ls-files -z`.split("\x0")
+  s.files                 = all_files.grep(%r{^(bin|lib)/|^.rubocop.yml$})
+  s.executables           = all_files.grep(%r{^bin/}) { |f| File.basename(f) }
+
+  GitHubPages::Dependencies.gems.each do |gem, version|
     s.add_dependency(gem, "= #{version}")
   end
 
-  s.add_dependency('github-pages-health-check', "~> 0.2")
-  s.add_dependency('mercenary', "~> 0.3")
-  s.add_dependency('terminal-table', "~> 1.4")
+  s.add_dependency("mercenary", "~> 0.3")
+  s.add_dependency("terminal-table", "~> 1.4")
   s.add_development_dependency("rspec", "~> 3.3")
+  s.add_development_dependency("rubocop", "~> 0.46")
+  s.add_development_dependency("rainbow", "~> 2.1.0")
+  s.add_development_dependency("pry", "~> 0.10")
+  s.add_development_dependency("jekyll_test_plugin_malicious", "~> 0.2")
 end

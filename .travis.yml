@@ -1,5 +1,11 @@
 language: ruby
-rvm: 2.1
+rvm:
+  - 2.0
+  - 2.1
+  - 2.2
+  - 2.3.3
+
+before_install: gem install bundler # update bundler.
 script: "script/cibuild"
 env:
   global:
