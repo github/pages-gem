@@ -8,10 +8,10 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
 ## Usage
 
 1. Add the following to your project's Gemfile:  
-_Note: Forcing the version with `'109'` is a temporary workaround to avoid [this Bundler issue](https://github.com/bundler/bundler/issues/5154)._
+_Note: Forcing the version with `'114'` is a temporary workaround to avoid [this Bundler issue](https://github.com/bundler/bundler/issues/5154)._
 
   ```ruby
-  gem 'github-pages', '109', group: :jekyll_plugins
+  gem 'github-pages', '114', group: :jekyll_plugins
   ```
 
 2. Run `bundle install`
@@ -26,17 +26,17 @@ The GitHub Pages gem also comes with several command-line tools, contained withi
 
 ```console
 $ bundle exec github-pages versions
-+---------------------------+---------+
-| Gem                       | Version |
-+---------------------------+---------+
-| jekyll                    | 3.3.0   |
-| jekyll-sass-converter     | 1.3.0   |
-| kramdown                  | 1.11.1  |
-| liquid                    | 3.0.6   |
-| rouge                     | 1.11.1  |
-| github-pages-health-check | 1.2.0   |
-| ....                      | ....    |
-+---------------------------+---------+
++------------------------------+---------+
+| Gem                          | Version |
++------------------------------+---------+
+| jekyll                       | 3.3.1   |
+| jekyll-sass-converter        | 1.3.0   |
+| kramdown                     | 1.11.1  |
+| liquid                       | 3.0.6   |
+| rouge                        | 1.11.1  |
+| github-pages-health-check    | 1.3.0   |
+| ....                         | ....    |
++------------------------------+---------+
 ```
 
 Note, you can also pass the `--gemfile` flag to get the dependencies listed in a valid Gemfile dependency format. You can also see a list of the live dependency versions at [pages.github.com/versions](https://pages.github.com/versions/).
