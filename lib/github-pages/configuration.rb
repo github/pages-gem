@@ -2,45 +2,24 @@
 require "securerandom"
 
 module GitHubPages
-  #
+  # Sets and manages Jekyll configuration defaults and overrides
   class Configuration
-    # Plugins which are activated by default
-    DEFAULT_PLUGINS = %w(
-      jekyll-coffeescript
-      jekyll-gist
-      jekyll-github-metadata
-      jekyll-paginate
-    ).freeze
-
-    # Plugins allowed by GitHub Pages
-    PLUGIN_WHITELIST = %w(
-      jekyll-coffeescript
-      jekyll-feed
-      jekyll-gist
-      jekyll-github-metadata
-      jekyll-mentions
-      jekyll-paginate
-      jekyll-redirect-from
-      jekyll-seo-tag
-      jekyll-sitemap
-      jekyll-avatar
-      jemoji
-    ).freeze
-
-    # Plugins only allowed locally
-    DEVELOPMENT_PLUGINS = %w(
-      jekyll-admin
-    ).freeze
+    # Backward compatability of constants
+    DEFAULT_PLUGINS     = GitHubPages::Plugins::DEFAULT_PLUGINS
+    PLUGIN_WHITELIST    = GitHubPages::Plugins::PLUGIN_WHITELIST
+    DEVELOPMENT_PLUGINS = GitHubPages::Plugins::DEVELOPMENT_PLUGINS
+    THEMES              = GitHubPages::Plugins::THEMES
 
     # Default, user overwritable options
     DEFAULTS = {
       "jailed"   => false,
-      "gems"     => DEFAULT_PLUGINS,
+      "gems"     => GitHubPages::Plugins::DEFAULT_PLUGINS,
       "future"   => true,
+      "theme"    => "jekyll-theme-primer",
       "kramdown" => {
         "input"     => "GFM",
-        "hard_wrap" => false
-      }
+        "hard_wrap" => false,
+      },
     }.freeze
 
     # Jekyll defaults merged with Pages defaults.
@@ -64,16 +43,16 @@ module GitHubPages
       "safe"        => true,
       "plugins"     => SecureRandom.hex,
       "plugins_dir" => SecureRandom.hex,
-      "whitelist"   => PLUGIN_WHITELIST,
+      "whitelist"   => GitHubPages::Plugins::PLUGIN_WHITELIST,
       "highlighter" => "rouge",
       "kramdown"    => {
         "template"           => "",
         "math_engine"        => "mathjax",
-        "syntax_highlighter" => "rouge"
+        "syntax_highlighter" => "rouge",
       },
       "gist"        => {
-        "noscript"  => false
-      }
+        "noscript"  => false,
+      },
     }.freeze
 
     # These configuration settings have corresponding instance variables on

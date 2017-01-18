@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require File.expand_path("../lib/github-pages/dependencies", __FILE__)
+require File.expand_path("../lib/github-pages/plugins", __FILE__)
 require File.expand_path("../lib/github-pages/version", __FILE__)
 
 Gem::Specification.new do |s|
@@ -25,7 +26,8 @@ Gem::Specification.new do |s|
   s.add_dependency("mercenary", "~> 0.3")
   s.add_dependency("terminal-table", "~> 1.4")
   s.add_development_dependency("rspec", "~> 3.3")
-  s.add_development_dependency("rubocop", "~> 0.35")
+  s.add_development_dependency("rubocop", "~> 0.46")
+  s.add_development_dependency("rainbow", "~> 2.1.0")
   s.add_development_dependency("pry", "~> 0.10")
   s.add_development_dependency("jekyll_test_plugin_malicious", "~> 0.2")
 end

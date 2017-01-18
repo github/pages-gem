@@ -6,7 +6,7 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.3.0",
+      "jekyll"                    => "3.3.1",
       "jekyll-sass-converter"     => "1.5.0",
 
       # Converters
@@ -15,40 +15,44 @@ module GitHubPages
       # Misc
       "liquid"                    => "3.0.6",
       "rouge"                     => "1.11.1",
-      "github-pages-health-check" => "1.2.0",
+      "github-pages-health-check" => "1.3.0",
 
       # Plugins
-      "jemoji"                    => "0.7.0",
-      "jekyll-mentions"           => "1.2.0",
-      "jekyll-redirect-from"      => "0.11.0",
-      "jekyll-sitemap"            => "0.12.0",
-      "jekyll-feed"               => "0.8.0",
-      "jekyll-gist"               => "1.4.0",
-      "jekyll-paginate"           => "1.1.0",
-      "jekyll-coffeescript"       => "1.0.1",
-      "jekyll-seo-tag"            => "2.1.0",
-      "jekyll-github-metadata"    => "2.2.0",
-      "jekyll-avatar"             => "0.4.2",
+      "jekyll-redirect-from"   => "0.11.0",
+      "jekyll-sitemap"         => "0.12.0",
+      "jekyll-feed"            => "0.8.0",
+      "jekyll-gist"            => "1.4.0",
+      "jekyll-paginate"        => "1.1.0",
+      "jekyll-coffeescript"    => "1.0.1",
+      "jekyll-seo-tag"         => "2.1.0",
+      "jekyll-github-metadata" => "2.3.1",
+      "jekyll-avatar"          => "0.4.2",
+
+      # Plugins to match GitHub.com Markdown
+      "jemoji"                       => "0.7.0",
+      "jekyll-mentions"              => "1.2.0",
+      "jekyll-relative-links"        => "0.2.1",
+      "jekyll-optional-front-matter" => "0.1.2",
+      "jekyll-readme-index"          => "0.0.3",
+      "jekyll-default-layout"        => "0.1.4",
+      "jekyll-titles-from-headings"  => "0.1.4",
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
       "listen"                    => "3.0.6",
 
       # Pin activesupport because 5.0 is broken on 2.1
-      "activesupport"             => "4.2.7"
-    }.freeze
+      "activesupport"             => "4.2.7",
 
-    # Themes
-    THEMES = {
-      "minima"                    => "2.0.0",
-      "jekyll-swiss"              => "0.4.0"
+      # Pin nokogiri to 1.6 because 1.7 dropped support for Ruby 2.0.
+      "nokogiri"                  => "1.6.8.1",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
     # For more information see:
     # https://help.github.com/articles/using-jekyll-with-pages
     def self.gems
-      VERSIONS.merge(THEMES)
+      VERSIONS.merge(GitHubPages::Plugins::THEMES)
     end
 
     # Versions used by GitHub Pages, including github-pages gem and ruby version
@@ -69,7 +73,7 @@ module GitHubPages
         "github-pages"  => VERSION.to_s,
         "html-pipeline" => HTML::Pipeline::VERSION,
         "sass"          => Sass.version[:number],
-        "safe_yaml"     => SafeYAML::VERSION
+        "safe_yaml"     => SafeYAML::VERSION,
       }
     end
   end
