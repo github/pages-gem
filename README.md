@@ -7,7 +7,9 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
 
 ## Usage
 
-1. Add the following to your project's Gemfile:  
+**Important: Make sure you have Bundler > v1.14 by running `gem update bundler` in your terminal before following the next steps.**
+
+1. Add the following to your project's Gemfile:  
 
   ```ruby
   gem 'github-pages', group: :jekyll_plugins
