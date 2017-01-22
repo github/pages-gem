@@ -7,11 +7,12 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
 
 ## Usage
 
-1. Add the following to your project's Gemfile:  
-_Note: Forcing the version with `'115'` is a temporary workaround to avoid [this Bundler issue](https://github.com/bundler/bundler/issues/5154)._
+**Important: Make sure you have Bundler > v1.14 by running `gem update bundler` in your terminal before following the next steps.**
+
+1. Add the following to your project's Gemfile:  
 
   ```ruby
-  gem 'github-pages', '115', group: :jekyll_plugins
+  gem 'github-pages', group: :jekyll_plugins
   ```
 
 2. Run `bundle install`
