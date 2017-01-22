@@ -29,5 +29,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency("rainbow", "~> 2.1.0")
   s.add_development_dependency("pry", "~> 0.10")
   s.add_development_dependency("jekyll_test_plugin_malicious", "~> 0.2")
-  s.add_development_dependency("rubocop", "~> 0.47")
+  s.add_development_dependency("rubocop", "~> 0.4")
 end
