@@ -46,6 +46,10 @@ module GitHubPages
 
       # Pin nokogiri to 1.6 because 1.7 dropped support for Ruby 2.0.
       "nokogiri"                  => "1.6.8.1",
+
+      # Pin redcarpet because 3.4.0 fix non-ASCII anchors
+      # https://github.com/vmg/redcarpet/pull/591
+      "redcarpet"                 => "3.4.0",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
