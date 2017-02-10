@@ -18,7 +18,7 @@ module GitHubPages
       "github-pages-health-check" => "1.3.0",
 
       # Plugins
-      "jekyll-redirect-from"   => "0.11.0",
+      "jekyll-redirect-from"   => "0.12.1",
       "jekyll-sitemap"         => "0.12.0",
       "jekyll-feed"            => "0.8.0",
       "jekyll-gist"            => "1.4.0",
@@ -29,11 +29,11 @@ module GitHubPages
       "jekyll-avatar"          => "0.4.2",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji"                       => "0.7.0",
+      "jemoji"                       => "0.8.0",
       "jekyll-mentions"              => "1.2.0",
-      "jekyll-relative-links"        => "0.2.1",
+      "jekyll-relative-links"        => "0.3.0",
       "jekyll-optional-front-matter" => "0.1.2",
-      "jekyll-readme-index"          => "0.0.3",
+      "jekyll-readme-index"          => "0.0.4",
       "jekyll-default-layout"        => "0.1.4",
       "jekyll-titles-from-headings"  => "0.1.4",
 
