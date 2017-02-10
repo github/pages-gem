@@ -19,6 +19,7 @@ module GitHubPages
       "kramdown" => {
         "input"     => "GFM",
         "hard_wrap" => false,
+        "gfm_quirks" => "paragraph_end",
       },
     }.freeze
 
