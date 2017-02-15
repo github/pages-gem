@@ -32,7 +32,7 @@ $ bundle exec github-pages versions
 +---------------------------+---------+
 | jekyll                    | 3.3.1   |
 | jekyll-sass-converter     | 1.3.0   |
-| kramdown                  | 1.11.1  |
+| kramdown                  | 1.13.2  |
 | liquid                    | 3.0.6   |
 | rouge                     | 1.11.1  |
 | github-pages-health-check | 1.3.0   |

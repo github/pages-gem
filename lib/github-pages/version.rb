@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module GitHubPages
-  VERSION = 120
+  VERSION = 121
 end
