@@ -10,7 +10,7 @@ module GitHubPages
       "jekyll-sass-converter"     => "1.5.0",
 
       # Converters
-      "kramdown"                  => "1.11.1",
+      "kramdown"                  => "1.13.2",
 
       # Misc
       "liquid"                    => "3.0.6",
@@ -29,9 +29,9 @@ module GitHubPages
       "jekyll-avatar"          => "0.4.2",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji"                       => "0.7.0",
+      "jemoji"                       => "0.8.0",
       "jekyll-mentions"              => "1.2.0",
-      "jekyll-relative-links"        => "0.2.1",
+      "jekyll-relative-links"        => "0.3.0",
       "jekyll-optional-front-matter" => "0.1.2",
       "jekyll-readme-index"          => "0.0.4",
       "jekyll-default-layout"        => "0.1.4",
