@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/github-pages"
+require 'json'
+require 'open-uri'
+require 'terminal-table'
+
+def latest_version(gem_name)
+  uri = "https://rubygems.org/api/v1/versions/#{gem_name}/latest.json"
+  data = open(uri).read
+  JSON.parse(data)["version"]
+end
+
+rows = []
+GitHubPages::Dependencies.gems.each do |gem_name, version|
+  latest = latest_version(gem_name)
+  rows << [gem_name, version, latest] unless version == latest
+end
+
+if rows.empty?
+  puts "Nice work! Everything's up to date."
+else
+  puts "Here are the gems that are out of date:"
+  puts Terminal::Table.new :headings => ["Gem", "Current", "Latest"], :rows => rows
+end
