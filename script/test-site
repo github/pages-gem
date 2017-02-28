@@ -1,0 +1,23 @@
+#!/bin/sh
+# Test that the default Jekyll site builds
+
+set -e
+
+rm -Rf ./test-site
+bundle exec jekyll new test-site
+
+BUNDLE_GEMFILE="$(pwd)/Gemfile"
+export BUNDLE_GEMFILE
+
+cd test-site
+rm -Rf Gemfile
+
+echo "Using $(bundle exec github-pages --version)"
+echo "Using $(bundle exec jekyll --version)"
+bundle exec jekyll build --trace --verbose
+
+grep --quiet "Your awesome title" ./_site/index.html
+echo "Site built!"
+
+cd ..
+rm -Rf ./test-site

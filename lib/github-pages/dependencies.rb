@@ -15,12 +15,12 @@ module GitHubPages
       # Misc
       "liquid"                    => "3.0.6",
       "rouge"                     => "1.11.1",
-      "github-pages-health-check" => "1.3.0",
+      "github-pages-health-check" => "1.3.1",
 
       # Plugins
       "jekyll-redirect-from"   => "0.12.1",
-      "jekyll-sitemap"         => "0.12.0",
-      "jekyll-feed"            => "0.8.0",
+      "jekyll-sitemap"         => "1.0.0",
+      "jekyll-feed"            => "0.9.1",
       "jekyll-gist"            => "1.4.0",
       "jekyll-paginate"        => "1.1.0",
       "jekyll-coffeescript"    => "1.0.1",
