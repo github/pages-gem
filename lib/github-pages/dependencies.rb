@@ -21,7 +21,7 @@ module GitHubPages
       # Plugins
       "jekyll-redirect-from"   => "0.12.1",
       "jekyll-sitemap"         => "1.0.0",
-      "jekyll-feed"            => "0.9.1",
+      "jekyll-feed"            => "0.9.2",
       "jekyll-gist"            => "1.4.0",
       "jekyll-paginate"        => "1.1.0",
       "jekyll-coffeescript"    => "1.0.1",
@@ -32,9 +32,9 @@ module GitHubPages
       # Plugins to match GitHub.com Markdown
       "jemoji"                       => "0.8.0",
       "jekyll-mentions"              => "1.2.0",
-      "jekyll-relative-links"        => "0.3.0",
+      "jekyll-relative-links"        => "0.4.0",
       "jekyll-optional-front-matter" => "0.1.2",
-      "jekyll-readme-index"          => "0.0.4",
+      "jekyll-readme-index"          => "0.1.0",
       "jekyll-default-layout"        => "0.1.4",
       "jekyll-titles-from-headings"  => "0.1.4",
 
