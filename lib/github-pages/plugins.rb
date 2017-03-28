@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module GitHubPages
   # Manages the constants the govern what plugins are allows on GitHub Pages
   class Plugins

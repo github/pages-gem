@@ -1,10 +1,11 @@
 # frozen_string_literal: true
+
 require "spec_helper"
 
 describe(GitHubPages::Dependencies) do
   CORE_DEPENDENCIES = %w(
     jekyll kramdown liquid rouge jekyll-sass-converter
-    github-pages-health-check listen activesupport nokogiri
+    github-pages-health-check listen activesupport
   ).freeze
   PLUGINS = described_class::VERSIONS.keys - CORE_DEPENDENCIES
 
