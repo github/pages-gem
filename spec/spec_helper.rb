@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require File.expand_path("../../lib/github-pages.rb", __FILE__)
 
 RSpec.configure do |config|

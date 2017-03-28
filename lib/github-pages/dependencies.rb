@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module GitHubPages
   # Dependencies is where all the public dependencies for GitHub Pages are defined,
   # and versions locked. Any plugin for Pages must be specified here with a
