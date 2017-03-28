@@ -45,7 +45,7 @@ module GitHubPages
       "activesupport"             => "4.2.7",
 
       # Pin nokogiri to 1.6 because 1.7 dropped support for Ruby 2.0.
-      "nokogiri"                  => "1.6.8.1",
+      "nokogiri"                  => "1.7.1",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
