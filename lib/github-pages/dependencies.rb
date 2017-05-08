@@ -43,7 +43,7 @@ module GitHubPages
       "listen"                    => "3.0.6",
 
       # Pin activesupport because 5.0 is broken on 2.1
-      "activesupport"             => "4.2.7",
+      "activesupport"             => "4.2.8",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
