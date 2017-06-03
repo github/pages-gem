@@ -35,6 +35,7 @@ module GitHubPages
       jekyll-default-layout
       jekyll-titles-from-headings
       jekyll-include-cache
+      jekyll-org
     ).freeze
 
     # Plugins only allowed locally
