@@ -7,14 +7,14 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.4.3",
+      "jekyll"                    => "3.5.0",
       "jekyll-sass-converter"     => "1.5.0",
 
       # Converters
       "kramdown"                  => "1.13.2",
 
       # Misc
-      "liquid"                    => "3.0.6",
+      "liquid"                    => "4.0.0",
       "rouge"                     => "1.11.1",
       "github-pages-health-check" => "1.3.4",
 
