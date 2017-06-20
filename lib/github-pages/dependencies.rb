@@ -14,7 +14,7 @@ module GitHubPages
       "kramdown"                  => "1.13.2",
 
       # Misc
-      "liquid"                    => "4.0.0",
+      "liquid"                    => "3.0.6",
       "rouge"                     => "1.11.1",
       "github-pages-health-check" => "1.3.4",
 
