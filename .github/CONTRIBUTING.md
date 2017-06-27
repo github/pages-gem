@@ -6,7 +6,7 @@ Hi there! We're glad you're interested in contributing to the GitHub Pages Gem. 
 
 ### Bugs
 
-* If your think you may have found a bug in a particular plugin, please open an issue against that plugin's repository directly.
+* If your think you may have found a bug in a particular theme or plugin, please open an issue against that project's repository directly.
 
 * If your think you may have found a bug in Jekyll itself, please [open an issue in the Jekyll repository](https://github.com/jekyll/jekyll/issues/new).
 
@@ -22,7 +22,7 @@ If you have a general question about Jekyll or GitHub Pages (e.g., a configurati
 
 ### Feature requests
 
-General GitHub Pages feature requests, including requests to add additional plugins should be made via [GitHub Support](https://github.com/contact?form%5Bsubject%5D=GitHub%20Pages%20Feature%20Request).
+General GitHub Pages feature requests, including requests to add additional plugins or themes should be made via [GitHub Support](https://github.com/contact?form%5Bsubject%5D=GitHub%20Pages%20Feature%20Request).
 
 ## Contributing
 
