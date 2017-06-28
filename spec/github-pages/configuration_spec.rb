@@ -14,8 +14,11 @@ describe(GitHubPages::Configuration) do
   let(:configuration) { Jekyll.configuration(test_config) }
   let(:site)          { Jekyll::Site.new(configuration) }
   let(:effective_config) { described_class.effective_config(site.config) }
-  before(:each) { ENV.delete("DISABLE_WHITELIST") }
-  before(:each) { ENV["JEKYLL_ENV"] = "test" }
+  before(:each) do
+    ENV.delete("DISABLE_WHITELIST")
+    ENV["JEKYLL_ENV"] = "test"
+    ENV["PAGES_REPO_NWO"] = "github/pages-gem"
+  end
 
   context "#effective_config" do
     it "sets configuration defaults" do
