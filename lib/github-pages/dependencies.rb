@@ -16,7 +16,7 @@ module GitHubPages
       # Misc
       "liquid"                    => "3.0.6",
       "rouge"                     => "1.11.1",
-      "github-pages-health-check" => "1.3.3",
+      "github-pages-health-check" => "1.3.4",
 
       # Plugins
       "jekyll-redirect-from"   => "0.12.1",
@@ -25,8 +25,9 @@ module GitHubPages
       "jekyll-gist"            => "1.4.0",
       "jekyll-paginate"        => "1.1.0",
       "jekyll-coffeescript"    => "1.0.1",
-      "jekyll-seo-tag"         => "2.2.0",
+      "jekyll-seo-tag"         => "2.2.3",
       "jekyll-github-metadata" => "2.4.0",
+      "jekyll-github-metadata" => "2.3.1",
       "jekyll-avatar"          => "0.4.2",
 
       # Plugins to match GitHub.com Markdown
@@ -43,7 +44,7 @@ module GitHubPages
       "listen"                    => "3.0.6",
 
       # Pin activesupport because 5.0 is broken on 2.1
-      "activesupport"             => "4.2.7",
+      "activesupport"             => "4.2.8",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.

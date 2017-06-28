@@ -47,6 +47,7 @@ module GitHubPages
       "plugins_dir" => SecureRandom.hex,
       "whitelist"   => GitHubPages::Plugins::PLUGIN_WHITELIST,
       "highlighter" => "rouge",
+      "markdown"    => "kramdown",
       "kramdown"    => {
         "template"           => "",
         "math_engine"        => "mathjax",
