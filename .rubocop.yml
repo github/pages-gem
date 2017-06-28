@@ -47,10 +47,10 @@ Style/HashSyntax:
   EnforcedStyle: hash_rockets
   Severity: error
 
-Style/AlignHash:
+Layout/AlignHash:
   SupportedLastArgumentHashStyles: always_ignore
 
-Style/AlignParameters:
+Layout/AlignParameters:
   Enabled: false # This is usually true, but we often want to roll back to
                  # the start of a line.
 
@@ -94,7 +94,7 @@ Style/MultilineTernaryOperator:
 Style/AndOr:
   Severity: error
 
-Style/IndentationWidth:
+Layout/IndentationWidth:
   Severity: error
 
 Metrics/MethodLength:
@@ -121,14 +121,14 @@ Metrics/PerceivedComplexity: { Max: 8 }
 Metrics/ParameterLists: { Max: 4 }
 Metrics/AbcSize: { Max: 20 }
 
-Style/IndentHash: { EnforcedStyle: consistent }
+Layout/IndentHash: { EnforcedStyle: consistent }
 Style/SignalException: { EnforcedStyle: only_raise }
-Style/MultilineMethodCallIndentation: { EnforcedStyle: indented }
-Style/MultilineOperationIndentation: { EnforcedStyle: indented }
-Style/FirstParameterIndentation: { EnforcedStyle: consistent }
+Layout/MultilineMethodCallIndentation: { EnforcedStyle: indented }
+Layout/MultilineOperationIndentation: { EnforcedStyle: indented }
+Layout/FirstParameterIndentation: { EnforcedStyle: consistent }
 Style/StringLiterals: { EnforcedStyle: double_quotes }
-Style/IndentArray: { EnforcedStyle: consistent }
-Style/ExtraSpacing: { AllowForAlignment: true }
+Layout/IndentArray: { EnforcedStyle: consistent }
+Layout/ExtraSpacing: { AllowForAlignment: true }
 Style/TrailingCommaInLiteral: { EnforcedStyleForMultiline: consistent_comma }
 
 Style/PercentLiteralDelimiters:
