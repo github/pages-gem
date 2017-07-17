@@ -55,6 +55,14 @@ describe(GitHubPages::Configuration) do
     it "accepts local configs" do
       expect(effective_config["testing"]).to eql("123")
     end
+
+    context "in development" do
+      before { ENV["JEKYLL_ENV"] = "development" }
+
+      it "doesn't compress sass" do
+        expect(effective_config["sass"]).to be_nil
+      end
+    end
   end
 
   context "#set being called via the hook" do
@@ -158,6 +166,11 @@ describe(GitHubPages::Configuration) do
         it "knows not to disable the whitelist" do
           expect(described_class.disable_whitelist?).to eql(false)
         end
+      end
+
+      it "compresses sass" do
+        puts ENV["JEKYLL_ENV"].inspect
+        expect(effective_config["sass"]).to eql("style" => "compressed")
       end
     end
   end
