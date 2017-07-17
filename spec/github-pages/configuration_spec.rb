@@ -169,7 +169,6 @@ describe(GitHubPages::Configuration) do
       end
 
       it "compresses sass" do
-        puts ENV["JEKYLL_ENV"].inspect
         expect(effective_config["sass"]).to eql("style" => "compressed")
       end
     end
