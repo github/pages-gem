@@ -14,7 +14,7 @@ module GitHubPages
     # Default, user overwritable options
     DEFAULTS = {
       "jailed"   => false,
-      "gems"     => GitHubPages::Plugins::DEFAULT_PLUGINS,
+      "plugins"  => GitHubPages::Plugins::DEFAULT_PLUGINS,
       "future"   => true,
       "theme"    => "jekyll-theme-primer",
       "kramdown" => {
@@ -43,7 +43,6 @@ module GitHubPages
     OVERRIDES = {
       "lsi"         => false,
       "safe"        => true,
-      "plugins"     => SecureRandom.hex,
       "plugins_dir" => SecureRandom.hex,
       "whitelist"   => GitHubPages::Plugins::PLUGIN_WHITELIST,
       "highlighter" => "rouge",
@@ -62,7 +61,7 @@ module GitHubPages
     # Jekyll::Site and need to be set properly when the config is updated.
     CONFIGS_WITH_METHODS = %w(
       safe lsi highlighter baseurl exclude include future unpublished
-      show_drafts limit_posts keep_files gems
+      show_drafts limit_posts keep_files
     ).freeze
 
     class << self
@@ -99,9 +98,15 @@ module GitHubPages
         config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
 
         # Ensure we have those gems we want.
-        config["gems"] = Array(config["gems"]) | DEFAULT_PLUGINS
-        config["whitelist"] = config["whitelist"] | config["gems"] if disable_whitelist?
-        config["whitelist"] = config["whitelist"] | DEVELOPMENT_PLUGINS if development?
+        config["plugins"] = Array(config["plugins"]) | DEFAULT_PLUGINS
+
+        if disable_whitelist?
+          config["whitelist"] = config["whitelist"] | config["plugins"]
+        end
+
+        if development?
+          config["whitelist"] = config["whitelist"] | DEVELOPMENT_PLUGINS
+        end
 
         config
       end
@@ -135,6 +140,10 @@ module GitHubPages
         CONFIGS_WITH_METHODS.each do |opt|
           site.public_send("#{opt}=", site.config[opt])
         end
+
+        # While Configuration renamed the gems key to plugins, Site retained
+        # backwards compatability and must be set manually
+        site.gems = site.config["plugins"]
       end
     end
   end
