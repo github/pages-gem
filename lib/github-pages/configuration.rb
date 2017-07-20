@@ -24,11 +24,12 @@ module GitHubPages
       },
     }.freeze
 
-    # Jekyll defaults merged with Pages defaults.
-    MERGED_DEFAULTS = Jekyll::Utils.deep_merge_hashes(
-      Jekyll::Configuration::DEFAULTS,
-      DEFAULTS
-    ).freeze
+    # User-overwritable defaults used only in production for practical reasons
+    PRODUCTION_DEFAULTS = Jekyll::Utils.deep_merge_hashes DEFAULTS, {
+      "sass" => {
+        "style" => "compressed",
+      },
+    }.freeze
 
     # Options which GitHub Pages sets, regardless of the user-specified value
     #
@@ -82,6 +83,11 @@ module GitHubPages
         Jekyll.env == "development"
       end
 
+      def defaults_for_env
+        defaults = development? ? DEFAULTS : PRODUCTION_DEFAULTS
+        Jekyll::Utils.deep_merge_hashes Jekyll::Configuration::DEFAULTS, defaults
+      end
+
       # Given a user's config, determines the effective configuration by building a user
       # configuration sandwhich with our overrides overriding the user's specified
       # values which themselves override our defaults.
@@ -91,7 +97,7 @@ module GitHubPages
       # Note: this is a highly modified version of Jekyll#configuration
       def effective_config(user_config)
         # Merge user config into defaults
-        config = Jekyll::Utils.deep_merge_hashes(MERGED_DEFAULTS, user_config)
+        config = Jekyll::Utils.deep_merge_hashes(defaults_for_env, user_config)
           .fix_common_issues
           .add_default_collections
 
