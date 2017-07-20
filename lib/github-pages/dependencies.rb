@@ -16,7 +16,7 @@ module GitHubPages
       # Misc
       "liquid"                    => "3.0.6",
       "rouge"                     => "1.11.1",
-      "github-pages-health-check" => "1.3.4",
+      "github-pages-health-check" => "1.3.5",
 
       # Plugins
       "jekyll-redirect-from"   => "0.12.1",
@@ -26,14 +26,14 @@ module GitHubPages
       "jekyll-paginate"        => "1.1.0",
       "jekyll-coffeescript"    => "1.0.1",
       "jekyll-seo-tag"         => "2.2.3",
-      "jekyll-github-metadata" => "2.4.0",
+      "jekyll-github-metadata" => "2.5.1",
       "jekyll-avatar"          => "0.4.2",
 
       # Plugins to match GitHub.com Markdown
       "jemoji"                       => "0.8.0",
       "jekyll-mentions"              => "1.2.0",
       "jekyll-relative-links"        => "0.4.1",
-      "jekyll-optional-front-matter" => "0.1.2",
+      "jekyll-optional-front-matter" => "0.2.0",
       "jekyll-readme-index"          => "0.1.0",
       "jekyll-default-layout"        => "0.1.4",
       "jekyll-titles-from-headings"  => "0.2.0",
