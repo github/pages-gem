@@ -83,7 +83,7 @@ module GitHubPages
         Jekyll.env == "development"
       end
 
-      def merged_defaults
+      def defaults_for_env
         defaults = development? ? DEFAULTS : PRODUCTION_DEFAULTS
         Jekyll::Utils.deep_merge_hashes Jekyll::Configuration::DEFAULTS, defaults
       end
@@ -97,7 +97,7 @@ module GitHubPages
       # Note: this is a highly modified version of Jekyll#configuration
       def effective_config(user_config)
         # Merge user config into defaults
-        config = Jekyll::Utils.deep_merge_hashes(merged_defaults, user_config)
+        config = Jekyll::Utils.deep_merge_hashes(defaults_for_env, user_config)
           .fix_common_issues
           .add_default_collections
 
