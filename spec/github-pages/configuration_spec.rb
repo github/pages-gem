@@ -14,6 +14,8 @@ describe(GitHubPages::Configuration) do
   let(:configuration) { Jekyll.configuration(test_config) }
   let(:site)          { Jekyll::Site.new(configuration) }
   let(:effective_config) { described_class.effective_config(site.config) }
+  let(:defaults_for_env) { described_class.defaults_for_env }
+
   before(:each) do
     ENV.delete("DISABLE_WHITELIST")
     ENV["JEKYLL_ENV"] = "test"
@@ -54,6 +56,15 @@ describe(GitHubPages::Configuration) do
 
     it "accepts local configs" do
       expect(effective_config["testing"]).to eql("123")
+    end
+
+    context "in development" do
+      before { ENV["JEKYLL_ENV"] = "development" }
+
+      it "doesn't compress sass" do
+        expect(effective_config["sass"]).to be_nil
+        expect(defaults_for_env["sass"]).to be_nil
+      end
     end
   end
 
@@ -158,6 +169,11 @@ describe(GitHubPages::Configuration) do
         it "knows not to disable the whitelist" do
           expect(described_class.disable_whitelist?).to eql(false)
         end
+      end
+
+      it "compresses sass" do
+        expect(effective_config["sass"]).to eql("style" => "compressed")
+        expect(defaults_for_env["sass"]).to eql("style" => "compressed")
       end
     end
   end
