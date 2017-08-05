@@ -5,9 +5,8 @@ RUN apt-get update \
     git \
     make
 
-COPY . /usr/src/app
-
-WORKDIR /usr/src/app
+COPY . /src
+WORKDIR /src
 
 RUN gem build github-pages.gemspec
 
