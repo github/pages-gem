@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module GitHubPages
   # Manages the constants the govern what plugins are allows on GitHub Pages
   class Plugins
@@ -43,21 +44,21 @@ module GitHubPages
 
     # Themes
     THEMES = {
-      "minima"                     => "2.0.0",
+      "minima"                     => "2.1.1",
       "jekyll-swiss"               => "0.4.0",
-      "jekyll-theme-primer"        => "0.1.7",
-      "jekyll-theme-architect"     => "0.0.3",
-      "jekyll-theme-cayman"        => "0.0.3",
-      "jekyll-theme-dinky"         => "0.0.3",
-      "jekyll-theme-hacker"        => "0.0.3",
-      "jekyll-theme-leap-day"      => "0.0.3",
-      "jekyll-theme-merlot"        => "0.0.3",
-      "jekyll-theme-midnight"      => "0.0.3",
-      "jekyll-theme-minimal"       => "0.0.3",
-      "jekyll-theme-modernist"     => "0.0.3",
-      "jekyll-theme-slate"         => "0.0.3",
-      "jekyll-theme-tactile"       => "0.0.3",
-      "jekyll-theme-time-machine"  => "0.0.3",
+      "jekyll-theme-primer"        => "0.3.1",
+      "jekyll-theme-architect"     => "0.0.4",
+      "jekyll-theme-cayman"        => "0.0.4",
+      "jekyll-theme-dinky"         => "0.0.4",
+      "jekyll-theme-hacker"        => "0.0.4",
+      "jekyll-theme-leap-day"      => "0.0.4",
+      "jekyll-theme-merlot"        => "0.0.4",
+      "jekyll-theme-midnight"      => "0.0.4",
+      "jekyll-theme-minimal"       => "0.0.4",
+      "jekyll-theme-modernist"     => "0.0.4",
+      "jekyll-theme-slate"         => "0.0.4",
+      "jekyll-theme-tactile"       => "0.0.4",
+      "jekyll-theme-time-machine"  => "0.0.4",
     }.freeze
   end
 end
