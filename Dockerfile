@@ -1,9 +1,9 @@
 FROM ruby:2.4
 
-RUN mkdir /usr/src/app \
-  && apk update \
-  && apk upgrade \
-  && apk add --no-cache bash git make
+RUN apt-get update \
+  && apt-get install -y \
+    git \
+    make
 
 COPY . /usr/src/app
 
