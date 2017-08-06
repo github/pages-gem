@@ -5,9 +5,10 @@ RUN apt-get update \
     git \
     make
 
-COPY . /src
-WORKDIR /src
+COPY . /gh-pages
+WORKDIR /gh-pages
 
-RUN gem build github-pages.gemspec
+RUN bundle config local.github-pages /gh-pages
+RUN bundle install
 
 CMD bundle install --gemfile=github-pages-127.gem
