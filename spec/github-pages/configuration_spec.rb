@@ -29,11 +29,11 @@ describe(GitHubPages::Configuration) do
     end
 
     it "sets default gems" do
-      expect(effective_config["gems"]).to include("jekyll-coffeescript")
+      expect(effective_config["plugins"]).to include("jekyll-coffeescript")
     end
 
     it "lets the user specify additional gems" do
-      expect(effective_config["gems"]).to include("jekyll-sitemap")
+      expect(effective_config["plugins"]).to include("jekyll-sitemap")
     end
 
     it "honors the user's config" do
@@ -84,11 +84,11 @@ describe(GitHubPages::Configuration) do
     end
 
     it "sets default gems" do
-      expect(site.config["gems"]).to include("jekyll-coffeescript")
+      expect(site.config["plugins"]).to include("jekyll-coffeescript")
     end
 
     it "lets the user specify additional gems" do
-      expect(site.config["gems"]).to include("jekyll-sitemap")
+      expect(site.config["plugins"]).to include("jekyll-sitemap")
     end
 
     it "honors the user's config" do
