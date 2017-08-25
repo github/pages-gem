@@ -7,7 +7,7 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.5.2",
+      "jekyll"                    => "3.6.0",
       "jekyll-sass-converter"     => "1.5.0",
 
       # Converters
