@@ -7,14 +7,14 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.4.5",
+      "jekyll"                    => "3.5.2",
       "jekyll-sass-converter"     => "1.5.0",
 
       # Converters
       "kramdown"                  => "1.13.2",
 
       # Misc
-      "liquid"                    => "3.0.6",
+      "liquid"                    => "4.0.0",
       "rouge"                     => "1.11.1",
       "github-pages-health-check" => "1.3.5",
 
@@ -22,11 +22,11 @@ module GitHubPages
       "jekyll-redirect-from"   => "0.12.1",
       "jekyll-sitemap"         => "1.0.0",
       "jekyll-feed"            => "0.9.2",
-      "jekyll-gist"            => "1.4.0",
+      "jekyll-gist"            => "1.4.1",
       "jekyll-paginate"        => "1.1.0",
       "jekyll-coffeescript"    => "1.0.1",
-      "jekyll-seo-tag"         => "2.2.3",
-      "jekyll-github-metadata" => "2.5.1",
+      "jekyll-seo-tag"         => "2.3.0",
+      "jekyll-github-metadata" => "2.9.1",
       "jekyll-avatar"          => "0.4.2",
 
       # Plugins to match GitHub.com Markdown
@@ -36,7 +36,7 @@ module GitHubPages
       "jekyll-optional-front-matter" => "0.2.0",
       "jekyll-readme-index"          => "0.1.0",
       "jekyll-default-layout"        => "0.1.4",
-      "jekyll-titles-from-headings"  => "0.2.0",
+      "jekyll-titles-from-headings"  => "0.4.0",
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
