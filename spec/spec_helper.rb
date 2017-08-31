@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require File.expand_path("../../lib/github-pages.rb", __FILE__)
+require "open3"
 
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
@@ -14,9 +15,13 @@ RSpec.configure do |config|
 end
 
 def fixture_dir
-  File.expand_path "./fixtures", File.dirname(__FILE__)
+  File.expand_path "./fixtures", __dir__
 end
 
 def tmp_dir
-  File.expand_path "./test-site", File.dirname(__FILE__)
+  File.expand_path "../tmp", __dir__
+end
+
+RSpec::Matchers.define :be_an_existing_file do
+  match { |path| File.exist?(path) }
 end

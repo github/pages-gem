@@ -1,0 +1,6 @@
+---
+---
+
+```ruby
+puts "hello world"
+```
