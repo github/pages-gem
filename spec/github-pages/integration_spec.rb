@@ -26,8 +26,8 @@ RSpec.describe "Pages Gem Integration spec" do
   let(:path) { destination_file file }
   let(:contents) { File.read path }
 
-  before(:all) { FileUtils.rm_rf(destination) }
   before(:all) do
+    FileUtils.rm_rf(destination)
     Dir.chdir(source) do
       run_or_raise env, %w(bundle install)
       cmd = %w(bundle exec jekyll build --verbose)
