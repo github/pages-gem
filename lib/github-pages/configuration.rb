@@ -137,19 +137,7 @@ module GitHubPages
       # Set the site's configuration with all the proper defaults and overrides.
       # Should be called by #set to protect against multiple processings.
       def set!(site)
-        config = effective_config(site.config)
-
-        # Assign everything to the site
-        site.instance_variable_set :@config, config
-
-        # Ensure all
-        CONFIGS_WITH_METHODS.each do |opt|
-          site.public_send("#{opt}=", site.config[opt])
-        end
-
-        # While Configuration renamed the gems key to plugins, Site retained
-        # backwards compatability and must be set manually
-        site.gems = site.config["plugins"]
+        site.config = effective_config(site.config)
       end
     end
   end
