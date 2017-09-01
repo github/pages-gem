@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require File.expand_path("../../lib/github-pages.rb", __FILE__)
+require File.expand_path("../lib/github-pages.rb", __dir__)
 require "open3"
 
 RSpec.configure do |config|
