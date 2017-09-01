@@ -14,7 +14,10 @@ RSpec.describe "Pages Gem Integration spec" do
   end
 
   def env
-    { "BUNDLE_GEMFILE" => "#{source}/Gemfile" }
+    {
+      "BUNDLE_GEMFILE" => "#{source}/Gemfile",
+      "JEKYLL_ENV"     => "development",
+    }
   end
 
   def run_or_raise(env, *cmd)
@@ -57,7 +60,7 @@ RSpec.describe "Pages Gem Integration spec" do
 
     it "Renders SCSS" do
       expect(path).to be_an_existing_file
-      expect(contents).to match("body{color:#333}")
+      expect(contents).to match("body { color: #333; }")
     end
   end
 
