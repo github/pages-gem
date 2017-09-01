@@ -15,7 +15,7 @@ RSpec.configure do |config|
 end
 
 def fixture_dir
-  File.expand_path "./fixtures", __dir__
+  File.expand_path "fixtures", __dir__
 end
 
 def tmp_dir
