@@ -57,7 +57,7 @@ RSpec.describe "Pages Gem Integration spec" do
 
     it "Renders SCSS" do
       expect(path).to be_an_existing_file
-      expect(contents).to match("body { color: #333; }")
+      expect(contents).to match("body{color:#333}")
     end
   end
 
@@ -149,7 +149,7 @@ RSpec.describe "Pages Gem Integration spec" do
 
   context "jekyll-seo-tag" do
     it "outputs the tag" do
-      expect(contents).to match("<title>Jekyll SEO Tag | pages-gem</title>")
+      expect(contents).to match("<title>Jekyll SEO Tag")
     end
   end
 
