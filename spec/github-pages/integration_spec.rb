@@ -20,11 +20,6 @@ RSpec.describe "Pages Gem Integration spec" do
     }
   end
 
-  def run_or_raise(env, *cmd)
-    stdout_and_stderr_str, status = Open3.capture2e env, *cmd
-    raise StandardError, stdout_and_stderr_str if status.exitstatus != 0
-  end
-
   let(:file) { "#{self.class.description}.html" }
   let(:path) { destination_file file }
   let(:contents) { File.read path }
@@ -32,10 +27,12 @@ RSpec.describe "Pages Gem Integration spec" do
   before(:all) do
     FileUtils.rm_rf(destination)
     Dir.chdir(source) do
-      run_or_raise env, %w(bundle install)
+      bundle_output, status = Open3.capture2e env, %w(bundle install)
+      raise StandardError, stdout_and_stderr_str if status.exitstatus != 0
       cmd = %w(bundle exec jekyll build --verbose)
       cmd = cmd.concat ["--source", source, "--destination", destination]
-      run_or_raise env, *cmd
+      build_output, status = Open3.capture2e env, *cmd
+      raise StandardError, bundle_output + build_output if status.exitstatus != 0
     end
   end
   after(:all) { FileUtils.rm_rf(destination) }
