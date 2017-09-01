@@ -58,6 +58,12 @@ describe(GitHubPages::Configuration) do
       expect(effective_config["testing"]).to eql("123")
     end
 
+    it "sets the theme" do
+      expect(site.theme).to_not be_nil
+      expect(site.theme).to be_a(Jekyll::Theme)
+      expect(site.theme.name).to eql("jekyll-theme-primer")
+    end
+
     context "in development" do
       before { ENV["JEKYLL_ENV"] = "development" }
 

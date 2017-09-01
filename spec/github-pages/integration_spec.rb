@@ -212,4 +212,14 @@ RSpec.describe "Pages Gem Integration spec" do
       expect(contents).to match("README")
     end
   end
+
+  context "jekyll-theme-primer" do
+    it "sets the theme" do
+      expect(contents).to match("Theme: jekyll-theme-primer")
+    end
+
+    it "uses the theme" do
+      expect(contents).to match('<div class="container-lg px-3 my-5 markdown-body">')
+    end
+  end
 end
