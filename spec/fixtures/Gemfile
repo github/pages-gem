@@ -3,3 +3,4 @@
 source "https://rubygems.org"
 
 gem "github-pages", :group => :jekyll_plugins, :path => "../../"
+gem "jekyll_test_plugin_malicious"

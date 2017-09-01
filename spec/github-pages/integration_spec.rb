@@ -28,7 +28,7 @@ RSpec.describe "Pages Gem Integration spec" do
     FileUtils.rm_rf(destination)
     Dir.chdir(source) do
       bundle_output, status = Open3.capture2e env, %w(bundle install)
-      raise StandardError, stdout_and_stderr_str if status.exitstatus != 0
+      raise StandardError, bundle_output if status.exitstatus != 0
       cmd = %w(bundle exec jekyll build --verbose)
       cmd = cmd.concat ["--source", source, "--destination", destination]
       build_output, status = Open3.capture2e env, *cmd
