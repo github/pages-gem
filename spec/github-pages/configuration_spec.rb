@@ -58,10 +58,27 @@ describe(GitHubPages::Configuration) do
       expect(effective_config["testing"]).to eql("123")
     end
 
-    it "sets the theme" do
-      expect(site.theme).to_not be_nil
-      expect(site.theme).to be_a(Jekyll::Theme)
-      expect(site.theme.name).to eql("jekyll-theme-primer")
+    context "themes" do
+      context "with no theme set" do
+        it "sets the theme" do
+          expect(site.theme).to_not be_nil
+          expect(site.theme).to be_a(Jekyll::Theme)
+          expect(site.theme.name).to eql("jekyll-theme-primer")
+        end
+      end
+
+      context "with a user-specified theme" do
+        let(:site) do
+          config = configuration.merge("theme" => "jekyll-theme-merlot")
+          Jekyll::Site.new(config)
+        end
+
+        it "respects the theme" do
+          expect(site.theme).to_not be_nil
+          expect(site.theme).to be_a(Jekyll::Theme)
+          expect(site.theme.name).to eql("jekyll-theme-merlot")
+        end
+      end
     end
 
     context "in development" do
