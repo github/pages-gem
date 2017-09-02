@@ -40,7 +40,7 @@ Provided that Docker is installed, one may avoid the setup of additional tools w
   source $PATH_TO_THIS_DIRECTORY/func.sh
   ```
 
-to the scripts that load on initiation of a terminal session (usually `~/.bashrc` on bash or `~/.zshrc on zsh).:
+to the scripts that load on initiation of a terminal session (usually `~/.bashrc` on bash or `~/.zshrc` on zsh).:
 
 >  Running of `github-pages` inside a directory of a Jekyll site spawns a [server on port 4000](http://localhost:4000). One may explicitly provide a path to a Jekyll site and a port by running `github-pages $PATH $PORT`. This approach is provided as a user-friendlier alternative to the `make server` or `docker run` invocations mentioned as the first options in step 2.
 
