@@ -34,17 +34,17 @@ Provided that Docker is installed, one may avoid the setup of additional tools w
   - `github-pages $PATH_TO_YOUR_PROJECT` from any directory when [func.sh](func.sh) has been sourced into your terminal session or
   - `github-pages` from the directory of the Jekyll site to be previewed when [func.sh](func.sh) has been sourced into your terminal session.
 
-**Note:** one may alternatively set up a function in the shell by sourcing func.sh by appending
+**Note:** the `github-pages` function may be enabled by sourcing func.sh. This can be done by appending
 
   ```bash
   source $PATH_TO_THIS_DIRECTORY/func.sh
   ```
 
-to the scripts that loads on initiation of a terminal session (usually `~/.bashrc` on bash or `~/.zshrc on zsh).:
+to the scripts that load on initiation of a terminal session (usually `~/.bashrc` on bash or `~/.zshrc on zsh).:
 
-Running of `github-pages` inside a directory of a Jekyll site spawns a [server on port 4000](http://localhost:4000). One may explicitly provide a path to a Jekyll site and a port by running `github-pages $PATH $PORT`. This approach is provided as a user-friendlier alternative to the `make server` or `docker run` invocations mentioned as the first options in step 2.
+>  Running of `github-pages` inside a directory of a Jekyll site spawns a [server on port 4000](http://localhost:4000). One may explicitly provide a path to a Jekyll site and a port by running `github-pages $PATH $PORT`. This approach is provided as a user-friendlier alternative to the `make server` or `docker run` invocations mentioned as the first options in step 2.
 
-The ordering of the arguments for the `github-pages` function is based on the assumption that it is more likely to need to specify a custom path rather than a custom port.
+> The ordering of the arguments for the `github-pages` function is based on the assumption that it is more likely to need to specify a custom path rather than a custom port.
 
 ### Command line usage
 
