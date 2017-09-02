@@ -31,8 +31,8 @@ Provided that Docker is installed, one may avoid the setup of additional tools w
 2. Start an instance of the server by running either:
   - `SITE=PATH_TO_YOUR_PROJECT make server` from the root of the `gh-pages` repository (where the Makefile resides) or
   - ``SITE=PATH_TO_YOUR_PROJECT docker run --rm -p 4000:4000 -v `realpath ${SITE}`:/site gh-pages`` from any directory or
-  - `github-pages $PATH_TO_YOUR_PROJECT` from any directory when the function has been sourced into your terminal session or
-  - `github-pages` from the directory of the Jekyll site to be previewed when the function has been sourced into your terminal session.
+  - `github-pages $PATH_TO_YOUR_PROJECT` from any directory when [func.sh](func.sh) has been sourced into your terminal session or
+  - `github-pages` from the directory of the Jekyll site to be previewed when [func.sh](func.sh) has been sourced into your terminal session.
 
 **Note:** one may alternatively set up a function in the shell by sourcing func.sh by appending
 
