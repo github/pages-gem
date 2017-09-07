@@ -20,14 +20,14 @@ module GitHubPages
 
       # Plugins
       "jekyll-redirect-from"   => "0.12.1",
-      "jekyll-sitemap"         => "1.0.0",
+      "jekyll-sitemap"         => "1.1.1",
       "jekyll-feed"            => "0.9.2",
       "jekyll-gist"            => "1.4.1",
       "jekyll-paginate"        => "1.1.0",
-      "jekyll-coffeescript"    => "1.0.1",
+      "jekyll-coffeescript"    => "1.0.2",
       "jekyll-seo-tag"         => "2.3.0",
-      "jekyll-github-metadata" => "2.9.1",
-      "jekyll-avatar"          => "0.4.2",
+      "jekyll-github-metadata" => "2.9.2",
+      "jekyll-avatar"          => "0.5.0",
 
       # Plugins to match GitHub.com Markdown
       "jemoji"                       => "0.8.0",

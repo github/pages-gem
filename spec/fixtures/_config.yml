@@ -12,3 +12,6 @@ gems:
   - jekyll_test_plugin_malicious
 quiet: false
 paginate: 5
+github:
+  source:
+    branch: gh-pages
