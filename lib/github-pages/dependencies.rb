@@ -32,11 +32,11 @@ module GitHubPages
       # Plugins to match GitHub.com Markdown
       "jemoji"                       => "0.8.0",
       "jekyll-mentions"              => "1.2.0",
-      "jekyll-relative-links"        => "0.4.1",
-      "jekyll-optional-front-matter" => "0.2.0",
-      "jekyll-readme-index"          => "0.1.0",
+      "jekyll-relative-links"        => "0.5.0",
+      "jekyll-optional-front-matter" => "0.3.0",
+      "jekyll-readme-index"          => "0.2.0",
       "jekyll-default-layout"        => "0.1.4",
-      "jekyll-titles-from-headings"  => "0.4.0",
+      "jekyll-titles-from-headings"  => "0.5.0",
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
