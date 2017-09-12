@@ -222,4 +222,12 @@ RSpec.describe "Pages Gem Integration spec" do
       expect(contents).to match('<div class="container-lg px-3 my-5 markdown-body">')
     end
   end
+
+  context "jekyll-octicons" do
+    it "plops in the octicon" do
+      expect(contents).to match('<svg height="32"')
+      expect(contents).to match('class="octicon octicon-alert right left"')
+      expect(contents).to match('aria-label="hi"')
+    end
+  end
 end
