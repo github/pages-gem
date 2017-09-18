@@ -17,6 +17,7 @@ RSpec.describe "Pages Gem Integration spec" do
     {
       "BUNDLE_GEMFILE" => "#{source}/Gemfile",
       "JEKYLL_ENV"     => "development",
+      "DISABLE_WHITELIST" => "", # Do not disable the whitelist.
     }
   end
 
@@ -29,7 +30,7 @@ RSpec.describe "Pages Gem Integration spec" do
     Dir.chdir(source) do
       bundle_output, status = Open3.capture2e env, %w(bundle install)
       raise StandardError, bundle_output if status.exitstatus != 0
-      cmd = %w(bundle exec jekyll build --verbose)
+      cmd = %w(bundle exec jekyll build --verbose --trace)
       cmd = cmd.concat ["--source", source, "--destination", destination]
       build_output, status = Open3.capture2e env, *cmd
       raise StandardError, bundle_output + build_output if status.exitstatus != 0
@@ -220,6 +221,14 @@ RSpec.describe "Pages Gem Integration spec" do
 
     it "uses the theme" do
       expect(contents).to match('<div class="container-lg px-3 my-5 markdown-body">')
+    end
+  end
+
+  context "jekyll-octicons" do
+    it "plops in the octicon" do
+      expect(contents).to match('<svg height="32"')
+      expect(contents).to match('class="octicon octicon-alert right left"')
+      expect(contents).to match('aria-label="hi"')
     end
   end
 end
