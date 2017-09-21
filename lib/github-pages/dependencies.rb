@@ -30,7 +30,7 @@ module GitHubPages
       "jekyll-avatar"          => "0.5.0",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji"                       => "0.8.0",
+      "jemoji"                       => "0.8.1",
       "jekyll-mentions"              => "1.2.0",
       "jekyll-relative-links"        => "0.4.1",
       "jekyll-optional-front-matter" => "0.2.0",
