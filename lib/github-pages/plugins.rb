@@ -35,6 +35,7 @@ module GitHubPages
       jekyll-default-layout
       jekyll-titles-from-headings
       jekyll-include-cache
+      jekyll-octicons
     ).freeze
 
     # Plugins only allowed locally
@@ -46,7 +47,7 @@ module GitHubPages
     THEMES = {
       "minima"                     => "2.1.1",
       "jekyll-swiss"               => "0.4.0",
-      "jekyll-theme-primer"        => "0.5.0",
+      "jekyll-theme-primer"        => "0.5.2",
       "jekyll-theme-architect"     => "0.1.0",
       "jekyll-theme-cayman"        => "0.1.0",
       "jekyll-theme-dinky"         => "0.1.0",
