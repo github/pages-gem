@@ -4,6 +4,7 @@ gems:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-feed
+  - jekyll-octicons
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-avatar
