@@ -30,9 +30,9 @@ module GitHubPages
       "jekyll-avatar"          => "0.5.0",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji"                       => "0.8.0",
+      "jemoji"                       => "0.8.1",
       "jekyll-mentions"              => "1.2.0",
-      "jekyll-relative-links"        => "0.4.1",
+      "jekyll-relative-links"        => "0.5.0",
       "jekyll-optional-front-matter" => "0.2.0",
       "jekyll-readme-index"          => "0.1.0",
       "jekyll-default-layout"        => "0.1.4",
@@ -43,7 +43,7 @@ module GitHubPages
       "listen"                    => "3.0.6",
 
       # Pin activesupport because 5.0 is broken on 2.1
-      "activesupport"             => "4.2.8",
+      "activesupport"             => "4.2.9",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
