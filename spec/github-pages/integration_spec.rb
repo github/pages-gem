@@ -77,7 +77,8 @@ RSpec.describe "Pages Gem Integration spec" do
   context "rouge" do
     it "syntax highlights" do
       expected = '<div class="language-ruby highlighter-rouge">'.dup
-      expected << '<pre class="highlight"><code><span class="nb">'
+      expected << '<div class="highlight"><pre class="highlight">'
+      expected << '<code><span class="nb">'
       expected << 'puts</span> <span class="s2">"hello world"'
       expect(contents).to match(expected)
     end
