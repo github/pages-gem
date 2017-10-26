@@ -7,15 +7,15 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.5.2",
+      "jekyll"                    => "3.6.2",
       "jekyll-sass-converter"     => "1.5.0",
 
       # Converters
-      "kramdown"                  => "1.13.2",
+      "kramdown"                  => "1.14.0",
 
       # Misc
       "liquid"                    => "4.0.0",
-      "rouge"                     => "1.11.1",
+      "rouge"                     => "2.2.1",
       "github-pages-health-check" => "1.3.5",
 
       # Plugins
