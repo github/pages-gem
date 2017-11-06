@@ -36,6 +36,7 @@ module GitHubPages
       jekyll-titles-from-headings
       jekyll-include-cache
       jekyll-octicons
+      jekyll-remote-theme
     ).freeze
 
     # Plugins only allowed locally
