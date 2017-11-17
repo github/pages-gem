@@ -103,6 +103,10 @@ module GitHubPages
         # Merge overwrites into user config
         config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
 
+        if !%w(kramdown commonmarkghpages).include?(config["markdown"].to_s.downcase)
+          config["markdown"] = "kramdown"
+        end
+
         # Ensure we have those gems we want.
         config["plugins"] = Array(config["plugins"]) | DEFAULT_PLUGINS
 
