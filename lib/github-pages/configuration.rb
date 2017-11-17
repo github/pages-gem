@@ -17,6 +17,7 @@ module GitHubPages
       "plugins"  => GitHubPages::Plugins::DEFAULT_PLUGINS,
       "future"   => true,
       "theme"    => "jekyll-theme-primer",
+      "markdown" => "kramdown",
       "kramdown" => {
         "input"     => "GFM",
         "hard_wrap" => false,
@@ -47,7 +48,6 @@ module GitHubPages
       "plugins_dir" => SecureRandom.hex,
       "whitelist"   => GitHubPages::Plugins::PLUGIN_WHITELIST,
       "highlighter" => "rouge",
-      "markdown"    => "kramdown",
       "kramdown"    => {
         "template"           => "",
         "math_engine"        => "mathjax",
