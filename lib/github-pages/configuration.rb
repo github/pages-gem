@@ -17,6 +17,7 @@ module GitHubPages
       "plugins"  => GitHubPages::Plugins::DEFAULT_PLUGINS,
       "future"   => true,
       "theme"    => "jekyll-theme-primer",
+      "markdown" => "kramdown",
       "kramdown" => {
         "input"     => "GFM",
         "hard_wrap" => false,
@@ -47,7 +48,6 @@ module GitHubPages
       "plugins_dir" => SecureRandom.hex,
       "whitelist"   => GitHubPages::Plugins::PLUGIN_WHITELIST,
       "highlighter" => "rouge",
-      "markdown"    => "kramdown",
       "kramdown"    => {
         "template"           => "",
         "math_engine"        => "mathjax",
@@ -103,6 +103,8 @@ module GitHubPages
         # Merge overwrites into user config
         config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
 
+        restrict_markdown_processor(config)
+
         # Ensure we have those gems we want.
         config["plugins"] = Array(config["plugins"]) | DEFAULT_PLUGINS
 
@@ -115,6 +117,13 @@ module GitHubPages
         end
 
         config
+      end
+
+      # Ensure we're using Kramdown or CommonMarkGhPages.  Force to Kramdown if
+      # neither of these.
+      def restrict_markdown_processor(config)
+        config["markdown"] = "kramdown" unless \
+          %w(kramdown commonmarkghpages).include?(config["markdown"].to_s.downcase)
       end
 
       # Set the site's configuration. Implemented as an `after_reset` hook.
