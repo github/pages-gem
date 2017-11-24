@@ -119,11 +119,11 @@ module GitHubPages
         config
       end
 
-      # Ensure we're using Kramdown or CommonMarkGhPages.  Force to Kramdown if
+      # Ensure we're using Kramdown or GFM.  Force to Kramdown if
       # neither of these.
       def restrict_markdown_processor(config)
         config["markdown"] = "kramdown" unless \
-          %w(kramdown commonmarkghpages).include?(config["markdown"].to_s.downcase)
+          %w(kramdown gfm).include?(config["markdown"].to_s.downcase)
       end
 
       # Set the site's configuration. Implemented as an `after_reset` hook.

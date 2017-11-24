@@ -65,14 +65,14 @@ describe(GitHubPages::Configuration) do
         end
       end
 
-      context "with CommonMarkGhPages set" do
+      context "with GFM set" do
         let(:site) do
-          config = configuration.merge("markdown" => "CommonMarkGhPages")
+          config = configuration.merge("markdown" => "GFM")
           Jekyll::Site.new(config)
         end
 
         it "keeps the setting" do
-          expect(effective_config["markdown"]).to eql("CommonMarkGhPages")
+          expect(effective_config["markdown"]).to eql("GFM")
         end
       end
 
