@@ -4,6 +4,7 @@ gems:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-feed
+  - jekyll-octicons
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-avatar
@@ -12,3 +13,6 @@ gems:
   - jekyll_test_plugin_malicious
 quiet: false
 paginate: 5
+github:
+  source:
+    branch: gh-pages

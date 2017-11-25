@@ -7,7 +7,7 @@
 
 - [ ] useful for a vast majority of users
 - [ ] available as a gem
-- [ ] covererd with a test suite
+- [ ] covered with a test suite
 - [ ] actively maintained
 
 ### This issue affects
