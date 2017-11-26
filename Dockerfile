@@ -11,6 +11,6 @@ RUN \
   bundle config local.github-pages /src/gh/pages-gem && \
   bundle install --gemfile=/src/gh/pages-gem/Gemfile
 
-WORKDIR /site
+WORKDIR /src/site
 
 CMD ["jekyll", "serve", "-H", "0.0.0.0", "-P", "4000"]

@@ -23,8 +23,8 @@ server:
 	${DOCKER} run --rm -it \
 		-p 4000:4000 \
 		-v ${PWD}:/src/gh/pages-gem \
-		-v `realpath ${SITE}`:/site \
-		-w /site \
+		-v `realpath ${SITE}`:/src/site \
+		-w /src/site \
 		${TAG}
 
 .PHONY:
