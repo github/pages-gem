@@ -10,7 +10,7 @@ image:
 shell:
 	${DOCKER} run --rm -it \
 		-p 4000:4000 \
-		-v ${PWD}:/gh-pages \
+		-v ${PWD}:/src/gh/pages-gem \
 		${TAG} \
 		/bin/bash
 
@@ -21,7 +21,7 @@ server:
 	ls "${SITE}" >/dev/null && \
 	${DOCKER} run --rm -it \
 		-p 4000:4000 \
-		-v ${PWD}:/gh-pages \
+		-v ${PWD}:/src/gh/pages-gem \
 		-v `realpath ${SITE}`:/site \
 		-w /site \
 		${TAG}

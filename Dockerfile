@@ -5,11 +5,11 @@ RUN apt-get update \
     git \
     make
 
-COPY . /gh-pages
-WORKDIR /gh-pages
+COPY . /src/gh/pages-gem
 
-RUN bundle config local.github-pages /gh-pages
-RUN bundle install
+RUN \
+  bundle config local.github-pages /src/gh/pages-gem && \
+  bundle install --gemfile=/src/gh/pages-gem/Gemfile
 
 WORKDIR /site
 
