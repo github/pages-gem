@@ -18,7 +18,8 @@ shell:
 # exposing it using `expose SITE="../path-to-jekyll-site"` prior to calling or
 # by prepending it to the make rule e.g.: `SITE=../path-to-site make server`
 server:
-	ls "${SITE}" >/dev/null && \
+	test -d "${SITE}" || \
+		(echo -E "specify SITE e.g.: SITE=/path/to/site make server"; exit 1) && \
 	${DOCKER} run --rm -it \
 		-p 4000:4000 \
 		-v ${PWD}:/src/gh/pages-gem \
