@@ -31,13 +31,13 @@ Provided that Docker is installed, one may avoid the setup of additional tools w
 2. Start an instance of the server by running either:
   - `SITE=PATH_TO_YOUR_PROJECT make server` from the root of the `gh-pages` repository (where the Makefile resides) or
   - ``SITE=PATH_TO_YOUR_PROJECT docker run --rm -p 4000:4000 -v `realpath ${SITE}`:/src/site gh-pages`` from any directory or
-  - `github-pages $PATH_TO_YOUR_PROJECT` from any directory when [func.sh](func.sh) has been sourced into your terminal session or
-  - `github-pages` from the directory of the Jekyll site to be previewed when [func.sh](func.sh) has been sourced into your terminal session.
+  - `github-pages $PATH_TO_YOUR_PROJECT` from any directory when [func.sh](contrib/func.sh) has been sourced into your terminal session or
+  - `github-pages` from the directory of the Jekyll site to be previewed when [func.sh](contrib/func.sh) has been sourced into your terminal session.
 
 **Note:** the `github-pages` function may be enabled by sourcing func.sh. This can be done by appending
 
   ```bash
-  source $PATH_TO_THIS_DIRECTORY/func.sh
+  source $PATH_TO_THIS_DIRECTORY/contrib/func.sh
   ```
 
 to the scripts that load on initiation of a terminal session (usually `~/.bashrc` on bash or `~/.zshrc` on zsh).:
