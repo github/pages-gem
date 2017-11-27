@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 # The github-pages function optionally takes two arguments
 #  - the first argument is the path to the Jekyll site
 #  - the second argument is the port number
