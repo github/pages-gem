@@ -5,5 +5,9 @@
 function github-pages {
   _path=${1:-.}
   _port=${2:-4000}
-  docker run --rm -v `realpath $_path`:/src/site -p $_port:4000 gh-pages
+  docker run --rm \
+    -p $_port:4000 \
+    -u `id -u`:`id -g` \
+    -v `realpath $_path`:/src/site \
+    gh-pages
 }
