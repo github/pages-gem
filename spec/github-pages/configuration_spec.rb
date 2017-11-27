@@ -58,6 +58,36 @@ describe(GitHubPages::Configuration) do
       expect(effective_config["testing"]).to eql("123")
     end
 
+    context "markdown processor" do
+      context "with no markdown processor set" do
+        it "defaults to kramdown" do
+          expect(effective_config["markdown"]).to eql("kramdown")
+        end
+      end
+
+      context "with GFM set" do
+        let(:site) do
+          config = configuration.merge("markdown" => "GFM")
+          Jekyll::Site.new(config)
+        end
+
+        it "keeps the setting" do
+          expect(effective_config["markdown"]).to eql("GFM")
+        end
+      end
+
+      context "with some other processor set" do
+        let(:site) do
+          config = configuration.merge("markdown" => "whatever")
+          Jekyll::Site.new(config)
+        end
+
+        it "overrides to kramdown" do
+          expect(effective_config["markdown"]).to eql("kramdown")
+        end
+      end
+    end
+
     context "themes" do
       context "with no theme set" do
         it "sets the theme" do
