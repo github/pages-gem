@@ -165,6 +165,10 @@ RSpec.describe "Pages Gem Integration spec" do
       end
     end
 
+    context "jekyll-commonmark-ghpages" do
+      # noop: this is tested by other things
+    end
+
     context "jekyll-seo-tag" do
       it "outputs the tag" do
         expect(contents).to match("<title>Jekyll SEO Tag")

@@ -121,17 +121,20 @@ module GitHubPages
 
       # Ensure we're using Kramdown or GFM.  Force to Kramdown if
       # neither of these.
+      #
+      # This can get called multiply on the same config, so try to
+      # be idempotentish.
       def restrict_and_config_markdown_processor(config)
         config["markdown"] = "kramdown" unless \
-          %w(kramdown gfm).include?(config["markdown"].to_s.downcase)
+          %w(kramdown gfm commonmarkghpages).include?(config["markdown"].to_s.downcase)
 
-        if config["markdown"].to_s.casecmp("gfm").zero?
-          config["markdown"] = "CommonMarkGhPages"
-          config["commonmark"] = {
-            "extensions" => %w(table strikethrough autolink tagfilter),
-            "options" => %w(footnotes),
-          }
-        end
+        return unless config["markdown"].to_s.casecmp("gfm").zero?
+
+        config["markdown"] = "CommonMarkGhPages"
+        config["commonmark"] = {
+          "extensions" => %w(table strikethrough autolink tagfilter),
+          "options" => %w(footnotes),
+        }
       end
 
       # Set the site's configuration. Implemented as an `after_reset` hook.
