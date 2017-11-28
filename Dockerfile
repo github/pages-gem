@@ -4,7 +4,8 @@ RUN apt-get update \
   && apt-get install -y \
     git \
     locales \
-    make
+    make \
+    nodejs
 
 COPY . /src/gh/pages-gem
 
