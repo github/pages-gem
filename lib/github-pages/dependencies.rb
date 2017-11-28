@@ -28,6 +28,7 @@ module GitHubPages
       "jekyll-seo-tag"         => "2.3.0",
       "jekyll-github-metadata" => "2.9.3",
       "jekyll-avatar"          => "0.5.0",
+      "jekyll-remote-theme"    => "0.2.3",
 
       # Plugins to match GitHub.com Markdown
       "jemoji"                       => "0.8.1",
