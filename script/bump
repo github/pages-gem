@@ -1,10 +1,5 @@
 #!/bin/bash -ex
 
-(git branch | grep -q '* master') || {
-  echo "Only release from the master branch."
-  exit 1
-}
-
 VERSION_FILE="./lib/github-pages/version.rb"
 OLD_VERSION=$(curl "https://rubygems.org/api/v1/versions/github-pages/latest.json" | jq -r .version)
 NEW_VERSION=$(expr $OLD_VERSION + 1)
