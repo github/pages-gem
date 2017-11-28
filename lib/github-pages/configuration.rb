@@ -103,7 +103,7 @@ module GitHubPages
         # Merge overwrites into user config
         config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
 
-        restrict_markdown_processor(config)
+        restrict_and_config_markdown_processor(config)
 
         # Ensure we have those gems we want.
         config["plugins"] = Array(config["plugins"]) | DEFAULT_PLUGINS
@@ -121,9 +121,17 @@ module GitHubPages
 
       # Ensure we're using Kramdown or GFM.  Force to Kramdown if
       # neither of these.
-      def restrict_markdown_processor(config)
+      def restrict_and_config_markdown_processor(config)
         config["markdown"] = "kramdown" unless \
           %w(kramdown gfm).include?(config["markdown"].to_s.downcase)
+
+        if config["markdown"].to_s.casecmp("gfm").zero?
+          config["markdown"] = "CommonMarkGhPages"
+          config["commonmark"] = {
+            "extensions" => %w(table strikethrough autolink tagfilter),
+            "options" => %w(footnotes),
+          }
+        end
       end
 
       # Set the site's configuration. Implemented as an `after_reset` hook.
