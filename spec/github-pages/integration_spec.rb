@@ -165,10 +165,6 @@ RSpec.describe "Pages Gem Integration spec" do
       end
     end
 
-    context "jekyll-commonmark-ghpages" do
-      # noop: this is tested by other things
-    end
-
     context "jekyll-seo-tag" do
       it "outputs the tag" do
         expect(contents).to match("<title>Jekyll SEO Tag")
@@ -267,6 +263,18 @@ RSpec.describe "Pages Gem Integration spec" do
         expect(contents).to match("theme: cayman")
         expect(contents).to match('<h1 class="project-name">pages-gem</h1>')
       end
+    end
+  end
+
+  context "jekyll-commonmark-ghpages" do
+    before(:all) do
+      rm_destination
+      bundle_install
+      build(["--config", "_config_with_gfm.yml"])
+    end
+
+    it "builds with GFM" do
+      expect(contents).to match("markdown: CommonMarkGhPages")
     end
   end
 end
