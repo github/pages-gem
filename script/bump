@@ -1,4 +1,11 @@
-#!/bin/bash -ex
+#!/bin/bash
+
+set -e
+
+(git symbolic-ref HEAD | grep -q 'refs/heads/master') || {
+  echo "Only release from the master branch."
+  exit 1
+}
 
 VERSION_FILE="./lib/github-pages/version.rb"
 OLD_VERSION=$(curl "https://rubygems.org/api/v1/versions/github-pages/latest.json" | jq -r .version)
