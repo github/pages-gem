@@ -265,4 +265,16 @@ RSpec.describe "Pages Gem Integration spec" do
       end
     end
   end
+
+  context "jekyll-commonmark-ghpages" do
+    before(:all) do
+      rm_destination
+      bundle_install
+      build(["--config", "_config_with_gfm.yml"])
+    end
+
+    it "builds with GFM" do
+      expect(contents).to match("markdown: CommonMarkGhPages")
+    end
+  end
 end

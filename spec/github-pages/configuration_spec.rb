@@ -71,8 +71,12 @@ describe(GitHubPages::Configuration) do
           Jekyll::Site.new(config)
         end
 
-        it "keeps the setting" do
-          expect(effective_config["markdown"]).to eql("GFM")
+        it "configures CommonMarkGhPages" do
+          expect(effective_config["markdown"]).to eql("CommonMarkGhPages")
+          expect(effective_config["commonmark"]).to eql(
+            "extensions" => %w(table strikethrough autolink tagfilter),
+            "options" => %w(footnotes)
+          )
         end
       end
 
