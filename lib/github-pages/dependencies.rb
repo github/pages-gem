@@ -18,6 +18,7 @@ module GitHubPages
       "liquid"                    => "4.0.0",
       "rouge"                     => "2.2.1",
       "github-pages-health-check" => "1.3.5",
+      "commonmarker"              => "0.17.7",
 
       # Plugins
       "jekyll-redirect-from"   => "0.12.1",
