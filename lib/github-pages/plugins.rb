@@ -6,6 +6,7 @@ module GitHubPages
     # Plugins which are activated by default
     DEFAULT_PLUGINS = %w(
       jekyll-coffeescript
+      jekyll-commonmark-ghpages
       jekyll-gist
       jekyll-github-metadata
       jekyll-paginate
@@ -14,11 +15,13 @@ module GitHubPages
       jekyll-readme-index
       jekyll-default-layout
       jekyll-titles-from-headings
+      jekyll-remote-theme
     ).freeze
 
     # Plugins allowed by GitHub Pages
     PLUGIN_WHITELIST = %w(
       jekyll-coffeescript
+      jekyll-commonmark-ghpages
       jekyll-feed
       jekyll-gist
       jekyll-github-metadata

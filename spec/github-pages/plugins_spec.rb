@@ -16,7 +16,6 @@ describe(GitHubPages::Plugins) do
       it "versions the #{plugin} plugin" do
         next if plugin == "jekyll-include-cache"
         next if plugin == "jekyll-octicons" # TODO: we should expose the version for these
-        next if plugin == "jekyll-remote-theme"
         expect(GitHubPages::Dependencies::VERSIONS.keys).to include(plugin)
       end
     end

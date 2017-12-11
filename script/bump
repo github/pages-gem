@@ -1,6 +1,8 @@
-#!/bin/bash -ex
+#!/bin/bash
 
-(git branch | grep -q '* master') || {
+set -e
+
+(git symbolic-ref HEAD | grep -q 'refs/heads/master') || {
   echo "Only release from the master branch."
   exit 1
 }

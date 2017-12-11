@@ -12,6 +12,7 @@ module GitHubPages
 
       # Converters
       "kramdown"                  => "1.14.0",
+      "jekyll-commonmark-ghpages" => "0.1.3",
 
       # Misc
       "liquid"                    => "4.0.0",
@@ -28,6 +29,7 @@ module GitHubPages
       "jekyll-seo-tag"         => "2.3.0",
       "jekyll-github-metadata" => "2.9.3",
       "jekyll-avatar"          => "0.5.0",
+      "jekyll-remote-theme"    => "0.2.3",
 
       # Plugins to match GitHub.com Markdown
       "jemoji"                       => "0.8.1",
