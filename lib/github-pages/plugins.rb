@@ -15,7 +15,6 @@ module GitHubPages
       jekyll-readme-index
       jekyll-default-layout
       jekyll-titles-from-headings
-      jekyll-remote-theme
     ).freeze
 
     # Plugins allowed by GitHub Pages
