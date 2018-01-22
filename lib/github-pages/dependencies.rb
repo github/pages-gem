@@ -8,7 +8,7 @@ module GitHubPages
     VERSIONS = {
       # Jekyll
       "jekyll"                    => "3.6.2",
-      "jekyll-sass-converter"     => "1.5.0",
+      "jekyll-sass-converter"     => "1.5.1",
 
       # Converters
       "kramdown"                  => "1.14.0",
@@ -20,19 +20,19 @@ module GitHubPages
       "github-pages-health-check" => "1.3.5",
 
       # Plugins
-      "jekyll-redirect-from"   => "0.12.1",
+      "jekyll-redirect-from"   => "0.13.0",
       "jekyll-sitemap"         => "1.1.1",
       "jekyll-feed"            => "0.9.2",
-      "jekyll-gist"            => "1.4.1",
+      "jekyll-gist"            => "1.5.0",
       "jekyll-paginate"        => "1.1.0",
-      "jekyll-coffeescript"    => "1.0.2",
-      "jekyll-seo-tag"         => "2.3.0",
-      "jekyll-github-metadata" => "2.9.3",
+      "jekyll-coffeescript"    => "1.1.0",
+      "jekyll-seo-tag"         => "2.4.0",
+      "jekyll-github-metadata" => "2.9.4",
       "jekyll-avatar"          => "0.5.0",
       "jekyll-remote-theme"    => "0.2.3",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji"                       => "0.8.1",
+      "jemoji"                       => "0.9.0",
       "jekyll-mentions"              => "1.2.0",
       "jekyll-relative-links"        => "0.5.2",
       "jekyll-optional-front-matter" => "0.3.0",
