@@ -33,7 +33,10 @@ RSpec.describe "Pages Gem Integration spec" do
 
   def bundle_install
     Dir.chdir(source) do
-      bundle_output, status = Open3.capture2e env, %w(bundle install)
+      bundle_output, status = Open3.capture2e env, *%w(gem install bundler)
+      raise StandardError, bundle_output if status.exitstatus != 0
+
+      bundle_output, status = Open3.capture2e env, *%w(bundle install)
       raise StandardError, bundle_output if status.exitstatus != 0
     end
   end
