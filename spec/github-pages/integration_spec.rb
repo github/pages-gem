@@ -13,12 +13,22 @@ RSpec.describe "Pages Gem Integration spec" do
     @destination ||= tmp_dir
   end
 
+  def gemfile
+    "#{source}/Gemfile"
+  end
+
   def env
     {
-      "BUNDLE_GEMFILE" => "#{source}/Gemfile",
+      "BUNDLE_GEMFILE" => gemfile,
       "JEKYLL_ENV"     => "development",
       "DISABLE_WHITELIST" => "", # Do not disable the whitelist.
     }
+  end
+
+  def run_cmd(cmd)
+    output, status = Open3.capture2e env, *cmd
+    raise StandardError, output if status.exitstatus != 0
+    output
   end
 
   def build(additional_flags = nil)
@@ -26,15 +36,15 @@ RSpec.describe "Pages Gem Integration spec" do
       cmd = %w(bundle exec jekyll build --verbose --trace)
       cmd = cmd.concat ["--source", source, "--destination", destination]
       cmd = cmd.concat(additional_flags) if additional_flags
-      build_output, status = Open3.capture2e env, *cmd
-      raise StandardError, build_output if status.exitstatus != 0
+      run_cmd(cmd)
     end
   end
 
   def bundle_install
     Dir.chdir(source) do
-      bundle_output, status = Open3.capture2e env, %w(bundle install)
-      raise StandardError, bundle_output if status.exitstatus != 0
+      File.unlink "#{gemfile}.lock" if File.exist? "#{gemfile}.lock"
+      run_cmd %w(gem install bundler)
+      run_cmd %w(bundle install)
     end
   end
 
