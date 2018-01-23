@@ -119,6 +119,25 @@ module GitHubPages
         config
       end
 
+      # Set the site's configuration. Implemented as an `after_reset` hook.
+      # Equivalent #set! function contains the code of interest. This function
+      # guards against double-processing via the value in #processed.
+      def set(site)
+        return if processed? site
+        debug_print_versions
+        set!(site)
+        processed(site)
+        conditionally_require_plugins(site)
+      end
+
+      # Set the site's configuration with all the proper defaults and overrides.
+      # Should be called by #set to protect against multiple processings.
+      def set!(site)
+        site.config = effective_config(site.config)
+      end
+
+      private
+
       # Ensure we're using Kramdown or GFM.  Force to Kramdown if
       # neither of these.
       #
@@ -137,16 +156,6 @@ module GitHubPages
         }
       end
 
-      # Set the site's configuration. Implemented as an `after_reset` hook.
-      # Equivalent #set! function contains the code of interest. This function
-      # guards against double-processing via the value in #processed.
-      def set(site)
-        return if processed? site
-        debug_print_versions
-        set!(site)
-        processed(site)
-      end
-
       # Print the versions for github-pages and jekyll to the debug
       # stream for debugging purposes. See by running Jekyll with '--verbose'
       def debug_print_versions
@@ -154,10 +163,13 @@ module GitHubPages
         Jekyll.logger.debug "GitHub Pages:", "jekyll v#{Jekyll::VERSION}"
       end
 
-      # Set the site's configuration with all the proper defaults and overrides.
-      # Should be called by #set to protect against multiple processings.
-      def set!(site)
-        site.config = effective_config(site.config)
+      # To minimize erorrs, lazy-load plugins if they're requested by the user
+      def conditionally_require_plugins(site)
+        plugins = []
+        plugins.push "jekyll-remote-theme" if site.config.key? "remote_theme"
+        Jekyll::External.require_with_graceful_fail(
+          plugins.select { |plugin| site.plugin_manager.plugin_allowed?(plugin) }
+        )
       end
     end
   end
