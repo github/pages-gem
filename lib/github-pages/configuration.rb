@@ -108,6 +108,9 @@ module GitHubPages
         # Ensure we have those gems we want.
         config["plugins"] = Array(config["plugins"]) | DEFAULT_PLUGINS
 
+        # To minimize erorrs, lazy-require jekyll-remote-theme if requested by the user
+        config["plugins"].push("jekyll-remote-theme") if config.key? "remote_theme"
+
         if disable_whitelist?
           config["whitelist"] = config["whitelist"] | config["plugins"]
         end
@@ -127,7 +130,6 @@ module GitHubPages
         debug_print_versions
         set!(site)
         processed(site)
-        conditionally_require_plugins(site)
       end
 
       # Set the site's configuration with all the proper defaults and overrides.
@@ -161,15 +163,6 @@ module GitHubPages
       def debug_print_versions
         Jekyll.logger.debug "GitHub Pages:", "github-pages v#{GitHubPages::VERSION}"
         Jekyll.logger.debug "GitHub Pages:", "jekyll v#{Jekyll::VERSION}"
-      end
-
-      # To minimize erorrs, lazy-load plugins if they're requested by the user
-      def conditionally_require_plugins(site)
-        plugins = []
-        plugins.push "jekyll-remote-theme" if site.config.key? "remote_theme"
-        Jekyll::External.require_with_graceful_fail(
-          plugins.select { |plugin| site.plugin_manager.plugin_allowed?(plugin) }
-        )
       end
     end
   end
