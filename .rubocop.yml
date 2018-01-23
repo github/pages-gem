@@ -70,6 +70,7 @@ Metrics/ClassLength:
   Exclude:
     - !ruby/regexp /spec\/.*.rb$/
     - !ruby/regexp /features\/.*.rb$/
+    - lib/github-pages/configuration.rb
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
