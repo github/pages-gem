@@ -12,7 +12,7 @@ module GitHubPages
 
       # Converters
       "kramdown"                  => "1.16.2",
-      "jekyll-commonmark-ghpages" => "0.1.3",
+      "jekyll-commonmark-ghpages" => "0.1.4",
 
       # Misc
       "liquid"                    => "4.0.0",
