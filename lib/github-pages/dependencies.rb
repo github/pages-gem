@@ -7,7 +7,7 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.6.2",
+      "jekyll"                    => "3.7.2",
       "jekyll-sass-converter"     => "1.5.0",
 
       # Converters
@@ -21,7 +21,7 @@ module GitHubPages
 
       # Plugins
       "jekyll-redirect-from"   => "0.12.1",
-      "jekyll-sitemap"         => "1.1.1",
+      "jekyll-sitemap"         => "1.2.0",
       "jekyll-feed"            => "0.9.2",
       "jekyll-gist"            => "1.4.1",
       "jekyll-paginate"        => "1.1.0",
