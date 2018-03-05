@@ -23,6 +23,7 @@ module GitHubPages
         "hard_wrap" => false,
         "gfm_quirks" => "paragraph_end",
       },
+      "exclude" => ["CNAME"],
     }.freeze
 
     # User-overwritable defaults used only in production for practical reasons
@@ -99,6 +100,10 @@ module GitHubPages
         config = Jekyll::Utils.deep_merge_hashes(defaults_for_env, user_config)
           .fix_common_issues
           .add_default_collections
+
+        if config["exclude"].eql? Jekyll::Configuration::DEFAULTS["exclude"]
+          config["exclude"].concat(DEFAULTS["exclude"])
+        end
 
         # Merge overwrites into user config
         config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
