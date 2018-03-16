@@ -8,41 +8,41 @@ module GitHubPages
     VERSIONS = {
       # Jekyll
       "jekyll"                    => "3.6.2",
-      "jekyll-sass-converter"     => "1.5.0",
+      "jekyll-sass-converter"     => "1.5.2",
 
       # Converters
-      "kramdown"                  => "1.14.0",
-      "jekyll-commonmark-ghpages" => "0.1.3",
+      "kramdown"                  => "1.16.2",
+      "jekyll-commonmark-ghpages" => "0.1.5",
 
       # Misc
       "liquid"                    => "4.0.0",
       "rouge"                     => "2.2.1",
-      "github-pages-health-check" => "1.3.5",
+      "github-pages-health-check" => "1.4.0",
 
       # Plugins
-      "jekyll-redirect-from"   => "0.12.1",
-      "jekyll-sitemap"         => "1.1.1",
-      "jekyll-feed"            => "0.9.2",
-      "jekyll-gist"            => "1.4.1",
+      "jekyll-redirect-from"   => "0.13.0",
+      "jekyll-sitemap"         => "1.2.0",
+      "jekyll-feed"            => "0.9.3",
+      "jekyll-gist"            => "1.5.0",
       "jekyll-paginate"        => "1.1.0",
-      "jekyll-coffeescript"    => "1.0.2",
-      "jekyll-seo-tag"         => "2.3.0",
-      "jekyll-github-metadata" => "2.9.3",
+      "jekyll-coffeescript"    => "1.1.1",
+      "jekyll-seo-tag"         => "2.4.0",
+      "jekyll-github-metadata" => "2.9.4",
       "jekyll-avatar"          => "0.5.0",
       "jekyll-remote-theme"    => "0.2.3",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji"                       => "0.8.1",
-      "jekyll-mentions"              => "1.2.0",
-      "jekyll-relative-links"        => "0.5.2",
+      "jemoji"                       => "0.9.0",
+      "jekyll-mentions"              => "1.3.0",
+      "jekyll-relative-links"        => "0.5.3",
       "jekyll-optional-front-matter" => "0.3.0",
       "jekyll-readme-index"          => "0.2.0",
       "jekyll-default-layout"        => "0.1.4",
-      "jekyll-titles-from-headings"  => "0.5.0",
+      "jekyll-titles-from-headings"  => "0.5.1",
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
-      "listen"                    => "3.0.6",
+      "listen"                    => "3.1.5",
 
       # Pin activesupport because 5.0 is broken on 2.1
       "activesupport"             => "4.2.9",

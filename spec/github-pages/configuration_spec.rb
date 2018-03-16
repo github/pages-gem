@@ -58,6 +58,10 @@ describe(GitHubPages::Configuration) do
       expect(effective_config["testing"]).to eql("123")
     end
 
+    it "sets exclude directive" do
+      expect(effective_config["exclude"]).to include("CNAME")
+    end
+
     context "markdown processor" do
       context "with no markdown processor set" do
         it "defaults to kramdown" do
@@ -111,6 +115,26 @@ describe(GitHubPages::Configuration) do
           expect(site.theme).to_not be_nil
           expect(site.theme).to be_a(Jekyll::Theme)
           expect(site.theme.name).to eql("jekyll-theme-merlot")
+        end
+      end
+
+      it "plugins don't include jekyll remote theme" do
+        expect(effective_config["plugins"]).to_not include("jekyll-remote-theme")
+      end
+
+      context "with a remote theme" do
+        let(:test_config) do
+          {
+            "source" => fixture_dir,
+            "quiet" => true,
+            "testing" => "123",
+            "destination" => tmp_dir,
+            "remote_theme" => "foo/bar",
+          }
+        end
+
+        it "plugins include jekyll remote theme" do
+          expect(effective_config["plugins"]).to include("jekyll-remote-theme")
         end
       end
     end

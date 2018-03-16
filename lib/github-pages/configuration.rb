@@ -23,6 +23,7 @@ module GitHubPages
         "hard_wrap" => false,
         "gfm_quirks" => "paragraph_end",
       },
+      "exclude" => ["CNAME"],
     }.freeze
 
     # User-overwritable defaults used only in production for practical reasons
@@ -100,24 +101,35 @@ module GitHubPages
           .fix_common_issues
           .add_default_collections
 
+        exclude_cname(config)
+
         # Merge overwrites into user config
         config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
 
         restrict_and_config_markdown_processor(config)
 
-        # Ensure we have those gems we want.
-        config["plugins"] = Array(config["plugins"]) | DEFAULT_PLUGINS
-
-        if disable_whitelist?
-          config["whitelist"] = config["whitelist"] | config["plugins"]
-        end
-
-        if development?
-          config["whitelist"] = config["whitelist"] | DEVELOPMENT_PLUGINS
-        end
+        configure_plugins(config)
 
         config
       end
+
+      # Set the site's configuration. Implemented as an `after_reset` hook.
+      # Equivalent #set! function contains the code of interest. This function
+      # guards against double-processing via the value in #processed.
+      def set(site)
+        return if processed? site
+        debug_print_versions
+        set!(site)
+        processed(site)
+      end
+
+      # Set the site's configuration with all the proper defaults and overrides.
+      # Should be called by #set to protect against multiple processings.
+      def set!(site)
+        site.config = effective_config(site.config)
+      end
+
+      private
 
       # Ensure we're using Kramdown or GFM.  Force to Kramdown if
       # neither of these.
@@ -137,14 +149,27 @@ module GitHubPages
         }
       end
 
-      # Set the site's configuration. Implemented as an `after_reset` hook.
-      # Equivalent #set! function contains the code of interest. This function
-      # guards against double-processing via the value in #processed.
-      def set(site)
-        return if processed? site
-        debug_print_versions
-        set!(site)
-        processed(site)
+      # If the user's 'exclude' config is the default, also exclude the CNAME
+      def exclude_cname(config)
+        return unless config["exclude"].eql? Jekyll::Configuration::DEFAULTS["exclude"]
+        config["exclude"].concat(DEFAULTS["exclude"])
+      end
+
+      # Requires default plugins and configures whitelist in development
+      def configure_plugins(config)
+        # Ensure we have those gems we want.
+        config["plugins"] = Array(config["plugins"]) | DEFAULT_PLUGINS
+
+        # To minimize erorrs, lazy-require jekyll-remote-theme if requested by the user
+        config["plugins"].push("jekyll-remote-theme") if config.key? "remote_theme"
+
+        return unless development?
+
+        if disable_whitelist?
+          config["whitelist"] = config["whitelist"] | config["plugins"]
+        end
+
+        config["whitelist"] = config["whitelist"] | DEVELOPMENT_PLUGINS
       end
 
       # Print the versions for github-pages and jekyll to the debug
@@ -152,12 +177,6 @@ module GitHubPages
       def debug_print_versions
         Jekyll.logger.debug "GitHub Pages:", "github-pages v#{GitHubPages::VERSION}"
         Jekyll.logger.debug "GitHub Pages:", "jekyll v#{Jekyll::VERSION}"
-      end
-
-      # Set the site's configuration with all the proper defaults and overrides.
-      # Should be called by #set to protect against multiple processings.
-      def set!(site)
-        site.config = effective_config(site.config)
       end
     end
   end
