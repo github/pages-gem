@@ -42,7 +42,7 @@ module GitHubPages
 
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
-      "listen"                    => "3.0.6",
+      "listen"                    => "3.1.5",
 
       # Pin activesupport because 5.0 is broken on 2.1
       "activesupport"             => "4.2.9",
