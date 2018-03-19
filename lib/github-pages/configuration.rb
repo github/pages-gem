@@ -22,6 +22,7 @@ module GitHubPages
         "input"     => "GFM",
         "hard_wrap" => false,
         "gfm_quirks" => "paragraph_end",
+        "math_engine" => "mathjax",
       },
       "exclude" => ["CNAME"],
     }.freeze
@@ -51,7 +52,6 @@ module GitHubPages
       "highlighter" => "rouge",
       "kramdown"    => {
         "template"           => "",
-        "math_engine"        => "mathjax",
         "syntax_highlighter" => "rouge",
       },
       "gist"        => {
