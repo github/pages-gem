@@ -36,6 +36,9 @@ Lint/AmbiguousRegexpLiteral:
   Exclude:
     - 'features/step_definitions/pages_steps.rb'
 
+Style/ModuleFunction:
+  Enabled: false
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
   Severity: error

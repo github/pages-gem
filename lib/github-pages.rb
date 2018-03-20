@@ -9,6 +9,7 @@ module GitHubPages
   autoload :Configuration, "github-pages/configuration"
   autoload :Dependencies,  "github-pages/dependencies"
   autoload :VERSION,       "github-pages/version"
+  autoload :VersionCheck,  "github-pages/version_check"
 
   def self.versions
     Dependencies.versions
@@ -17,4 +18,8 @@ end
 
 Jekyll::Hooks.register :site, :after_reset do |site|
   GitHubPages::Configuration.set(site)
+end
+
+Jekyll::Hooks.register :site, :after_init do
+  GitHubPages::VersionCheck.run!
 end
