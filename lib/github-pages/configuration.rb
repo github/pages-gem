@@ -23,6 +23,7 @@ module GitHubPages
         "hard_wrap" => false,
         "gfm_quirks" => "paragraph_end",
       },
+      "exclude" => ["CNAME"],
     }.freeze
 
     # User-overwritable defaults used only in production for practical reasons
@@ -100,24 +101,14 @@ module GitHubPages
           .fix_common_issues
           .add_default_collections
 
+        exclude_cname(config)
+
         # Merge overwrites into user config
         config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
 
         restrict_and_config_markdown_processor(config)
 
-        # Ensure we have those gems we want.
-        config["plugins"] = Array(config["plugins"]) | DEFAULT_PLUGINS
-
-        # To minimize erorrs, lazy-require jekyll-remote-theme if requested by the user
-        config["plugins"].push("jekyll-remote-theme") if config.key? "remote_theme"
-
-        if disable_whitelist?
-          config["whitelist"] = config["whitelist"] | config["plugins"]
-        end
-
-        if development?
-          config["whitelist"] = config["whitelist"] | DEVELOPMENT_PLUGINS
-        end
+        configure_plugins(config)
 
         config
       end
@@ -156,6 +147,29 @@ module GitHubPages
           "extensions" => %w(table strikethrough autolink tagfilter),
           "options" => %w(footnotes),
         }
+      end
+
+      # If the user's 'exclude' config is the default, also exclude the CNAME
+      def exclude_cname(config)
+        return unless config["exclude"].eql? Jekyll::Configuration::DEFAULTS["exclude"]
+        config["exclude"].concat(DEFAULTS["exclude"])
+      end
+
+      # Requires default plugins and configures whitelist in development
+      def configure_plugins(config)
+        # Ensure we have those gems we want.
+        config["plugins"] = Array(config["plugins"]) | DEFAULT_PLUGINS
+
+        # To minimize erorrs, lazy-require jekyll-remote-theme if requested by the user
+        config["plugins"].push("jekyll-remote-theme") if config.key? "remote_theme"
+
+        return unless development?
+
+        if disable_whitelist?
+          config["whitelist"] = config["whitelist"] | config["plugins"]
+        end
+
+        config["whitelist"] = config["whitelist"] | DEVELOPMENT_PLUGINS
       end
 
       # Print the versions for github-pages and jekyll to the debug

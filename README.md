@@ -7,6 +7,10 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
 
 ## Usage
 
+One may opt for the conventional approach of using the pages-gem or the containerized approach in which a Docker container is used to provide an environment with most dependencies pre-installed.
+
+### Conventional
+
 **Important: Make sure you have Bundler > v1.14 by running `gem update bundler` in your terminal before following the next steps.**
 
 1. Add the following to your project's Gemfile:  
@@ -18,6 +22,29 @@ A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a loc
 2. Run `bundle install`
 
 *Note: You are not required to install Jekyll separately. Once the `github-pages` gem is installed, you can build your site using `jekyll build`, or preview your site using `jekyll serve`.* For more information about installing Jekyll locally, please see [the GitHub Help docs on the matter](https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll).
+
+### Docker
+
+Provided that Docker is installed, one may avoid the setup of additional tools within the environment by simply spawning a Docker container.
+
+1. Run `make image` from the root of the pages-gem directory to build an image which will be tagged as `gh-pages`
+2. Start an instance of the server by running either:
+  - `SITE=PATH_TO_YOUR_PROJECT make server` from the root of the `gh-pages` repository (where the Makefile resides) or
+  - ``SITE=PATH_TO_YOUR_PROJECT docker run --rm -p 4000:4000 -v `realpath ${SITE}`:/src/site gh-pages`` from any directory or
+  - `github-pages $PATH_TO_YOUR_PROJECT` from any directory when [func.sh](contrib/func.sh) has been sourced into your terminal session or
+  - `github-pages` from the directory of the Jekyll site to be previewed when [func.sh](contrib/func.sh) has been sourced into your terminal session.
+
+**Note:** the `github-pages` function may be enabled by sourcing func.sh. This can be done by appending
+
+  ```bash
+  source $PATH_TO_THIS_DIRECTORY/contrib/func.sh
+  ```
+
+to the scripts that load on initiation of a terminal session (usually `~/.bashrc` on bash or `~/.zshrc` on zsh).:
+
+>  Running of `github-pages` inside a directory of a Jekyll site spawns a [server on port 4000](http://localhost:4000). One may explicitly provide a path to a Jekyll site and a port by running `github-pages $PATH $PORT`. This approach is provided as a user-friendlier alternative to the `make server` or `docker run` invocations mentioned as the first options in step 2.
+
+> The ordering of the arguments for the `github-pages` function is based on the assumption that it is more likely to need to specify a custom path rather than a custom port.
 
 ### Command line usage
 
