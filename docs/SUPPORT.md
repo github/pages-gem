@@ -6,7 +6,7 @@
 
 * If your think you may have found a bug in Jekyll itself, please [open an issue in the Jekyll repository](https://github.com/jekyll/jekyll/issues/new).
 
-* If you think you may have found a bug with how the GitHub Pages Gem bootstraps your local development environment, please [open an issue in this repository](https://github.com/github/pages-gem/issues/new).
+* If you think you may have found a bug with how the GitHub Pages Gem bootstraps your local development environment, please [check the existing issues](https://github.com/github/pages-gem/issues), and if no one has reported the problem, [open a new issue](https://github.com/github/pages-gem/issues/new).
 
 ### Questions
 
