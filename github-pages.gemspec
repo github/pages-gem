@@ -1,7 +1,11 @@
-require './lib/github-pages.rb'
+# frozen_string_literal: true
+
+require File.expand_path("../lib/github-pages/dependencies", __FILE__)
+require File.expand_path("../lib/github-pages/plugins", __FILE__)
+require File.expand_path("../lib/github-pages/version", __FILE__)
 
 Gem::Specification.new do |s|
-  s.required_ruby_version = ">= 1.9.3"
+  s.required_ruby_version = ">= 2.0.0"
 
   s.name                  = "github-pages"
   s.version               = GitHubPages::VERSION
@@ -11,9 +15,21 @@ Gem::Specification.new do |s|
   s.email                 = "support@github.com"
   s.homepage              = "https://github.com/github/pages-gem"
   s.license               = "MIT"
-  s.files                 = ["lib/github-pages.rb"]
 
-  GitHubPages.gems.each do |gem, version|
-    s.add_dependency(gem, "= #{version}") unless gem == "github-pages"
+  all_files               = `git ls-files -z`.split("\x0")
+  s.files                 = all_files.grep(%r{^(bin|lib)/|^.rubocop.yml$})
+  s.executables           = all_files.grep(%r{^bin/}) { |f| File.basename(f) }
+
+  GitHubPages::Dependencies.gems.each do |gem, version|
+    s.add_dependency(gem, "= #{version}")
   end
+
+  s.add_dependency("mercenary", "~> 0.3")
+  s.add_dependency("terminal-table", "~> 1.4")
+  s.add_dependency("nokogiri", ">= 1.8.1", "< 2.0") # CVE-2017-9050
+  s.add_development_dependency("rspec", "~> 3.3")
+  s.add_development_dependency("rainbow", "~> 2.1.0")
+  s.add_development_dependency("pry", "~> 0.10")
+  s.add_development_dependency("jekyll_test_plugin_malicious", "~> 0.2")
+  s.add_development_dependency("rubocop", ">= 0.48.1", "< 5.0") # CVE-2017-8418
 end
