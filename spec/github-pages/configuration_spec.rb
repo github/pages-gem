@@ -58,6 +58,10 @@ describe(GitHubPages::Configuration) do
       expect(effective_config["testing"]).to eql("123")
     end
 
+    it "sets exclude directive" do
+      expect(effective_config["exclude"]).to include("CNAME")
+    end
+
     context "markdown processor" do
       context "with no markdown processor set" do
         it "defaults to kramdown" do
