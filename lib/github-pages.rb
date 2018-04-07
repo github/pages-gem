@@ -1,4 +1,11 @@
+<<<<<<< HEAD
+require_relative "version-check"
+
+class GitHubPages
+  VERSION = 13
+=======
 # frozen_string_literal: true
+>>>>>>> master
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require "jekyll"
