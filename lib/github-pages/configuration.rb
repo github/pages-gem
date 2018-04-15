@@ -101,6 +101,9 @@ module GitHubPages
           .fix_common_issues
           .add_default_collections
 
+        # Allow theme to be explicitly disabled via "theme: null"
+        config["theme"] = user_config["theme"] if user_config.key?("theme")
+
         exclude_cname(config)
 
         # Merge overwrites into user config

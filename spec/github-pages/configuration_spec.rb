@@ -118,6 +118,17 @@ describe(GitHubPages::Configuration) do
         end
       end
 
+      context "with user-specified theme to be null" do
+        let(:site) do
+          config = configuration.merge("theme" => nil)
+          Jekyll::Site.new(config)
+        end
+
+        it "respects null" do
+          expect(site.theme).to be_nil
+        end
+      end
+
       it "plugins don't include jekyll remote theme" do
         expect(effective_config["plugins"]).to_not include("jekyll-remote-theme")
       end
