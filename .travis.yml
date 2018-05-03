@@ -5,6 +5,10 @@ rvm:
   - 2.4
   - 2.5
 
+branches:
+  only:
+    - master
+
 before_install:
   - gem install bundler
 script: "script/cibuild"
