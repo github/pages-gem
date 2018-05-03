@@ -19,7 +19,7 @@ describe(GitHubPages) do
 
   it "detects the CNAME when running health check" do
     File.write("CNAME", "foo.invalid")
-    expect(`./bin/github-pages health-check`).to include("Checking domain foo.invalid...")
+    expect(`./bin/github-pages health-check --trace`).to include("Checking domain foo.invalid...")
     File.delete("CNAME")
   end
 end
