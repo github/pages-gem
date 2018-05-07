@@ -5,6 +5,8 @@ TAG=gh-pages
 # Build the docker image
 image:
 	${DOCKER} build -t ${TAG} .
+image_alpine:
+	${DOCKER} build -t ${TAG} . -f Dockerfile.alpine
 
 # Produce a bash shell
 shell:
@@ -30,4 +32,4 @@ server:
 		${TAG}
 
 .PHONY:
-	image server shell
+	image image_alpine server shell
