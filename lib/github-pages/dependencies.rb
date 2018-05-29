@@ -17,7 +17,7 @@ module GitHubPages
       # Misc
       "liquid"                    => "4.0.0",
       "rouge"                     => "2.2.1",
-      "github-pages-health-check" => "1.7.4",
+      "github-pages-health-check" => "1.8.1",
 
       # Plugins
       "jekyll-redirect-from"   => "0.13.0",
@@ -29,7 +29,7 @@ module GitHubPages
       "jekyll-seo-tag"         => "2.4.0",
       "jekyll-github-metadata" => "2.9.4",
       "jekyll-avatar"          => "0.5.0",
-      "jekyll-remote-theme"    => "0.2.4",
+      "jekyll-remote-theme"    => "0.3.1",
 
       # Plugins to match GitHub.com Markdown
       "jemoji"                       => "0.9.0",

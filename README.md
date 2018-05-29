@@ -28,6 +28,7 @@ One may opt for the conventional approach of using the pages-gem or the containe
 Provided that Docker is installed, one may avoid the setup of additional tools within the environment by simply spawning a Docker container.
 
 1. Run `make image` from the root of the pages-gem directory to build an image which will be tagged as `gh-pages`
+  - Alternatively use `make image_alpine` for a smaller `alpine`-based image
 2. Start an instance of the server by running either:
   - `SITE=PATH_TO_YOUR_PROJECT make server` from the root of the `gh-pages` repository (where the Makefile resides) or
   - ``SITE=PATH_TO_YOUR_PROJECT docker run --rm -p 4000:4000 -v `realpath ${SITE}`:/src/site gh-pages`` from any directory or
