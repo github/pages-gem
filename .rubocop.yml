@@ -16,7 +16,7 @@
 # If you disable a check, document why.
 
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.3
   Exclude:
     - 'bin/**/*'
     - 'script/**/*'
