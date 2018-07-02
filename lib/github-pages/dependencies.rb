@@ -26,7 +26,7 @@ module GitHubPages
       "jekyll-gist"            => "1.5.0",
       "jekyll-paginate"        => "1.1.0",
       "jekyll-coffeescript"    => "1.1.1",
-      "jekyll-seo-tag"         => "2.4.0",
+      "jekyll-seo-tag"         => "2.5.0",
       "jekyll-github-metadata" => "2.9.4",
       "jekyll-avatar"          => "0.5.0",
       "jekyll-remote-theme"    => "0.3.1",
