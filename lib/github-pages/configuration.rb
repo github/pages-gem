@@ -163,7 +163,7 @@ module GitHubPages
         # Ensure we have those gems we want.
         config["plugins"] = Array(config["plugins"]) | DEFAULT_PLUGINS
 
-        # To minimize erorrs, lazy-require jekyll-remote-theme if requested by the user
+        # To minimize errors, lazy-require jekyll-remote-theme if requested by the user
         config["plugins"].push("jekyll-remote-theme") if config.key? "remote_theme"
 
         return unless development?

@@ -20,20 +20,20 @@ module GitHubPages
       "github-pages-health-check" => "1.8.1",
 
       # Plugins
-      "jekyll-redirect-from"   => "0.13.0",
+      "jekyll-redirect-from"   => "0.14.0",
       "jekyll-sitemap"         => "1.2.0",
-      "jekyll-feed"            => "0.9.3",
+      "jekyll-feed"            => "0.10.0",
       "jekyll-gist"            => "1.5.0",
       "jekyll-paginate"        => "1.1.0",
       "jekyll-coffeescript"    => "1.1.1",
-      "jekyll-seo-tag"         => "2.4.0",
+      "jekyll-seo-tag"         => "2.5.0",
       "jekyll-github-metadata" => "2.9.4",
-      "jekyll-avatar"          => "0.5.0",
+      "jekyll-avatar"          => "0.6.0",
       "jekyll-remote-theme"    => "0.3.1",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji"                       => "0.9.0",
-      "jekyll-mentions"              => "1.3.0",
+      "jemoji"                       => "0.10.0",
+      "jekyll-mentions"              => "1.4.0",
       "jekyll-relative-links"        => "0.5.3",
       "jekyll-optional-front-matter" => "0.3.0",
       "jekyll-readme-index"          => "0.2.0",
@@ -45,7 +45,7 @@ module GitHubPages
       "listen"                    => "3.1.5",
 
       # Pin activesupport because 5.0 is broken on 2.1
-      "activesupport"             => "4.2.9",
+      "activesupport"             => "4.2.10",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
