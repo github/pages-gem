@@ -15,6 +15,7 @@ module GitHubPages
       jekyll-readme-index
       jekyll-default-layout
       jekyll-titles-from-headings
+      jekyll-octicons
     ).freeze
 
     # Plugins allowed by GitHub Pages
@@ -37,7 +38,6 @@ module GitHubPages
       jekyll-default-layout
       jekyll-titles-from-headings
       jekyll-include-cache
-      jekyll-octicons
       jekyll-remote-theme
     ).freeze
 
