@@ -11,7 +11,7 @@ module GitHubPages
       "jekyll-sass-converter"     => "1.5.2",
 
       # Converters
-      "kramdown"                  => "1.16.2",
+      "kramdown"                  => "1.17.0",
       "jekyll-commonmark-ghpages" => "0.1.5",
 
       # Misc
@@ -32,8 +32,8 @@ module GitHubPages
       "jekyll-remote-theme"    => "0.3.1",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji"                       => "0.10.0",
-      "jekyll-mentions"              => "1.4.0",
+      "jemoji"                       => "0.10.1",
+      "jekyll-mentions"              => "1.4.1",
       "jekyll-relative-links"        => "0.5.3",
       "jekyll-optional-front-matter" => "0.3.0",
       "jekyll-readme-index"          => "0.2.0",
