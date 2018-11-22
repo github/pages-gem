@@ -62,6 +62,10 @@ describe(GitHubPages::Configuration) do
       expect(effective_config["exclude"]).to include("CNAME")
     end
 
+    it "retains Jekyll default excludes" do
+      expect(effective_config["exclude"]).to include(*Jekyll::Configuration::DEFAULTS["exclude"])
+    end
+
     context "markdown processor" do
       context "with no markdown processor set" do
         it "defaults to kramdown" do
