@@ -23,7 +23,7 @@ module GitHubPages
         "hard_wrap" => false,
         "gfm_quirks" => "paragraph_end",
       },
-      "exclude" => Jekyll::Configuration::DEFAULTS["exclude"] + ["CNAME"]
+      "exclude" => Jekyll::Configuration::DEFAULTS["exclude"] + ["CNAME"],
     }.freeze
 
     # User-overwritable defaults used only in production for practical reasons

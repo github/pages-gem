@@ -3,7 +3,6 @@
 module GitHubPages
   # Reads configuration files.
   class ConfigurationReader
-
     # Determine configuration files for a site source and read the file(s).
     # It should be used in conjunction with GitHubPages::Configuration.
     # This simply reads the files and merges them.
@@ -20,7 +19,7 @@ module GitHubPages
     end
 
     def self.configuration_files_for(source)
-      Jekyll::Configuration.new.config_files({"source" => source, "quiet" => true})
+      Jekyll::Configuration.new.config_files("source" => source, "quiet" => true)
     end
 
     ##################
