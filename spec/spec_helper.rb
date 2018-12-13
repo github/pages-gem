@@ -2,6 +2,7 @@
 
 require File.expand_path("../lib/github-pages.rb", __dir__)
 require "open3"
+require_relative "spec_profiling"
 
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
@@ -19,7 +20,7 @@ def fixture_dir
 end
 
 def tmp_dir
-  File.expand_path "../tmp", __dir__
+  File.expand_path "spec/tmp", __dir__
 end
 
 RSpec::Matchers.define :be_an_existing_file do
