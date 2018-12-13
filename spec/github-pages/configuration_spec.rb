@@ -11,9 +11,14 @@ describe(GitHubPages::Configuration) do
       "destination" => tmp_dir,
     }
   end
-  let(:configuration) { Jekyll.configuration(test_config) }
-  let(:site)          { Jekyll::Site.new(configuration) }
-  let(:effective_config) { described_class.effective_config(site.config) }
+  let(:override_config){ Hash.new }
+  let(:user_config) { GitHubPages::ConfigurationReader.read_for_site(test_config["source"]) }
+  let(:merged_configuration) do
+    # user_config <- test_config <- override_config
+    Jekyll::Utils.deep_merge_hashes(user_config, Jekyll::Utils.deep_merge_hashes(test_config, override_config))
+  end
+  let(:effective_config) { described_class.effective_config(merged_configuration) }
+  let(:site) { Jekyll::Site.new(effective_config) }
   let(:defaults_for_env) { described_class.defaults_for_env }
 
   before(:each) do
@@ -25,7 +30,7 @@ describe(GitHubPages::Configuration) do
   context "#effective_config" do
     it "sets configuration defaults" do
       expect(effective_config["kramdown"]["input"]).to eql("GFM")
-      expect(effective_config["future"]).to eql(false)
+      expect(effective_config["future"]).to eql(true)
     end
 
     it "sets default gems" do
@@ -60,6 +65,7 @@ describe(GitHubPages::Configuration) do
 
     it "sets exclude directive" do
       expect(effective_config["exclude"]).to include("CNAME")
+      expect(effective_config["exclude"]).to include(*Jekyll::Configuration::DEFAULTS["exclude"])
     end
 
     it "retains Jekyll default excludes" do
@@ -74,10 +80,7 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with GFM set" do
-        let(:site) do
-          config = configuration.merge("markdown" => "GFM")
-          Jekyll::Site.new(config)
-        end
+        let(:override_config) { {"markdown" => "GFM"} }
 
         it "configures CommonMarkGhPages" do
           expect(effective_config["markdown"]).to eql("CommonMarkGhPages")
@@ -89,10 +92,7 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with some other processor set" do
-        let(:site) do
-          config = configuration.merge("markdown" => "whatever")
-          Jekyll::Site.new(config)
-        end
+        let(:override_config) { {"markdown" => "whatever"} }
 
         it "overrides to kramdown" do
           expect(effective_config["markdown"]).to eql("kramdown")
@@ -110,10 +110,7 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with a user-specified theme" do
-        let(:site) do
-          config = configuration.merge("theme" => "jekyll-theme-merlot")
-          Jekyll::Site.new(config)
-        end
+        let(:override_config) { {"theme" => "jekyll-theme-merlot"} }
 
         it "respects the theme" do
           expect(site.theme).to_not be_nil
@@ -123,10 +120,7 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with user-specified theme to be null" do
-        let(:site) do
-          config = configuration.merge("theme" => nil)
-          Jekyll::Site.new(config)
-        end
+        let(:override_config) { {"theme" => nil} }
 
         it "respects null" do
           expect(site.theme).to be_nil
@@ -138,15 +132,7 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with a remote theme" do
-        let(:test_config) do
-          {
-            "source" => fixture_dir,
-            "quiet" => true,
-            "testing" => "123",
-            "destination" => tmp_dir,
-            "remote_theme" => "foo/bar",
-          }
-        end
+        let(:override_config) { {"remote_theme" => "foo/bar"} }
 
         it "plugins include jekyll remote theme" do
           expect(effective_config["plugins"]).to include("jekyll-remote-theme")
@@ -165,15 +151,7 @@ describe(GitHubPages::Configuration) do
   end
 
   context "#set being called via the hook" do
-    let(:test_config) do
-      {
-        "source" => fixture_dir,
-        "quiet" => true,
-        "testing" => "123",
-        "destination" => tmp_dir,
-        "future" => true,
-      }
-    end
+    let(:override_config) { {"future" => true} }
 
     it "sets configuration defaults" do
       expect(site.config["kramdown"]["input"]).to eql("GFM")
@@ -226,13 +204,14 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with the DISABLE_WHITELIST flag" do
-        before { ENV["DISABLE_WHITELIST"] = "1" }
+        before(:each) { ENV["DISABLE_WHITELIST"] = "1" }
 
         it "includes additional plugins in the whitelist" do
           expect(site.config["whitelist"]).to include("jekyll_test_plugin_malicious")
         end
 
         it "fires additional non-whitelisted plugins" do
+          p site.config["plugins"]
           expect { site.process }.to raise_error "ALL YOUR COMPUTER ARE BELONG TO US"
         end
 

@@ -23,7 +23,7 @@ module GitHubPages
         "hard_wrap" => false,
         "gfm_quirks" => "paragraph_end",
       },
-      "exclude" => ["CNAME"],
+      "exclude" => Jekyll::Configuration::DEFAULTS["exclude"] + ["CNAME"]
     }.freeze
 
     # User-overwritable defaults used only in production for practical reasons
@@ -104,8 +104,6 @@ module GitHubPages
         # Allow theme to be explicitly disabled via "theme: null"
         config["theme"] = user_config["theme"] if user_config.key?("theme")
 
-        exclude_cname(config)
-
         # Merge overwrites into user config
         config = Jekyll::Utils.deep_merge_hashes config, OVERRIDES
 
@@ -150,12 +148,6 @@ module GitHubPages
           "extensions" => %w(table strikethrough autolink tagfilter),
           "options" => %w(footnotes),
         }
-      end
-
-      # If the user's 'exclude' config is the default, also exclude the CNAME
-      def exclude_cname(config)
-        return unless config["exclude"].eql? Jekyll::Configuration::DEFAULTS["exclude"]
-        config["exclude"].concat(DEFAULTS["exclude"])
       end
 
       # Requires default plugins and configures whitelist in development
