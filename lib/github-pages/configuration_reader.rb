@@ -62,7 +62,8 @@ module GitHubPages
     def fix(config)
       if paginate_invalid?(config)
         Jekyll.logger.warn "Config Warning:", "The `paginate` key must be a" \
-          " positive integer or nil. It's currently set to '#{config["paginate"].inspect}'."
+          " positive integer or nil. It's currently set to " \
+          "'#{config["paginate"].inspect}'."
         config["paginate"] = nil
       end
 
