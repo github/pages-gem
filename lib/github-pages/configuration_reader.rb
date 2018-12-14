@@ -39,7 +39,7 @@ module GitHubPages
 
     # User config, with common issues fixed & backwards compatibilized
     def user_config
-      @user_config ||= Jekyll::Configuration[raw_user_config] \
+      @user_config ||= fix(Jekyll::Configuration[raw_user_config]) \
         .backwards_compatibilize.add_default_collections
     end
 
@@ -54,6 +54,19 @@ module GitHubPages
       rescue ArgumentError, LoadError
         Jekyll::Configuration.new
       end
+    end
+
+    # Fix issues to prevent Jekyll from doing strange things.
+    # In this case, Configuration#check_maruku aborts the process;
+    # we want to simply overwrite with our kramdown default instead.
+    def fix(config)
+      if config.fetch("markdown", "kramdown").to_s.casecmp("maruku").zero?
+        Jekyll.logger.warn "Configuration:", \
+          "maruku is no longer supported; using kramdown instead."
+        config["markdown"] = "kramdown"
+      end
+
+      config
     end
   end
 end
