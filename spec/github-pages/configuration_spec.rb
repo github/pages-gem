@@ -65,7 +65,6 @@ describe(GitHubPages::Configuration) do
 
     it "sets exclude directive" do
       expect(effective_config["exclude"]).to include("CNAME")
-      expect(effective_config["exclude"]).to include(*Jekyll::Configuration::DEFAULTS["exclude"])
     end
 
     it "retains Jekyll default excludes" do
