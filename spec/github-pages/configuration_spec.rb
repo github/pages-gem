@@ -11,7 +11,7 @@ describe(GitHubPages::Configuration) do
       "destination" => tmp_dir,
     }
   end
-  let(:override_config){ Hash.new }
+  let(:override_config) { {} }
   let(:user_config) { GitHubPages::ConfigurationReader.read_for_site(test_config["source"]) }
   let(:merged_configuration) do
     # user_config <- test_config <- override_config
@@ -79,7 +79,7 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with GFM set" do
-        let(:override_config) { {"markdown" => "GFM"} }
+        let(:override_config) { { "markdown" => "GFM" } }
 
         it "configures CommonMarkGhPages" do
           expect(effective_config["markdown"]).to eql("CommonMarkGhPages")
@@ -91,7 +91,7 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with some other processor set" do
-        let(:override_config) { {"markdown" => "whatever"} }
+        let(:override_config) { { "markdown" => "whatever" } }
 
         it "overrides to kramdown" do
           expect(effective_config["markdown"]).to eql("kramdown")
@@ -109,7 +109,7 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with a user-specified theme" do
-        let(:override_config) { {"theme" => "jekyll-theme-merlot"} }
+        let(:override_config) { { "theme" => "jekyll-theme-merlot" } }
 
         it "respects the theme" do
           expect(site.theme).to_not be_nil
@@ -119,7 +119,7 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with user-specified theme to be null" do
-        let(:override_config) { {"theme" => nil} }
+        let(:override_config) { { "theme" => nil } }
 
         it "respects null" do
           expect(site.theme).to be_nil
@@ -131,7 +131,7 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with a remote theme" do
-        let(:override_config) { {"remote_theme" => "foo/bar"} }
+        let(:override_config) { { "remote_theme" => "foo/bar" } }
 
         it "plugins include jekyll remote theme" do
           expect(effective_config["plugins"]).to include("jekyll-remote-theme")
@@ -150,7 +150,7 @@ describe(GitHubPages::Configuration) do
   end
 
   context "#set being called via the hook" do
-    let(:override_config) { {"future" => true} }
+    let(:override_config) { { "future" => true } }
 
     it "sets configuration defaults" do
       expect(site.config["kramdown"]["input"]).to eql("GFM")
