@@ -16,8 +16,8 @@ RSpec.configure do |config|
 
   # Stub all GitHub API requests so they come back empty.
   config.before(:each) do
-    stub_request(:get, /api.github.com/).
-      to_return(status: 200, body: "{}", headers: {})
+    stub_request(:get, /api.github.com/)
+      .to_return(:status => 200, :body => "{}", :headers => {})
   end
 end
 
