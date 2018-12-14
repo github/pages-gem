@@ -60,13 +60,26 @@ module GitHubPages
     # In this case, Configuration#check_maruku aborts the process;
     # we want to simply overwrite with our kramdown default instead.
     def fix(config)
-      if config.fetch("markdown", "kramdown").to_s.casecmp("maruku").zero?
-        Jekyll.logger.warn "Configuration:", \
-          "maruku is no longer supported; using kramdown instead."
+      if paginate_invalid?(config)
+        Jekyll.logger.warn "Config Warning:", "The `paginate` key must be a" \
+          " positive integer or nil. It's currently set to '#{config["paginate"].inspect}'."
+        config["paginate"] = nil
+      end
+
+      if config["markdown"].to_s.casecmp("maruku").zero?
+        Jekyll.logger.error "Error:", "Maruku has been removed." \
+          " This build will use kramdown instead."
         config["markdown"] = "kramdown"
       end
 
       config
+    end
+
+    def paginate_invalid?(config)
+      config.key?("paginate") && (
+        !config["paginate"].is_a?(Integer) ||
+        config["paginate"] < 1
+      )
     end
   end
 end
