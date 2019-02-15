@@ -34,7 +34,7 @@ module GitHubPages
       # Plugins to match GitHub.com Markdown
       "jemoji"                       => "0.10.2",
       "jekyll-mentions"              => "1.4.1",
-      "jekyll-relative-links"        => "0.5.3",
+      "jekyll-relative-links"        => "0.6.0",
       "jekyll-optional-front-matter" => "0.3.0",
       "jekyll-readme-index"          => "0.2.0",
       "jekyll-default-layout"        => "0.1.4",
