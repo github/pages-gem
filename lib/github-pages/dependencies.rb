@@ -27,12 +27,12 @@ module GitHubPages
       "jekyll-paginate"        => "1.1.0",
       "jekyll-coffeescript"    => "1.1.1",
       "jekyll-seo-tag"         => "2.5.0",
-      "jekyll-github-metadata" => "2.11.0",
+      "jekyll-github-metadata" => "2.12.1",
       "jekyll-avatar"          => "0.6.0",
       "jekyll-remote-theme"    => "0.3.1",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji"                       => "0.10.1",
+      "jemoji"                       => "0.10.2",
       "jekyll-mentions"              => "1.4.1",
       "jekyll-relative-links"        => "0.6.0",
       "jekyll-optional-front-matter" => "0.3.0",
