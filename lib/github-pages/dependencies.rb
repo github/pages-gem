@@ -17,7 +17,7 @@ module GitHubPages
       # Misc
       "liquid"                    => "4.0.0",
       "rouge"                     => "2.2.1",
-      "github-pages-health-check" => "1.16.0",
+      "github-pages-health-check" => "1.16.1",
 
       # Plugins
       "jekyll-redirect-from"   => "0.14.0",
