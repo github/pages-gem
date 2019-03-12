@@ -2,6 +2,7 @@
 
 require File.expand_path("../lib/github-pages.rb", __dir__)
 require "open3"
+require "webmock/rspec"
 
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
@@ -12,6 +13,12 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # Stub all GitHub API requests so they come back empty.
+  config.before(:each) do
+    stub_request(:get, /api.github.com/)
+      .to_return(:status => 200, :body => "{}", :headers => {})
+  end
 end
 
 def fixture_dir
