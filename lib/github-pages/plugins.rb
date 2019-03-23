@@ -39,6 +39,7 @@ module GitHubPages
       jekyll-include-cache
       jekyll-octicons
       jekyll-remote-theme
+      jekyll-i18n_tags
     ).freeze
 
     # Plugins only allowed locally
