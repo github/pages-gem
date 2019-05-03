@@ -15,7 +15,7 @@ module GitHubPages
       "jekyll-commonmark-ghpages" => "0.1.5",
 
       # Misc
-      "liquid"                    => "4.0.0",
+      "liquid"                    => "4.0.3",
       "rouge"                     => "2.2.1",
       "github-pages-health-check" => "1.16.1",
 
