@@ -107,14 +107,6 @@ module GitHubPages
         # Allow theme to be explicitly disabled via "theme: null"
         config["theme"] = user_config["theme"] if user_config.key?("theme")
 
-        # Override non-nil values for kramdown options math_engine and syntax_highlighter
-        unless config["kramdown"]["math_engine"].nil?
-          config["kramdown"]["math_engine"] = DEFAULTS["kramdown"]["math_engine"]
-        end
-        unless config["kramdown"]["syntax_highlighter"].nil?
-          config["kramdown"]["syntax_highlighter"] = DEFAULTS["kramdown"]["syntax_highlighter"]
-        end
-
         exclude_cname(config)
 
         # Merge overwrites into user config
@@ -149,11 +141,19 @@ module GitHubPages
       # Ensure we're using Kramdown or GFM.  Force to Kramdown if
       # neither of these.
       #
+      # Also override non-nil values for kramdown options math_engine and
+      # syntax_highlighter.
+      #
       # This can get called multiply on the same config, so try to
       # be idempotentish.
       def restrict_and_config_markdown_processor(config)
         config["markdown"] = "kramdown" unless \
           %w(kramdown gfm commonmarkghpages).include?(config["markdown"].to_s.downcase)
+
+        %w(math_engine syntax_highlighter).each do |opt|
+          config["kramdown"][opt] = DEFAULTS["kramdown"][opt] unless \
+            config["kramdown"][opt].nil?
+        end
 
         return unless config["markdown"].to_s.casecmp("gfm").zero?
 
