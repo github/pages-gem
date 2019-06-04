@@ -22,6 +22,8 @@ module GitHubPages
         "input" => "GFM",
         "hard_wrap" => false,
         "gfm_quirks" => "paragraph_end",
+        "math_engine" => "mathjax",
+        "syntax_highlighter" => "rouge",
         "syntax_highlighter_opts" => {
           "default_lang" => "plaintext",
         },
@@ -54,8 +56,6 @@ module GitHubPages
       "highlighter" => "rouge",
       "kramdown" => {
         "template" => "",
-        "math_engine" => "mathjax",
-        "syntax_highlighter" => "rouge",
       },
       "gist" => {
         "noscript" => false,
@@ -106,6 +106,14 @@ module GitHubPages
 
         # Allow theme to be explicitly disabled via "theme: null"
         config["theme"] = user_config["theme"] if user_config.key?("theme")
+
+        # Override non-nil values for kramdown options math_engine and syntax_highlighter
+        unless config["kramdown"]["math_engine"].nil?
+          config["kramdown"]["math_engine"] = DEFAULTS["kramdown"]["math_engine"]
+        end
+        unless config["kramdown"]["syntax_highlighter"].nil?
+          config["kramdown"]["syntax_highlighter"] = DEFAULTS["kramdown"]["syntax_highlighter"]
+        end
 
         exclude_cname(config)
 
