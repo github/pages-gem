@@ -151,8 +151,8 @@ module GitHubPages
           %w(kramdown gfm commonmarkghpages).include?(config["markdown"].to_s.downcase)
 
         %w(math_engine syntax_highlighter).each do |opt|
-          config["kramdown"][opt] = DEFAULTS["kramdown"][opt] unless \
-            config["kramdown"][opt].nil?
+          config["kramdown"][opt] = \
+            config["kramdown"][opt] == "nil" ? nil : DEFAULTS["kramdown"][opt]
         end
 
         return unless config["markdown"].to_s.casecmp("gfm").zero?
