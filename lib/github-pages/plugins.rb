@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module GitHubPages
-  # Manages the constants the govern what plugins are allows on GitHub Pages
+  # Manages the constants that govern which plugins are allowed on GitHub Pages
   class Plugins
     # Plugins which are activated by default
     DEFAULT_PLUGINS = %w(
