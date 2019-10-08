@@ -12,11 +12,11 @@ module GitHubPages
 
       # Converters
       "kramdown"                  => "1.17.0",
-      "jekyll-commonmark-ghpages" => "0.1.5",
+      "jekyll-commonmark-ghpages" => "0.1.6",
 
       # Misc
       "liquid"                    => "4.0.0",
-      "rouge"                     => "2.2.1",
+      "rouge"                     => "3.11.0",
       "github-pages-health-check" => "1.16.1",
 
       # Plugins
