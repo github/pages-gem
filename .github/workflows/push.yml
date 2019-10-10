@@ -15,5 +15,5 @@ jobs:
     - uses: actions/checkout@master
     - name: script/cibuild-docker
       run: script/cibuild-docker
-      with:
-        ruby_version: ${{ matrix.ruby }}
+      env:
+        RUBY_VERSION: ${{ matrix.ruby }}
