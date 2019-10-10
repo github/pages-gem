@@ -8,9 +8,11 @@ RUN apt-get update \
     make \
     nodejs
 
+COPY .git /src/gh/pages-gem/.git
 COPY Gemfile* /src/gh/pages-gem/
 COPY github-pages.gemspec /src/gh/pages-gem
 COPY lib/ /src/gh/pages-gem/lib
+COPY bin/ /src/gh/pages-gem/bin
 
 RUN \
   bundle config local.github-pages /src/gh/pages-gem && \
