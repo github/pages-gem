@@ -43,9 +43,6 @@ module GitHubPages
       # Pin listen because it's broken on 2.1 & that's what we recommend.
       # https://github.com/guard/listen/pull/371
       "listen"                    => "3.1.5",
-
-      # Pin activesupport because 5.0 is broken on 2.1
-      "activesupport"             => "4.2.11.1",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.
