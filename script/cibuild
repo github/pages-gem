@@ -6,7 +6,7 @@ set -e
 echo "Jekyll version: $(bundle exec jekyll --version)"
 
 echo "Running Ruby tests..."
-bundle exec rspec
+bundle exec rspec --format documentation
 
 echo "Running Ruby style tests..."
 script/fmt --display-style-guide
