@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -ex
+
+# Set the ruby version in the Action definition matrix.
+: "${RUBY_VERSION:="2.5.3"}"
+
+docker build --build-arg "RUBY_VERSION=$RUBY_VERSION" -t github-pages .
+docker run --rm --workdir /src/gh/pages-gem github-pages script/cibuild
