@@ -7,17 +7,17 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll"                    => "3.7.4",
+      "jekyll"                    => "3.8.5",
       "jekyll-sass-converter"     => "1.5.2",
 
       # Converters
       "kramdown"                  => "1.17.0",
-      "jekyll-commonmark-ghpages" => "0.1.5",
+      "jekyll-commonmark-ghpages" => "0.1.6",
 
       # Misc
       "liquid"                    => "4.0.0",
-      "rouge"                     => "2.2.1",
-      "github-pages-health-check" => "1.8.1",
+      "rouge"                     => "3.11.0",
+      "github-pages-health-check" => "1.16.1",
 
       # Plugins
       "jekyll-redirect-from"   => "0.14.0",
@@ -27,14 +27,14 @@ module GitHubPages
       "jekyll-paginate"        => "1.1.0",
       "jekyll-coffeescript"    => "1.1.1",
       "jekyll-seo-tag"         => "2.5.0",
-      "jekyll-github-metadata" => "2.9.4",
+      "jekyll-github-metadata" => "2.12.1",
       "jekyll-avatar"          => "0.6.0",
-      "jekyll-remote-theme"    => "0.3.1",
+      "jekyll-remote-theme"    => "0.4.0",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji"                       => "0.10.1",
+      "jemoji"                       => "0.10.2",
       "jekyll-mentions"              => "1.4.1",
-      "jekyll-relative-links"        => "0.5.3",
+      "jekyll-relative-links"        => "0.6.0",
       "jekyll-optional-front-matter" => "0.3.0",
       "jekyll-readme-index"          => "0.2.0",
       "jekyll-default-layout"        => "0.1.4",
@@ -45,7 +45,7 @@ module GitHubPages
       "listen"                    => "3.1.5",
 
       # Pin activesupport because 5.0 is broken on 2.1
-      "activesupport"             => "4.2.10",
+      "activesupport"             => "4.2.11.1",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.

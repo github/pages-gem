@@ -22,6 +22,9 @@ module GitHubPages
         "input"     => "GFM",
         "hard_wrap" => false,
         "gfm_quirks" => "paragraph_end",
+        "syntax_highlighter_opts" => {
+          "default_lang" => "plaintext",
+        },
       },
       "exclude" => Jekyll::Configuration::DEFAULTS["exclude"] + ["CNAME"],
     }.freeze
