@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require File.expand_path("../lib/github-pages/dependencies", __FILE__)
-require File.expand_path("../lib/github-pages/plugins", __FILE__)
-require File.expand_path("../lib/github-pages/version", __FILE__)
+require File.expand_path("lib/github-pages/dependencies", __dir__)
+require File.expand_path("lib/github-pages/plugins", __dir__)
+require File.expand_path("lib/github-pages/version", __dir__)
 
 Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.3.0"
@@ -25,11 +25,10 @@ Gem::Specification.new do |s|
   end
 
   s.add_dependency("mercenary", "~> 0.3")
-  s.add_dependency("terminal-table", "~> 1.4")
   s.add_dependency("nokogiri", ">= 1.10.4", "< 2.0")
-  s.add_development_dependency("rspec", "~> 3.3")
-  s.add_development_dependency("rainbow", "~> 2.1.0")
-  s.add_development_dependency("pry", "~> 0.10")
+  s.add_dependency("terminal-table", "~> 1.4")
   s.add_development_dependency("jekyll_test_plugin_malicious", "~> 0.2")
-  s.add_development_dependency("rubocop", ">= 0.48.1", "< 5.0") # CVE-2017-8418
+  s.add_development_dependency("pry", "~> 0.10")
+  s.add_development_dependency("rspec", "~> 3.3")
+  s.add_development_dependency("rubocop", "~> 0.76") # CVE-2017-8418
 end
