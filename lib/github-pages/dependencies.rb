@@ -39,9 +39,6 @@ module GitHubPages
       "jekyll-readme-index" => "0.3.0",
       "jekyll-default-layout" => "0.1.4",
       "jekyll-titles-from-headings" => "0.5.3",
-
-      # Pin activesupport because 5.0 is broken on 2.1
-      "activesupport" => "4.2.11.1",
     }.freeze
 
     # Jekyll and related dependency versions as used by GitHub Pages.

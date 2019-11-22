@@ -5,7 +5,7 @@ require "spec_helper"
 describe(GitHubPages::Dependencies) do
   CORE_DEPENDENCIES = %w(
     jekyll kramdown liquid rouge jekyll-sass-converter
-    github-pages-health-check activesupport
+    github-pages-health-check
   ).freeze
   PLUGINS = described_class::VERSIONS.keys - CORE_DEPENDENCIES
 

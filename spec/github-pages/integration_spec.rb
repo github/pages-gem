@@ -69,7 +69,7 @@ RSpec.describe "Pages Gem Integration spec" do
       contents = File.read(__FILE__)
       contexts = contents.scan(/context \"(.*?)\"/)
       missing = GitHubPages::Dependencies::VERSIONS.keys - contexts.flatten
-      missing -= %w(activesupport github-pages-health-check)
+      missing -= %w(github-pages-health-check)
       msg = "The following dependencies are missing integration tests: #{missing.join(", ")}"
       expect(missing).to be_empty, msg
     end
