@@ -28,7 +28,7 @@ module GitHubPages
       "jekyll-coffeescript" => "1.1.1",
       "jekyll-seo-tag" => "2.6.1",
       "jekyll-github-metadata" => "2.12.1",
-      "jekyll-avatar" => "0.6.0",
+      "jekyll-avatar" => "0.7.0",
       "jekyll-remote-theme" => "0.4.0",
 
       # Plugins to match GitHub.com Markdown
