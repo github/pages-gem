@@ -32,7 +32,7 @@ module GitHubPages
       "jekyll-remote-theme" => "0.4.1",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji" => "0.10.2",
+      "jemoji" => "0.11.1",
       "jekyll-mentions" => "1.4.1",
       "jekyll-relative-links" => "0.6.0",
       "jekyll-optional-front-matter" => "0.3.0",
