@@ -23,7 +23,7 @@ AllCops:
     - 'vendor/**/*'
     - 'test-site/**/*'
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   Severity: error
 
 Lint/RescueException:
@@ -73,11 +73,6 @@ Metrics/ClassLength:
     - !ruby/regexp /features\/.*.rb$/
     - lib/github-pages/configuration.rb
 
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%w': '{}'
-    '%r': '{}'
-
 Metrics/BlockLength:
   Exclude:
     - github-pages.gemspec
@@ -115,23 +110,44 @@ Style/RedundantSelf:
 Style/IfUnlessModifier:
   Enabled: false
 
-Style/FileName: #Rubocop doesn't like the Git*H*ub namespace
+Naming/FileName: #Rubocop doesn't like the Git*H*ub namespace
   Enabled: false
 
-Metrics/CyclomaticComplexity: { Max: 8 }
-Metrics/PerceivedComplexity: { Max: 8 }
-Metrics/ParameterLists: { Max: 4 }
-Metrics/AbcSize: { Max: 20 }
+Metrics/CyclomaticComplexity:
+  Max: 8
+Metrics/PerceivedComplexity:
+  Max: 8
+Metrics/ParameterLists:
+  Max: 4
+Metrics/AbcSize:
+  Max: 20
 
-Layout/IndentHash: { EnforcedStyle: consistent }
-Style/SignalException: { EnforcedStyle: only_raise }
-Layout/MultilineMethodCallIndentation: { EnforcedStyle: indented }
-Layout/MultilineOperationIndentation: { EnforcedStyle: indented }
-Layout/FirstParameterIndentation: { EnforcedStyle: consistent }
-Style/StringLiterals: { EnforcedStyle: double_quotes }
-Layout/IndentArray: { EnforcedStyle: consistent }
-Layout/ExtraSpacing: { AllowForAlignment: true }
-Style/TrailingCommaInLiteral: { EnforcedStyleForMultiline: consistent_comma }
+Layout/IndentFirstHashElement:
+  EnforcedStyle: consistent
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/IndentFirstArgument:
+  EnforcedStyle: consistent
+
+Layout/IndentFirstArrayElement:
+  EnforcedStyle: consistent
+
+Layout/ExtraSpacing:
+  AllowForAlignment: true
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
