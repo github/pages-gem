@@ -21,7 +21,7 @@ module GitHubPages
 
       # Plugins
       "jekyll-redirect-from" => "0.15.0",
-      "jekyll-sitemap" => "1.2.0",
+      "jekyll-sitemap" => "1.4.0",
       "jekyll-feed" => "0.11.0",
       "jekyll-gist" => "1.5.0",
       "jekyll-paginate" => "1.1.0",
