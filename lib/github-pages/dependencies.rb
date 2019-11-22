@@ -29,7 +29,7 @@ module GitHubPages
       "jekyll-seo-tag" => "2.6.1",
       "jekyll-github-metadata" => "2.12.1",
       "jekyll-avatar" => "0.7.0",
-      "jekyll-remote-theme" => "0.4.0",
+      "jekyll-remote-theme" => "0.4.1",
 
       # Plugins to match GitHub.com Markdown
       "jemoji" => "0.10.2",
