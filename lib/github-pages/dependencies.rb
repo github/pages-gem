@@ -35,7 +35,7 @@ module GitHubPages
       "jemoji" => "0.11.1",
       "jekyll-mentions" => "1.5.1",
       "jekyll-relative-links" => "0.6.1",
-      "jekyll-optional-front-matter" => "0.3.0",
+      "jekyll-optional-front-matter" => "0.3.2",
       "jekyll-readme-index" => "0.2.0",
       "jekyll-default-layout" => "0.1.4",
       "jekyll-titles-from-headings" => "0.5.1",
