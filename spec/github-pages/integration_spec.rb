@@ -20,7 +20,7 @@ RSpec.describe "Pages Gem Integration spec" do
   def env
     {
       "BUNDLE_GEMFILE" => gemfile,
-      "JEKYLL_ENV"     => "development",
+      "JEKYLL_ENV" => "development",
       "DISABLE_WHITELIST" => "", # Do not disable the whitelist.
     }
   end
@@ -28,6 +28,7 @@ RSpec.describe "Pages Gem Integration spec" do
   def run_cmd(cmd)
     output, status = Open3.capture2e env, *cmd
     raise StandardError, output if status.exitstatus != 0
+
     output
   end
 
@@ -68,7 +69,7 @@ RSpec.describe "Pages Gem Integration spec" do
       contents = File.read(__FILE__)
       contexts = contents.scan(/context \"(.*?)\"/)
       missing = GitHubPages::Dependencies::VERSIONS.keys - contexts.flatten
-      missing -= %w(listen activesupport github-pages-health-check)
+      missing -= %w(github-pages-health-check)
       msg = "The following dependencies are missing integration tests: #{missing.join(", ")}"
       expect(missing).to be_empty, msg
     end

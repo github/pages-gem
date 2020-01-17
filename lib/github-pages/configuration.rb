@@ -13,15 +13,18 @@ module GitHubPages
 
     # Default, user overwritable options
     DEFAULTS = {
-      "jailed"   => false,
-      "plugins"  => GitHubPages::Plugins::DEFAULT_PLUGINS,
-      "future"   => true,
-      "theme"    => "jekyll-theme-primer",
+      "jailed" => false,
+      "plugins" => GitHubPages::Plugins::DEFAULT_PLUGINS,
+      "future" => true,
+      "theme" => "jekyll-theme-primer",
       "markdown" => "kramdown",
       "kramdown" => {
-        "input"     => "GFM",
+        "input" => "GFM",
         "hard_wrap" => false,
         "gfm_quirks" => "paragraph_end",
+        "syntax_highlighter_opts" => {
+          "default_lang" => "plaintext",
+        },
       },
       "exclude" => ["CNAME"],
     }.freeze
@@ -44,18 +47,18 @@ module GitHubPages
     # * incremental
     # * GH_ENV
     OVERRIDES = {
-      "lsi"         => false,
-      "safe"        => true,
+      "lsi" => false,
+      "safe" => true,
       "plugins_dir" => SecureRandom.hex,
-      "whitelist"   => GitHubPages::Plugins::PLUGIN_WHITELIST,
+      "whitelist" => GitHubPages::Plugins::PLUGIN_WHITELIST,
       "highlighter" => "rouge",
-      "kramdown"    => {
-        "template"           => "",
-        "math_engine"        => "mathjax",
+      "kramdown" => {
+        "template" => "",
+        "math_engine" => "mathjax",
         "syntax_highlighter" => "rouge",
       },
-      "gist"        => {
-        "noscript"  => false,
+      "gist" => {
+        "noscript" => false,
       },
     }.freeze
 
@@ -121,6 +124,7 @@ module GitHubPages
       # guards against double-processing via the value in #processed.
       def set(site)
         return if processed? site
+
         debug_print_versions
         set!(site)
         processed(site)
@@ -155,6 +159,7 @@ module GitHubPages
       # If the user's 'exclude' config is the default, also exclude the CNAME
       def exclude_cname(config)
         return unless config["exclude"].eql? Jekyll::Configuration::DEFAULTS["exclude"]
+
         config["exclude"].concat(DEFAULTS["exclude"])
       end
 
