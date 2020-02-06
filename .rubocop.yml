@@ -15,6 +15,13 @@
 #
 # If you disable a check, document why.
 
+inherit_gem:
+  rubocop-github:
+    - config/default.yml
+
+require:
+  - rubocop-performance
+
 AllCops:
   TargetRubyVersion: 2.3
   Exclude:
@@ -48,10 +55,10 @@ Style/HashSyntax:
   EnforcedStyle: hash_rockets
   Severity: error
 
-Layout/AlignHash:
+Layout/HashAlignment:
   SupportedLastArgumentHashStyles: always_ignore
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Enabled: false # This is usually true, but we often want to roll back to
                  # the start of a line.
 
@@ -78,7 +85,7 @@ Metrics/BlockLength:
     - github-pages.gemspec
     - !ruby/regexp /spec\/.*.rb/
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 90
   Severity: warning
   Exclude:
@@ -122,9 +129,6 @@ Metrics/ParameterLists:
 Metrics/AbcSize:
   Max: 20
 
-Layout/IndentFirstHashElement:
-  EnforcedStyle: consistent
-
 Style/SignalException:
   EnforcedStyle: only_raise
 
@@ -134,10 +138,13 @@ Layout/MultilineMethodCallIndentation:
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
-Layout/IndentFirstArgument:
+Layout/FirstArgumentIndentation:
   EnforcedStyle: consistent
 
-Layout/IndentFirstArrayElement:
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
 Layout/ExtraSpacing:
