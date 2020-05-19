@@ -28,7 +28,6 @@ RSpec.describe "Pages Gem Integration spec" do
   def run_cmd(cmd)
     output, status = Open3.capture2e env, *cmd
     raise StandardError, output if status.exitstatus != 0
-
     output
   end
 
@@ -204,6 +203,24 @@ RSpec.describe "Pages Gem Integration spec" do
     context "jekyll-mentions" do
       it "renderse mentions" do
         expect(contents).to match('<a href="https://github.com/jekyll" class="user-mention">@jekyll</a>')
+      end
+    end
+
+    context "jekyll-spaceship" do
+      it "renders table" do
+        expect(contents).to match('<td style="text-align: right" rowspan="3">')
+      end
+      it "renders emoji" do
+        expect(contents).to match('<img class="emoji" title=":\+1:" alt=":\+1:"')
+      end
+      it "renders latex" do
+        expect(contents).to match('<p>\\$\\\LaTeX\\{\\}\\$</p>')
+      end
+      it "renders plantuml" do
+        expect(contents).to match('<img class="plantuml" src=')
+      end
+      it "renders video" do
+        expect(contents).to match('<iframe class="video" src="https://www.youtube.com/embed/')
       end
     end
 
