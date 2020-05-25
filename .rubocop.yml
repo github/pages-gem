@@ -23,7 +23,7 @@ require:
   - rubocop-performance
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
   Exclude:
     - 'bin/**/*'
     - 'script/**/*'
