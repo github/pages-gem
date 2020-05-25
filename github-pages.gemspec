@@ -5,7 +5,7 @@ require File.expand_path("lib/github-pages/plugins", __dir__)
 require File.expand_path("lib/github-pages/version", __dir__)
 
 Gem::Specification.new do |s|
-  s.required_ruby_version = ">= 2.5.0"
+  s.required_ruby_version = ">= 2.3.0"
 
   s.name                  = "github-pages"
   s.version               = GitHubPages::VERSION
