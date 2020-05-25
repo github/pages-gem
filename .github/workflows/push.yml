@@ -9,7 +9,6 @@ jobs:
         ruby:
           - 2.5
           - 2.6
-          - 2.7
     steps:
     - uses: actions/checkout@master
     - name: script/cibuild-docker
