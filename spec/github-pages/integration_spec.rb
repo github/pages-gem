@@ -190,7 +190,7 @@ RSpec.describe "Pages Gem Integration spec" do
 
     context "jekyll-avatar" do
       it "renders the avatar" do
-        expected = %r{https://avatars\d\.githubusercontent\.com/hubot\?v=3&s=40}
+        expected = %r{https://avatars\d\.githubusercontent\.com/hubot\?v=3&amp;s=40}
         expect(contents).to match(expected)
       end
     end
@@ -204,6 +204,12 @@ RSpec.describe "Pages Gem Integration spec" do
     context "jekyll-mentions" do
       it "renderse mentions" do
         expect(contents).to match('<a href="https://github.com/jekyll" class="user-mention">@jekyll</a>')
+      end
+    end
+
+    context "jekyll-loading-lazy" do
+      it "sets the loading attribute" do
+        expect(contents).to match('<img src="https://example.com/image.jpg" alt="image alt" loading="lazy">')
       end
     end
 

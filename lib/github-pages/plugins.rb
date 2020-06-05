@@ -31,6 +31,7 @@ module GitHubPages
       jekyll-avatar
       jemoji
       jekyll-mentions
+      jekyll-loading-lazy
       jekyll-relative-links
       jekyll-optional-front-matter
       jekyll-readme-index
