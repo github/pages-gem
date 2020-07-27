@@ -20,7 +20,7 @@ module GitHubPages
       "github-pages-health-check" => "1.16.1",
 
       # Plugins
-      "jekyll-redirect-from" => "0.15.0",
+      "jekyll-redirect-from" => "0.16.0",
       "jekyll-sitemap" => "1.4.0",
       "jekyll-feed" => "0.13.0",
       "jekyll-gist" => "1.5.0",
