@@ -27,7 +27,7 @@ RSpec.describe "Pages Gem Integration spec" do
 
   def run_cmd(cmd)
     output, status = Open3.capture2e env, *cmd
-    raise StandardError, output if status.exitstatus != 0
+    raise StandardError, "Command: #{cmd.inspect}\n\n#{output}" if status.exitstatus != 0
 
     output
   end
@@ -44,7 +44,7 @@ RSpec.describe "Pages Gem Integration spec" do
   def bundle_install
     Dir.chdir(source) do
       File.unlink "#{gemfile}.lock" if File.exist? "#{gemfile}.lock"
-      run_cmd %w(gem install bundler)
+      run_cmd %w(bundle --version)
       run_cmd %w(bundle install)
     end
   end
