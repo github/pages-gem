@@ -45,8 +45,6 @@ RSpec.describe "Pages Gem Integration spec" do
     Dir.chdir(source) do
       File.unlink "#{gemfile}.lock" if File.exist? "#{gemfile}.lock"
       run_cmd %w(bundle --version)
-      run_cmd %w(gem install bundler) if RUBY_VERSION < "2.6"
-      run_cmd %w(bundle --version)
       run_cmd %w(bundle install)
     end
   end
