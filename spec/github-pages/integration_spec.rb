@@ -95,6 +95,12 @@ RSpec.describe "Pages Gem Integration spec" do
       end
     end
 
+    context "kramdown-parser-gfm" do
+      it "converts GFM to HTML" do
+        expect(contents).to match("<del>Nope</del>Yes")
+      end
+    end
+
     context "liquid" do
       it "renders liquid templates" do
         expect(contents).to match("Value of foo: bar")

@@ -11,7 +11,8 @@ module GitHubPages
       "jekyll-sass-converter" => "1.5.2",
 
       # Converters
-      "kramdown" => "1.17.0",
+      "kramdown" => "2.3.0",
+      "kramdown-parser-gfm" => "1.1.0",
       "jekyll-commonmark-ghpages" => "0.1.6",
 
       # Misc
