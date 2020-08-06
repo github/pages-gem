@@ -93,6 +93,10 @@ RSpec.describe "Pages Gem Integration spec" do
       it "converts markdown to HTML" do
         expect(contents).to match('<h1 id="test">Test</h1>')
       end
+
+      it "converts math to mathjax" do
+        expect(contents).to include('\[a^2 + b^2 = c^2\]')
+      end
     end
 
     context "kramdown-parser-gfm" do
