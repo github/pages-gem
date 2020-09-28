@@ -54,7 +54,7 @@ module GitHubPages
       "jekyll-theme-architect" => "0.1.1",
       "jekyll-theme-cayman" => "0.1.1",
       "jekyll-theme-dinky" => "0.1.1",
-      "jekyll-theme-hacker" => "0.1.1",
+      "jekyll-theme-hacker" => "0.1.2",
       "jekyll-theme-leap-day" => "0.1.1",
       "jekyll-theme-merlot" => "0.1.1",
       "jekyll-theme-midnight" => "0.1.1",

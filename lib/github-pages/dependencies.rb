@@ -17,24 +17,24 @@ module GitHubPages
 
       # Misc
       "liquid" => "4.0.3",
-      "rouge" => "3.19.0",
+      "rouge" => "3.23.0",
       "github-pages-health-check" => "1.16.1",
 
       # Plugins
-      "jekyll-redirect-from" => "0.15.0",
+      "jekyll-redirect-from" => "0.16.0",
       "jekyll-sitemap" => "1.4.0",
-      "jekyll-feed" => "0.13.0",
+      "jekyll-feed" => "0.15.0",
       "jekyll-gist" => "1.5.0",
       "jekyll-paginate" => "1.1.0",
       "jekyll-coffeescript" => "1.1.1",
       "jekyll-seo-tag" => "2.6.1",
       "jekyll-github-metadata" => "2.13.0",
       "jekyll-avatar" => "0.7.0",
-      "jekyll-remote-theme" => "0.4.1",
+      "jekyll-remote-theme" => "0.4.2",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji" => "0.11.1",
-      "jekyll-mentions" => "1.5.1",
+      "jemoji" => "0.12.0",
+      "jekyll-mentions" => "1.6.0",
       "jekyll-relative-links" => "0.6.1",
       "jekyll-optional-front-matter" => "0.3.2",
       "jekyll-readme-index" => "0.3.0",
