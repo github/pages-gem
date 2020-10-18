@@ -187,8 +187,12 @@ RSpec.describe "Pages Gem Integration spec" do
     end
 
     context "jekyll-seo-tag" do
-      it "outputs the tag" do
-        expect(contents).to match("<title>Jekyll SEO Tag")
+      it "outputs title tag" do
+        expect(contents).to include("<title>Jekyll SEO Tag | pages-gem</title>")
+      end
+
+      it "outputs OpenGraph locale meta tag" do
+        expect(contents).to include("<meta property=\"og:locale\" content=\"en_US\">")
       end
     end
 
