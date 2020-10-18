@@ -192,7 +192,7 @@ RSpec.describe "Pages Gem Integration spec" do
       end
 
       it "outputs OpenGraph locale meta tag" do
-        expect(contents).to include("<meta property=\"og:locale\" content=\"en_US\">")
+        expect(contents).to include("<meta property=\"og:locale\" content=\"et_EE\">")
       end
     end
 
