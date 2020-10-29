@@ -230,7 +230,7 @@ RSpec.describe "Pages Gem Integration spec" do
         expect(contents).to match('<img class="plantuml" src=')
       end
       it "renders video" do
-        expect(contents).to match('<iframe class="video" src="https://www.youtube.com/embed/')
+        expect(contents).to match('<iframe id="[\\w-]*" class="media" src="https://www.youtube.com/embed/')
       end
     end
 
