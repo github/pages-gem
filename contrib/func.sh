@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
+# The github-pages function optionally reads two environment variables
+#  - the first is the path to the Jekyll site (GH_PATH)
+#  - the second is the port number (GH_PORT)
 
 function github-pages {
   _path=${GH_PATH:-.}
