@@ -60,6 +60,8 @@ module GitHubPages
       require "sass/version"
       require "safe_yaml/version"
       require "nokogiri"
+      require "jekyll-include-cache/version"
+      require "jekyll-octicons/version"
 
       {
         "ruby" => RUBY_VERSION,
@@ -70,6 +72,8 @@ module GitHubPages
         "sass" => Sass.version[:number],
         "safe_yaml" => SafeYAML::VERSION,
         "nokogiri" => Nokogiri::VERSION,
+        "jekyll-include-cache" => JekyllIncludeCache::VERSION,
+        "jekyll-octicons" => JekyllOcticons::VERSION,
       }
     end
   end
