@@ -18,7 +18,7 @@ shell:
 		/bin/bash
 
 # Spawn a server. Specify the path to the SITE directory by
-# exposing it using `expose SITE="../path-to-jekyll-site"` prior to calling or
+# exposing it using `export SITE="../path-to-jekyll-site"` prior to calling or
 # by prepending it to the make rule e.g.: `SITE=../path-to-site make server`
 server:
 	test -d "${SITE}" || \
