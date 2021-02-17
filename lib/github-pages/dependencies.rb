@@ -17,7 +17,7 @@ module GitHubPages
 
       # Misc
       "liquid" => "4.0.3",
-      "rouge" => "3.23.0",
+      "rouge" => "3.26.0",
       "github-pages-health-check" => "1.17.0",
 
       # Plugins
@@ -27,7 +27,7 @@ module GitHubPages
       "jekyll-gist" => "1.5.0",
       "jekyll-paginate" => "1.1.0",
       "jekyll-coffeescript" => "1.1.1",
-      "jekyll-seo-tag" => "2.6.1",
+      "jekyll-seo-tag" => "2.7.1",
       "jekyll-github-metadata" => "2.13.0",
       "jekyll-avatar" => "0.7.0",
       "jekyll-remote-theme" => "0.4.2",
