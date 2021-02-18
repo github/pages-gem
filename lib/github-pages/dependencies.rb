@@ -31,7 +31,7 @@ module GitHubPages
       "jekyll-github-metadata" => "2.13.0",
       "jekyll-avatar" => "0.7.0",
       "jekyll-remote-theme" => "0.4.2",
-
+      "jekyll-spaceship" => "0.9.4",
       # Plugins to match GitHub.com Markdown
       "jemoji" => "0.12.0",
       "jekyll-mentions" => "1.6.0",
