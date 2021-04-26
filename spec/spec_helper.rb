@@ -29,6 +29,15 @@ def tmp_dir
   File.expand_path "../tmp", __dir__
 end
 
+def support_dir
+  File.expand_path "support", __dir__
+end
+
+def stub_request_for_remote_theme(repo:, revision:, filename:)
+  stub_request(:get, "https://codeload.github.com/#{repo}/zip/#{revision}").
+    to_return(:status => 200, :body => File.binread(File.join(support_dir, filename)), :headers => {"Content-Type" => "archive/zip"})
+end
+
 RSpec::Matchers.define :be_an_existing_file do
   match { |path| File.exist?(path) }
 end
