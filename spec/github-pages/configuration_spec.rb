@@ -20,6 +20,7 @@ describe(GitHubPages::Configuration) do
     ENV.delete("DISABLE_WHITELIST")
     ENV["JEKYLL_ENV"] = "test"
     ENV["PAGES_REPO_NWO"] = "github/pages-gem"
+    stub_request_for_remote_theme(:repo => "pages-themes/primer", :revision => "v0.5.4", :filename => "primer-0.5.4.zip")
   end
 
   context "#effective_config" do
@@ -103,22 +104,32 @@ describe(GitHubPages::Configuration) do
     context "themes" do
       context "with no theme set" do
         it "sets the theme" do
+          expect(effective_config["plugins"]).to include("jekyll-remote-theme")
           expect(site.theme).to_not be_nil
           expect(site.theme).to be_a(Jekyll::Theme)
-          expect(site.theme.name).to eql("jekyll-theme-primer")
+          expect(site.theme.name).to eql("primer")
         end
       end
 
       context "with a user-specified theme" do
-        let(:site) do
-          config = configuration.merge("theme" => "jekyll-theme-merlot")
-          Jekyll::Site.new(config)
+        let(:configuration) do
+          described_class.effective_config(
+            Jekyll.configuration(
+              test_config.merge("theme" => "jekyll-theme-merlot")
+            )
+          )
+        end
+
+        before(:each) do
+          stub_request_for_remote_theme(:repo => "pages-themes/merlot", :revision => "v0.1.1", :filename => "merlot-0.1.1.zip")
         end
 
         it "respects the theme" do
+          expect(configuration["theme"]).to be_nil
+          expect(configuration["remote_theme"]).to eq(GitHubPages::Plugins::THEMES_TO_CONVERT_TO_REMOTE_THEMES["jekyll-theme-merlot"])
           expect(site.theme).to_not be_nil
           expect(site.theme).to be_a(Jekyll::Theme)
-          expect(site.theme.name).to eql("jekyll-theme-merlot")
+          expect(site.theme.name).to eql("merlot")
         end
       end
 
@@ -133,10 +144,6 @@ describe(GitHubPages::Configuration) do
         end
       end
 
-      it "plugins don't include jekyll remote theme" do
-        expect(effective_config["plugins"]).to_not include("jekyll-remote-theme")
-      end
-
       context "with a remote theme" do
         let(:test_config) do
           {
@@ -149,6 +156,7 @@ describe(GitHubPages::Configuration) do
         end
 
         it "plugins include jekyll remote theme" do
+          stub_request_for_remote_theme(:repo => "foo/bar", :revision => "HEAD", :filename => "primer-0.5.4.zip")
           expect(effective_config["plugins"]).to include("jekyll-remote-theme")
         end
       end
