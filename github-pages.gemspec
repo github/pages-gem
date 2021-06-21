@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   end
 
   s.add_dependency("mercenary", "~> 0.3")
-  s.add_dependency("nokogiri", ">= 1.10.4", "< 2.0")
+  s.add_dependency("nokogiri", ">= 1.10.8", "< 2.0")
   s.add_dependency("terminal-table", "~> 1.4")
   s.add_development_dependency("jekyll_test_plugin_malicious", "~> 0.2")
   s.add_development_dependency("pry", "~> 0.10")
