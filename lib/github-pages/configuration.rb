@@ -164,7 +164,7 @@ module GitHubPages
 
         theme_name = config.delete("theme")
         config["remote_theme"] ||= GitHubPages::Plugins::THEMES_TO_CONVERT_TO_REMOTE_THEMES[theme_name]
-        config["plugins"] = Array(config["plugins"]).concat(["jekyll-remote-theme"])
+        config["plugins"] = Array(config["plugins"]).concat(["jekyll-remote-theme"]).uniq
       end
 
       # If the user's 'exclude' config is the default, also exclude the CNAME
