@@ -54,19 +54,19 @@ module GitHubPages
     # Themes to convert to remote themes
     THEMES_TO_CONVERT_TO_REMOTE_THEMES = {
       "jekyll-swiss" => "broccolini/swiss",
-      "jekyll-theme-primer" => "pages-themes/primer@v0.5.4",
-      "jekyll-theme-architect" => "pages-themes/architect@v0.1.1",
-      "jekyll-theme-cayman" => "pages-themes/cayman@v0.1.1",
-      "jekyll-theme-dinky" => "pages-themes/dinky@v0.1.1",
-      "jekyll-theme-hacker" => "pages-themes/hacker@v0.1.1",
-      "jekyll-theme-leap-day" => "pages-themes/leap-day@v0.1.1",
-      "jekyll-theme-merlot" => "pages-themes/merlot@v0.1.1",
-      "jekyll-theme-midnight" => "pages-themes/midnight@v0.1.1",
-      "jekyll-theme-minimal" => "pages-themes/minimal@v0.1.1",
-      "jekyll-theme-modernist" => "pages-themes/modernist@v0.1.1",
-      "jekyll-theme-slate" => "pages-themes/slate@v0.1.1",
-      "jekyll-theme-tactile" => "pages-themes/tactile@v0.1.1",
-      "jekyll-theme-time-machine" => "pages-themes/time-machine@v0.1.1",
+      "jekyll-theme-primer" => "pages-themes/primer@v0.6.0",
+      "jekyll-theme-architect" => "pages-themes/architect@v0.2.0",
+      "jekyll-theme-cayman" => "pages-themes/cayman@v0.2.0",
+      "jekyll-theme-dinky" => "pages-themes/dinky@v0.2.0",
+      "jekyll-theme-hacker" => "pages-themes/hacker@v0.2.0",
+      "jekyll-theme-leap-day" => "pages-themes/leap-day@v0.2.0",
+      "jekyll-theme-merlot" => "pages-themes/merlot@v0.2.0",
+      "jekyll-theme-midnight" => "pages-themes/midnight@v0.2.0",
+      "jekyll-theme-minimal" => "pages-themes/minimal@v0.2.0",
+      "jekyll-theme-modernist" => "pages-themes/modernist@v0.2.0",
+      "jekyll-theme-slate" => "pages-themes/slate@v0.2.0",
+      "jekyll-theme-tactile" => "pages-themes/tactile@v0.2.0",
+      "jekyll-theme-time-machine" => "pages-themes/time-machine@v0.2.0",
     }
   end
 end
