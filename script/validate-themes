@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "github-pages"
+require "open3"
+
+failure = false
+
+def test_site(theme_name: nil, remote_theme_name: nil)
+  if theme_name.nil? && remote_theme_name.nil?
+    raise "theme_name: or remote_theme_name: required"
+  end
+
+  command = if theme_name
+              ["script/test-site", theme_name]
+            else
+              ["script/test-site-remote-theme", remote_theme_name]
+            end
+
+  exit_status = nil
+  puts "Executing #{command}"
+  Open3.popen2e(*command) { |stdin, stdout_and_stderr, wait_thr|
+    stdout_and_stderr.each { |line|
+      puts line
+    }
+    exit_status = wait_thr.value
+  }
+  exit_status.success?
+end
+
+# Gem-based themes
+GitHubPages::Plugins::THEMES.each do |theme_name, version|
+  puts "Testing theme #{theme_name}..."
+  unless test_site(theme_name: theme_name) # rubocop:disable Style/HashSyntax
+    failure = true
+    puts "FAILURE for #{theme_name}"
+  end
+end
+
+# Remote Themes
+GitHubPages::Plugins::THEMES_TO_CONVERT_TO_REMOTE_THEMES.each do |_theme_name, remote_theme|
+  puts "Testing remote theme #{remote_theme}..."
+  unless test_site(remote_theme_name: remote_theme) # rubocop:disable Style/HashSyntax
+    puts "FAILURE for #{remote_theme}"
+    failure = true
+  end
+end
+
+abort "FAILURE" if failure

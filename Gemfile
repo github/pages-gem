@@ -12,3 +12,7 @@ group :test do
   gem "rubocop-performance"
   gem "webmock"
 end
+
+group :development do
+  gem "solargraph"
+end

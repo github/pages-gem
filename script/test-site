@@ -6,11 +6,15 @@ set -e
 rm -Rf ./test-site
 bundle exec jekyll new test-site
 
-BUNDLE_GEMFILE="$(pwd)/Gemfile"
-export BUNDLE_GEMFILE
-
 cd test-site
-rm -Rf Gemfile
+echo 'source "https://rubygems.org"' > Gemfile
+echo 'gem "github-pages", path: "../", group: :jekyll_plugins' >> Gemfile
+bundle install
+
+theme_name="$1"
+if [ -n "$theme_name" ]; then
+  echo "theme: $theme_name" >> _config.yml
+fi
 
 echo "Using $(bundle exec github-pages --version)"
 echo "Using $(bundle exec jekyll --version)"

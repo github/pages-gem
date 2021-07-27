@@ -1,0 +1,14 @@
+on:
+  - push
+  - pull_request
+name: validate themes
+jobs:
+  build:
+    name: "GitHub Pages: Validate Themes"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Validate themes
+      run: script/docker-run script/validate-themes
+      env:
+        RUBY_VERSION: 2.7

@@ -1,0 +1,39 @@
+#!/bin/sh
+# Test that the default Jekyll site builds with a given remote theme
+
+set -e
+
+rm -Rf ./test-site
+bundle exec jekyll new --blank test-site
+
+cd test-site
+echo 'source "https://rubygems.org"' > Gemfile
+echo 'gem "github-pages", path: "../", group: :jekyll_plugins' >> Gemfile
+bundle install
+
+echo "title: Your awesome title" > _config.yml
+
+theme_name="$1"
+if [ -n "$theme_name" ]; then
+  echo "theme: null" >> _config.yml
+  echo "remote_theme: $theme_name" >> _config.yml
+  echo "plugins: [jekyll-remote-theme]" >> _config.yml
+fi
+
+rm -Rf index.html
+echo "---" > index.md
+echo "layout: page" >> index.md
+echo "---" >> index.md
+echo "" >> index.md
+echo "{{site.title}} rendered using {{site.remote_theme}}" >> index.md
+
+echo "Using $(bundle exec github-pages --version)"
+echo "Using $(bundle exec jekyll --version)"
+bundle exec jekyll build --trace --verbose
+
+grep --quiet "Your awesome title" ./_site/index.html
+grep --quiet "$theme_name" ./_site/index.html
+echo "Site built!"
+
+cd ..
+rm -Rf ./test-site
