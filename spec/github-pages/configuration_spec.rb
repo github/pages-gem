@@ -20,7 +20,6 @@ describe(GitHubPages::Configuration) do
     ENV.delete("DISABLE_WHITELIST")
     ENV["JEKYLL_ENV"] = "test"
     ENV["PAGES_REPO_NWO"] = "github/pages-gem"
-    stub_request_for_remote_theme(:repo => "pages-themes/primer", :revision => "v0.6.0", :filename => "primer-0.6.0.zip")
   end
 
   context "#effective_config" do
@@ -104,10 +103,9 @@ describe(GitHubPages::Configuration) do
     context "themes" do
       context "with no theme set" do
         it "sets the theme" do
-          expect(effective_config["plugins"]).to include("jekyll-remote-theme")
           expect(site.theme).to_not be_nil
           expect(site.theme).to be_a(Jekyll::Theme)
-          expect(site.theme.name).to eql("primer")
+          expect(site.theme.name).to eql("jekyll-theme-primer")
         end
       end
 
@@ -120,16 +118,10 @@ describe(GitHubPages::Configuration) do
           )
         end
 
-        before(:each) do
-          stub_request_for_remote_theme(:repo => "pages-themes/merlot", :revision => "v0.2.0", :filename => "merlot-0.2.0.zip")
-        end
-
         it "respects the theme" do
-          expect(configuration["theme"]).to be_nil
-          expect(configuration["remote_theme"]).to eq(GitHubPages::Plugins::THEMES_TO_CONVERT_TO_REMOTE_THEMES["jekyll-theme-merlot"])
           expect(site.theme).to_not be_nil
           expect(site.theme).to be_a(Jekyll::Theme)
-          expect(site.theme.name).to eql("merlot")
+          expect(site.theme.name).to eql("jekyll-theme-merlot")
         end
       end
 
@@ -144,6 +136,10 @@ describe(GitHubPages::Configuration) do
         end
       end
 
+      it "plugins don't include jekyll remote theme" do
+        expect(effective_config["plugins"]).to_not include("jekyll-remote-theme")
+      end
+
       context "with a remote theme" do
         let(:test_config) do
           {
@@ -156,7 +152,6 @@ describe(GitHubPages::Configuration) do
         end
 
         it "plugins include jekyll remote theme" do
-          stub_request_for_remote_theme(:repo => "foo/bar", :revision => "HEAD", :filename => "primer-0.6.0.zip")
           expect(effective_config["plugins"]).to include("jekyll-remote-theme")
         end
       end

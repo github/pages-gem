@@ -49,6 +49,20 @@ module GitHubPages
     # Themes
     THEMES = {
       "minima" => "2.5.1",
+      "jekyll-swiss" => "1.0.0",
+      "jekyll-theme-primer" => "0.6.0",
+      "jekyll-theme-architect" => "0.2.0",
+      "jekyll-theme-cayman" => "0.2.0",
+      "jekyll-theme-dinky" => "0.2.0",
+      "jekyll-theme-hacker" => "0.2.0",
+      "jekyll-theme-leap-day" => "0.2.0",
+      "jekyll-theme-merlot" => "0.2.0",
+      "jekyll-theme-midnight" => "0.2.0",
+      "jekyll-theme-minimal" => "0.2.0",
+      "jekyll-theme-modernist" => "0.2.0",
+      "jekyll-theme-slate" => "0.2.0",
+      "jekyll-theme-tactile" => "0.2.0",
+      "jekyll-theme-time-machine" => "0.2.0",
     }.freeze
 
     # Themes to convert to remote themes

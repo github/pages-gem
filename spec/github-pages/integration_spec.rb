@@ -258,7 +258,7 @@ RSpec.describe "Pages Gem Integration spec" do
 
     context "jekyll-theme-primer" do
       it "sets the theme" do
-        expect(contents).to match("Theme: primer")
+        expect(contents).to match("Theme: jekyll-theme-primer")
       end
 
       it "uses the theme" do

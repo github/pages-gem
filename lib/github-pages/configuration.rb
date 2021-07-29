@@ -159,12 +159,7 @@ module GitHubPages
 
       # If the user has set a 'theme', then see if we can automatically use remote theme instead.
       def migrate_theme_to_remote_theme(config)
-        return unless config["theme"]
-        return unless GitHubPages::Plugins::THEMES_TO_CONVERT_TO_REMOTE_THEMES.key?(config["theme"])
-
-        theme_name = config.delete("theme")
-        config["remote_theme"] ||= GitHubPages::Plugins::THEMES_TO_CONVERT_TO_REMOTE_THEMES[theme_name]
-        config["plugins"] = Array(config["plugins"]).concat(["jekyll-remote-theme"]).uniq
+        # This functionality has been rolled back due to complications with jekyll-remote-theme.
       end
 
       # If the user's 'exclude' config is the default, also exclude the CNAME
