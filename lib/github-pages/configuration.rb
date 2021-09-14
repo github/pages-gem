@@ -107,6 +107,7 @@ module GitHubPages
         # Allow theme to be explicitly disabled via "theme: null"
         config["theme"] = user_config["theme"] if user_config.key?("theme")
 
+        migrate_theme_to_remote_theme(config)
         exclude_cname(config)
 
         # Merge overwrites into user config
@@ -154,6 +155,11 @@ module GitHubPages
           "extensions" => %w(table strikethrough autolink tagfilter),
           "options" => %w(footnotes),
         }
+      end
+
+      # If the user has set a 'theme', then see if we can automatically use remote theme instead.
+      def migrate_theme_to_remote_theme(config)
+        # This functionality has been rolled back due to complications with jekyll-remote-theme.
       end
 
       # If the user's 'exclude' config is the default, also exclude the CNAME

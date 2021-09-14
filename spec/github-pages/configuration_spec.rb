@@ -110,9 +110,12 @@ describe(GitHubPages::Configuration) do
       end
 
       context "with a user-specified theme" do
-        let(:site) do
-          config = configuration.merge("theme" => "jekyll-theme-merlot")
-          Jekyll::Site.new(config)
+        let(:configuration) do
+          described_class.effective_config(
+            Jekyll.configuration(
+              test_config.merge("theme" => "jekyll-theme-merlot")
+            )
+          )
         end
 
         it "respects the theme" do
