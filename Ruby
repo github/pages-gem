@@ -1,0 +1,86 @@
+GitHub Trang Ruby Gem
+Một Ruby Gem đơn giản để khởi động các phụ thuộc để thiết lập và duy trì môi trường Jekyll cục bộ đồng bộ với GitHub Pages.
+
+Phiên bản đá quý Trạng thái xây dựng
+
+Sử dụng
+Người ta có thể chọn phương pháp tiếp cận thông thường là sử dụng trang-gem hoặc phương pháp chứa trong đó vùng chứa Docker được sử dụng để cung cấp một môi trường với hầu hết các phần phụ thuộc được cài đặt sẵn.
+
+Thông thường
+Quan trọng: Đảm bảo bạn có Bundler> v1.14 bằng cách chạy gem update bundlertrong thiết bị đầu cuối của bạn trước khi làm theo các bước tiếp theo.
+
+Thêm phần sau vào Gemfile của dự án của bạn:  
+đá quý  'github-trang' ,  nhóm : : jekyll_plugins
+Chạy bundle install
+Lưu ý: Bạn không bắt buộc phải cài đặt Jekyll riêng. Sau khi github-pagesgem được cài đặt, bạn có thể xây dựng trang web của mình bằng cách sử dụng jekyll buildhoặc xem trước trang web của mình bằng cách sử dụng jekyll serve. Để biết thêm thông tin về cách cài đặt Jekyll cục bộ, vui lòng xem tài liệu Trợ giúp GitHub về vấn đề này .
+
+Docker
+Với điều kiện Docker được cài đặt, người ta có thể tránh việc thiết lập các công cụ bổ sung trong môi trường bằng cách tạo một vùng chứa Docker.
+
+Chạy make imagetừ thư mục gốc của thư mục pages-gem để tạo một hình ảnh sẽ được gắn thẻ làgh-pages
+Hoặc sử dụng make image_alpinecho một alpinehình ảnh dựa trên nhỏ hơn
+Bắt đầu một phiên bản của máy chủ bằng cách chạy:
+SITE=PATH_TO_YOUR_PROJECT make servertừ gốc của gh-pageskho lưu trữ (nơi Makefile cư trú) hoặc
+SITE=PATH_TO_YOUR_PROJECT docker run --rm -p 4000:4000 -v `realpath ${SITE}`:/src/site gh-pages từ bất kỳ thư mục nào hoặc
+github-pages $PATH_TO_YOUR_PROJECTtừ bất kỳ thư mục nào khi func.sh đã được cung cấp vào phiên đầu cuối của bạn hoặc
+github-pagestừ thư mục của trang web Jekyll để được xem trước khi func.sh đã được lấy nguồn vào phiên đầu cuối của bạn.
+Lưu ý: các github-pageschức năng có thể được kích hoạt bằng nguồn func.sh. Điều này có thể được thực hiện bằng cách thêm vào
+
+nguồn  $ PATH_TO_THIS_DIRECTORY /contrib/func.sh
+đối với các tập lệnh tải khi bắt đầu một phiên đầu cuối (thường là ~/.bashrctrên bash hoặc ~/.zshrctrên zsh).:
+
+Chạy github-pagesbên trong một thư mục của trang web Jekyll sẽ tạo ra một máy chủ trên cổng 4000 . Người ta có thể cung cấp một cách rõ ràng một đường dẫn đến một trang web Jekyll và một cổng bằng cách chạy github-pages $PATH $PORT. Cách tiếp cận này được cung cấp như một giải pháp thay thế thân thiện hơn với người dùng make serverhoặc các docker runlời gọi được đề cập như là các tùy chọn đầu tiên trong bước 2.
+
+Thứ tự của các đối số cho github-pageshàm dựa trên giả định rằng có nhiều khả năng cần chỉ định một đường dẫn tùy chỉnh hơn là một cổng tùy chỉnh.
+
+Sử dụng dòng lệnh
+Đá quý GitHub Pages cũng đi kèm với một số công cụ dòng lệnh, có trong github-pageslệnh.
+
+Liệt kê các phiên bản phụ thuộc
+$ Bó exec github-trang phiên bản 
++ --------------------------- + --------- + 
+| Đá quý | Phiên bản | 
++ --------------------------- + --------- + 
+| jekyll | xxx | 
+| kramdown | xxx | 
+| chất lỏng | xxx | 
+| .... | .... | 
++ --------------------------- + --------- +
+Lưu ý, bạn cũng có thể chuyển --gemfilecờ để lấy các phụ thuộc được liệt kê ở định dạng phụ thuộc Gemfile hợp lệ. Bạn cũng có thể xem danh sách các phiên bản phụ thuộc trực tiếp tại trang.github.com/versions .
+
+Kiểm tra sức khỏe
+Kiểm tra trang GitHub Pages của bạn để biết các sự cố cấu hình DNS phổ biến.
+
+$ github-pages health-check Đang kiểm 
+tra tên miền foo.invalid ... Rất tiếc 
+. Có vẻ như có gì đó khó hiểu: Một bản ghi trỏ tới địa chỉ IP không dùng nữa
+Xem tài liệu Kiểm tra sức khỏe của Trang GitHub để biết thêm thông tin.
+
+Bỏ qua danh sách trắng plugin
+Nếu bạn muốn chạy một plugin Jekyll cục bộ không có trong danh sách cho phép để sử dụng trên Trang GitHub, bạn có thể làm như vậy bằng cách thêm tiền tố jekyll buildhoặc jekyll servelệnh với DISABLE_WHITELIST=true. Điều này sẽ cho phép trang web của bạn sử dụng bất kỳ plugin nào được liệt kê trong gemscờ cấu hình trang web của bạn . Xin lưu ý, tuy nhiên, tùy chọn này chỉ khả dụng khi xem trước trang web Jekyll của bạn tại địa phương.
+
+Đang cập nhật
+Để cập nhật lên phiên bản mới nhất của Jekyll và các phụ thuộc liên quan, chỉ cần chạy gem update github-pageshoặc nếu bạn đã cài đặt qua Bundler bundle update github-pages,.
+
+Mục đích của dự án
+Mục tiêu của đá quý GitHub Pages là giúp người dùng GitHub Pages khởi động và duy trì môi trường xây dựng Jekyll phù hợp nhất với môi trường xây dựng Trang GitHub. GitHub Pages gem dựa trên các yêu cầu rõ ràng được chia sẻ giữa cả máy tính của người dùng và máy chủ bản dựng để đảm bảo rằng kết quả của bản dựng cục bộ của người dùng nhất quán cũng là kết quả của bản dựng của máy chủ.
+
+Các công cụ bổ sung, chẳng hạn như các công cụ tích hợp với API GitHub để giúp quản lý các trang GitHub Pages dễ dàng hơn không phải là mục tiêu chính, nhưng có thể nằm trong phạm vi của dự án.
+
+Phiên bản nào
+Đá quý GitHub Pages tìm kiếm phiên bản hai khía cạnh của môi trường xây dựng:
+
+1. Ruby
+Phiên bản của Ruby mà Jekyll được thực thi. Mặc dù bản thân Jekyll có thể tương thích với các phiên bản trước hoặc trong tương lai của Ruby, các môi trường thực thi khác nhau mang lại kết quả khác nhau. Ví dụ: Ruby 1.8.7 phân tích cú pháp YAML khác với 1.9.3 và Kramdown gặp sự cố khi xử lý mailtocác liên kết trước 1.9.3. Để đảm bảo rằng việc xây dựng cục bộ luôn dẫn đến kết quả giống như những gì xuất hiện khi được xuất bản, điều cần thiết là bản thân Ruby phải được tạo phiên bản cùng với Đá quý, mặc dù không có điểm tương thích nào đã biết.
+
+2. Sự phụ thuộc
+Điều này bao gồm bộ xử lý Markdown và bất kỳ sự phụ thuộc nào khác của Jekyll mà sự không giống nhau về phiên bản có thể tạo ra kết quả không mong muốn. Theo truyền thống, Maruku, Kramdown, RedCloth, chất lỏng, rdiscount và redcarpet đã được duy trì nghiêm ngặt do những thay đổi phá vỡ đã biết.
+
+Changelog
+Xem tất cả các bản phát hành .
+
+Phát hành
+Để phát hành một phiên bản mới của đá quý này, hãy chạy script/releasetừ masterchi nhánh.
+
+Giấy phép
+Được phân phối theo Giấy phép MIT .
