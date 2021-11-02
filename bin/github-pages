@@ -56,4 +56,17 @@ Mercenary.program(:"github-pages") do |p|
       end
     end
   end
+
+  p.command(:build) do |c|
+    c.syntax "build [options]"
+    c.description "Builds your Jekyll site"
+
+    c.option 'verbose', '--verbose', 'Verbose logging'
+    c.option 'source', '--source DIR', 'From where to collect the source files'
+    c.option 'destination', '--destination DIR', 'To where the compiled files should be written'
+
+    c.action do |_, options|
+      Jekyll::Commands::Build.process(options)
+    end
+  end
 end
