@@ -25,7 +25,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t ${{ steps.meta.outputs.tags }} -f Dockerfile .
+          docker build -t ${{ steps.meta.outputs.version }} -f Dockerfile .
 
       - name: Push to Container Registry
         if: github.event_name != 'pull_request'
