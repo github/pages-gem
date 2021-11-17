@@ -11,6 +11,7 @@ gems:
   - jemoji
   - jekyll-mentions
   - jekyll_test_plugin_malicious
+  - jekyll-include-cache
 quiet: false
 paginate: 5
 github:

@@ -273,6 +273,12 @@ RSpec.describe "Pages Gem Integration spec" do
         expect(contents).to match('aria-label="hi"')
       end
     end
+
+    context "jekyll-include-cache" do
+      it "works" do
+        expect(contents).to match('<h1 id="cached">Hi from the cache Test User!!!</h1>')
+      end
+    end
   end
 
   context "fixture site with remote theme config" do
