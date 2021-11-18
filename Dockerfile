@@ -10,7 +10,6 @@ RUN apt-get update \
 
 RUN gem update --system
 
-COPY .git /src/gh/pages-gem/.git
 COPY Gemfile* /src/gh/pages-gem/
 COPY github-pages.gemspec /src/gh/pages-gem
 COPY lib/ /src/gh/pages-gem/lib
