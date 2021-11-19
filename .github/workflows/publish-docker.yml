@@ -17,6 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
       - name: Get Docker Metadata
         id: meta
         uses: docker/metadata-action@v3
@@ -29,6 +32,10 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Temp list all dirs
+        run: |
+          ls -a 
 
       - name: Build Image and Push to Conainer Registry (if master or tag)
         id: docker_build
