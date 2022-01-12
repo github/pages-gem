@@ -82,9 +82,9 @@ gh api repos/actions/jekyll-build-pages/git/refs/heads/pages-gem-release-$tag -F
 gh api repos/github/pages.github.com/git/refs/heads/pages-gem-release-$tag -F "sha"="$new_gh_pages_site_sha" -F "ref"="refs/heads/pages-gem-release-$tag" -F "force"="true"
 
 # create pull requests in downstream repos
-gh pr create --base "master" --reviewer "@me" --head "pages-gem-release-$tag" --title "Bump pages-gem version to $tag" --assignee "@me" --body "Bump pages-gem version to $tag. You must manually make those changes and commit to this branch" --repo "github/pages" 
-gh pr create --base "main" --reviewer "@me" --head "pages-gem-release-$tag" --title "Bump pages-gem version to $tag" --assignee "@me" --body "Bump pages-gem version to $tag. You must manually make those changes and commit to this branch" --repo "actions/jekyll-build-pages"
-gh pr create --base "master" --reviewer "@me"  --head "pages-gem-release-$tag" --title "Bump pages-gem version to $tag" --assignee "@me" --body "Bump pages-gem version to $tag. You must manually make those changes and commit to this branch" --repo "github/pages.github.com"
+gh pr create --base "master" --head "pages-gem-release-$tag" --title "Bump pages-gem version to $tag" --assignee "@me" --body "Bump pages-gem version to $tag. You must manually make those changes and commit to this branch" --repo "github/pages" 
+gh pr create --base "main"  --head "pages-gem-release-$tag" --title "Bump pages-gem version to $tag" --assignee "@me" --body "Bump pages-gem version to $tag. You must manually make those changes and commit to this branch" --repo "actions/jekyll-build-pages"
+gh pr create --base "master" --head "pages-gem-release-$tag" --title "Bump pages-gem version to $tag" --assignee "@me" --body "Bump pages-gem version to $tag. You must manually make those changes and commit to this branch" --repo "github/pages.github.com"
 
 # clean up the input file for the commit
 
