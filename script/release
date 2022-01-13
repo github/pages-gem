@@ -61,7 +61,7 @@ gh api repos/github/pages/git/refs -F "sha"="$gh_pages_site_sha" -F "ref"="refs/
 
 gh_pages_tree = gh api repos/github/pages/git/commits/$gh_pages_sha | jq '. | .tree.sha'
 jekyll_tree = gh api repos/github/actions/jekyll-build-pages/commits/$jekyll_sha | jq '. | .tree.sha'
-gh_pages_site_tree = gh api repos/github/papages.github.comges/git/commits/$gh_pages_site_sha | jq '. | .tree.sha'
+gh_pages_site_tree = gh api repos/github/pages.github.com/git/commits/$gh_pages_site_sha | jq '. | .tree.sha'
 
 # create the input file for the commit. We have to do this because the F flag doesn't support arrays
 
