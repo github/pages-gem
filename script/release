@@ -1,4 +1,9 @@
 #!/bin/sh
+
+# check that gh is installed and logged in 
+
+gh auth status -h github.com
+
 # Tag and push a release.
 
 set -e
@@ -39,4 +44,50 @@ git fetch -t origin
 # Tag it and bag it.
 
 gem push github-pages-*.gem && git tag "$tag" &&
-  git push origin master && git push origin "$tag"
+git push origin master && git push origin "$tag"
+
+# create a new release on github
+gh release create "$tag" --notes "Automated release for $tag"
+
+
+# create a tmp folder
+mkdir -p tmp
+
+#for each dependent repo, create a new branch an a blank pr. 
+# first get the sha of main for each repo 
+
+gh_pages_sha = gh api repos/github/pages/git/refs/heads/master | jq '. | .object.sha'
+jekyll_sha = gh api repos/actions/jekyll-build-pages/git/refs/heads/main | jq '. | .object.sha'
+
+# then create the branches 
+
+gh api repos/github/pages/git/refs -F "sha"="$gh_pages_sha" -F "ref"="refs/heads/pages-gem-release-$tag"
+gh api repos/github/pages/git/refs -F "sha"="$jekyll_sha" -F "ref"="refs/heads/pages-gem-release-$tag"
+
+#then we need the tree object so we can create a commit using the api
+
+gh_pages_tree = gh api repos/github/pages/git/commits/$gh_pages_sha | jq '. | .tree.sha'
+jekyll_tree = gh api repos/github/actions/jekyll-build-pages/commits/$jekyll_sha | jq '. | .tree.sha'
+
+# create the input file for the commit. We have to do this because the F flag doesn't support arrays
+
+echo "{\"tree\": \"$gh_pages_tree\", \"parents\": [\"$gh_pages_sha\"], \"message\": \"automated commit for pr creation\"}" > tmp/h_pages_commit_input.json
+echo "{\"tree\": \"$jekyll_tree\", \"parents\": [\"$jekyll_sha\"], \"message\": \"automated commit for pr creation\"}" > tmp/jekyll_commit_input.json
+
+# create the commit
+
+new_gh_pages_sha = gh api repos/github/pages/git/commits --input tmp/gh_pages_commit_input.json | jq '. | .sha' 
+new_jekyll_sha = gh api repos/actions/jekyll-build-pages/git/commits --input tmp/jekyll_commit_input.json | jq '. | .sha' 
+
+# associate the commit with the branch
+
+gh api repos/github/pages/git/refs/heads/pages-gem-release-$tag -F "sha"="$new_gh_pages_sha" -F "ref"="refs/heads/pages-gem-release-$tag" -F "force"="true"
+gh api repos/actions/jekyll-build-pages/git/refs/heads/pages-gem-release-$tag -F "sha"="$new_jekyll_sha" -F "ref"="refs/heads/pages-gem-release-$tag" -F "force"="true"
+
+# create pull requests in downstream repos
+gh pr create --base "master" --head "pages-gem-release-$tag" --title "Bump pages-gem version to $tag" --assignee "@me" --body "Bump pages-gem version to $tag. You must manually make those changes and commit to this branch" --repo "github/pages" 
+gh pr create --base "main"  --head "pages-gem-release-$tag" --title "Bump pages-gem version to $tag" --assignee "@me" --body "Bump pages-gem version to $tag. You must manually make those changes and commit to this branch" --repo "actions/jekyll-build-pages"
+
+# clean up the input file for the commit
+
+rm tmp/*

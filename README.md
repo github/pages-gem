@@ -113,6 +113,18 @@ See [all releases](https://github.com/github/pages-gem/releases).
 
 To release a new version of this gem, run `script/release` from the `master` branch.
 
+This will create and tag the release.
+
+It will also create prs in the relevant repos and assign them to you. It is your responsibility to
+
+1. update the version of the gem in those repos
+2. deploy those services as needed
+
+The relevant repos are: 
+1. [github-pages](https://github.com/github/pages)
+2. [jekyll-build-pages](https://github.com/actions/jekyll-build-pages/blob/main/Gemfile)
+3. [pages.github.com](https://github.com/github/pages.github.com)
+
 ## License
 
 Distributed under the [MIT License](LICENSE).
