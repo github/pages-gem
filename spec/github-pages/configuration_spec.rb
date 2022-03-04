@@ -83,7 +83,7 @@ describe(GitHubPages::Configuration) do
           expect(effective_config["markdown"]).to eql("CommonMarkGhPages")
           expect(effective_config["commonmark"]).to eql(
             "extensions" => %w(table strikethrough autolink tagfilter),
-            "options" => %w(footnotes)
+            "options" => %w(unsafe footnotes)
           )
         end
       end

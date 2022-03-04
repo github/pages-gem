@@ -153,7 +153,7 @@ module GitHubPages
         config["markdown"] = "CommonMarkGhPages"
         config["commonmark"] = {
           "extensions" => %w(table strikethrough autolink tagfilter),
-          "options" => %w(footnotes),
+          "options" => %w(unsafe footnotes),
         }
       end
 
