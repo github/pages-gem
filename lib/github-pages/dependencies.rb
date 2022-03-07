@@ -8,7 +8,7 @@ module GitHubPages
     VERSIONS = {
       # Jekyll
       "jekyll" => "3.9.0",
-      "jekyll-sass-converter" => "1.5.2",
+      "jekyll-sass-converter" => "2.2.0",
 
       # Converters
       "kramdown" => "2.3.1",
