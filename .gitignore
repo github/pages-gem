@@ -1,5 +1,4 @@
 *.gem
-*.lock
 .bundle
 .sass-cache
 CNAME

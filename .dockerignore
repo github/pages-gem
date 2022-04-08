@@ -2,4 +2,3 @@ Dockerfile*
 docker-compose*.yml
 .dockerignore
 Makefile
-Gemfile.lock
