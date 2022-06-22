@@ -1,7 +1,8 @@
 FROM ruby:2.7.3-alpine
 
 RUN apk update && apk add --no-cache \
-  git
+  git \
+  gcompat
 
 COPY . /src/gh/pages-gem
 
