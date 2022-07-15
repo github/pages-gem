@@ -62,13 +62,6 @@ module GitHubPages
       },
     }.freeze
 
-    # These configuration settings have corresponding instance variables on
-    # Jekyll::Site and need to be set properly when the config is updated.
-    CONFIGS_WITH_METHODS = %w(
-      safe lsi highlighter baseurl exclude include future unpublished
-      show_drafts limit_posts keep_files
-    ).freeze
-
     class << self
       def processed?(site)
         site.instance_variable_get(:@_github_pages_processed) == true
