@@ -17,7 +17,7 @@ module GitHubPages
 
       # Misc
       "liquid" => "4.0.4",
-      "rouge" => "3.26.0",
+      "rouge" => "3.30.0",
       "github-pages-health-check" => "1.17.9",
 
       # Plugins
