@@ -123,7 +123,7 @@ It will also create prs in the relevant repos and assign them to you. It is your
 The relevant repos are: 
 1. [github-pages](https://github.com/github/pages)
 2. [jekyll-build-pages](https://github.com/actions/jekyll-build-pages/blob/main/Gemfile)
-3. [pages.github.com](https://github.com/github/pages.github.com)
+3. [pages.github.com](https://pages.github.com)
 
 ## License
 
