@@ -10,7 +10,7 @@ jobs:
           - 2.6
           - 2.7
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: script/cibuild-docker
       run: script/cibuild-docker
       env:
