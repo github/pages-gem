@@ -14,7 +14,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
+          ruby-version: '2.7.3'
       - name: Build gem
         run: |
           gem build github-pages.gemspec
