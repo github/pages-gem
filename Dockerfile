@@ -1,4 +1,4 @@
-ARG RUBY_VERSION=2.7.3
+ARG RUBY_VERSION=2.7.8
 FROM ruby:$RUBY_VERSION
 
 RUN apt-get update \
