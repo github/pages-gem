@@ -9,7 +9,7 @@ RUN apt-get update \
     nodejs
 
 # final version for rubygems-update to supoprt ruby 2.7, consider removing this after upgraded to ruby 3.0
-RUN gem update --system 3.2
+RUN gem update --system 3.4.22
 
 COPY .git /src/gh/pages-gem/.git
 COPY Gemfile* /src/gh/pages-gem/
