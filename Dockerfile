@@ -1,4 +1,4 @@
-ARG RUBY_VERSION=3.4.22
+ARG RUBY_VERSION=3.4
 FROM ruby:$RUBY_VERSION
 
 RUN apt-get update \
