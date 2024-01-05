@@ -2,5 +2,5 @@
 
 set -ex
 
-docker build --build-arg -t github-pages .
+docker build -t github-pages .
 docker run --rm --workdir /src/gh/pages-gem github-pages script/cibuild
