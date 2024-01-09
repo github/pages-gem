@@ -7,7 +7,7 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll" => "3.9.3",
+      "jekyll" => "3.9.4",
       "jekyll-sass-converter" => "1.5.2",
 
       # Converters
@@ -63,7 +63,7 @@ module GitHubPages
       require "nokogiri"
 
       {
-        "ruby" => RUBY_VERSION,
+        "ruby" => "3.3",
 
         # Gem versions we're curious about
         "github-pages" => VERSION.to_s,
