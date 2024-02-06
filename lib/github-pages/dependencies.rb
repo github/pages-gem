@@ -11,35 +11,35 @@ module GitHubPages
       "jekyll-sass-converter" => "1.5.2",
 
       # Converters
-      "kramdown" => "2.3.2",
+      "kramdown" => "2.4.0",
       "kramdown-parser-gfm" => "1.1.0",
       "jekyll-commonmark-ghpages" => "0.4.0",
 
       # Misc
       "liquid" => "4.0.4",
-      "rouge" => "3.26.0",
-      "github-pages-health-check" => "1.17.9",
+      "rouge" => "3.30.0",
+      "github-pages-health-check" => "1.18.2",
 
       # Plugins
       "jekyll-redirect-from" => "0.16.0",
       "jekyll-sitemap" => "1.4.0",
-      "jekyll-feed" => "0.15.1",
-      "jekyll-gist" => "1.5.0",
+      "jekyll-feed" => "0.17.0",
+      "jekyll-gist" => "1.6.0",
       "jekyll-paginate" => "1.1.0",
-      "jekyll-coffeescript" => "1.1.1",
+      "jekyll-coffeescript" => "1.2.2",
       "jekyll-seo-tag" => "2.8.0",
-      "jekyll-github-metadata" => "2.13.0",
-      "jekyll-avatar" => "0.7.0",
+      "jekyll-github-metadata" => "2.16.1",
+      "jekyll-avatar" => "0.8.0",
       "jekyll-remote-theme" => "0.4.3",
       "jekyll-include-cache" => "0.2.1",
 
       # Plugins to match GitHub.com Markdown
-      "jemoji" => "0.12.0",
+      "jemoji" => "0.13.0",
       "jekyll-mentions" => "1.6.0",
-      "jekyll-relative-links" => "0.6.1",
+      "jekyll-relative-links" => "0.7.0",
       "jekyll-optional-front-matter" => "0.3.2",
       "jekyll-readme-index" => "0.3.0",
-      "jekyll-default-layout" => "0.1.4",
+      "jekyll-default-layout" => "0.1.5",
       "jekyll-titles-from-headings" => "0.5.3",
     }.freeze
 
