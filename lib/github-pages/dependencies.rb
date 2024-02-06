@@ -63,7 +63,7 @@ module GitHubPages
       require "nokogiri"
 
       {
-        "ruby" => "3.3",
+        "ruby" => RUBY_VERSION,
 
         # Gem versions we're curious about
         "github-pages" => VERSION.to_s,
