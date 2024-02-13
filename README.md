@@ -11,7 +11,12 @@ One may opt for the conventional approach of using the pages-gem or the containe
 
 ### Conventional
 
-**Important: Make sure you have Bundler > v1.14 by running `gem update bundler` in your terminal before following the next steps.**
+0. Make sure you have Bundler > `v1.14`:
+
+ ```sh
+ 
+ gem update bundler
+ ```
 
 1. Add the following to your project's Gemfile:  
 
