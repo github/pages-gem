@@ -224,6 +224,7 @@ RSpec.describe "Pages Gem Integration spec" do
     context "jekyll-relative-links" do
       it "converts relative links" do
         expect(contents).to match('<a href="/jekyll.html">Jekyll</a>')
+        expect(contents).to match("<p>Just a relative link</p>") # excerpt
       end
     end
 
