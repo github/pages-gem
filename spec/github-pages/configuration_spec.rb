@@ -49,6 +49,25 @@ describe(GitHubPages::Configuration) do
       expect(effective_config["quiet"]).to eql(true)
     end
 
+    it "has default values for math_engine and syntax_highlighter" do
+      expect(effective_config["kramdown"]["math_engine"]).to eql("mathjax")
+      expect(effective_config["kramdown"]["syntax_highlighter"]).to eql("rouge")
+    end
+
+    it "respects 'nil' for math_engine and syntax_highlighter" do
+      config = configuration.merge("kramdown" => { "math_engine" => "nil", "syntax_highlighter" => "nil" })
+      effective_config = described_class.effective_config(config)
+      expect(effective_config["kramdown"]["math_engine"]).to be_nil
+      expect(effective_config["kramdown"]["syntax_highlighter"]).to be_nil
+    end
+
+    it "overrides non-'nil' for math_engine and syntax_highlighter" do
+      config = configuration.merge("kramdown" => { "math_engine" => "foo", "syntax_highlighter" => "bar" })
+      effective_config = described_class.effective_config(config)
+      expect(effective_config["kramdown"]["math_engine"]).to eql("mathjax")
+      expect(effective_config["kramdown"]["syntax_highlighter"]).to eql("rouge")
+    end
+
     it "passes passthroughs" do
       expect(effective_config["quiet"]).to eql(true)
       expect(effective_config["source"]).to eql(fixture_dir)
