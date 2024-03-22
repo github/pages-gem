@@ -17,6 +17,8 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
+ENV BUNDLE_GEMFILE=/src/gh/pages-gem/Gemfile
+
 WORKDIR /src/site
 
 CMD ["jekyll", "serve", "-H", "0.0.0.0", "-P", "4000"]
