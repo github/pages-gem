@@ -7,14 +7,13 @@ module GitHubPages
   class Dependencies
     VERSIONS = {
       # Jekyll
-      "jekyll" => "3.9.5",
+      "jekyll" => "3.10.0",
       "jekyll-sass-converter" => "1.5.2",
-      "webrick" => "1.8.1",
 
       # Converters
       "kramdown" => "2.4.0",
       "kramdown-parser-gfm" => "1.1.0",
-      "jekyll-commonmark-ghpages" => "0.4.0",
+      "jekyll-commonmark-ghpages" => "0.5.1",
 
       # Misc
       "liquid" => "4.0.4",
