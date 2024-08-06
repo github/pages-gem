@@ -309,10 +309,4 @@ RSpec.describe "Pages Gem Integration spec" do
       expect(contents).to match("markdown: CommonMarkGhPages")
     end
   end
-
-  context "webrick" do
-    it "does nothing" do
-      # all is well
-    end
-  end
 end

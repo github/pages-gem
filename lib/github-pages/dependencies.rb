@@ -9,7 +9,6 @@ module GitHubPages
       # Jekyll
       "jekyll" => "3.10.0",
       "jekyll-sass-converter" => "1.5.2",
-      "webrick" => "1.8.1",
 
       # Converters
       "kramdown" => "2.4.0",
