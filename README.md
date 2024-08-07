@@ -105,6 +105,8 @@ The version of Ruby with which Jekyll is executed. Although Jekyll itself may be
 
 This includes Markdown processors, and any other Jekyll dependency for which version incongruency may produce unexpected results. Traditionally, Maruku, Kramdown, RedCloth, liquid, rdiscount, and redcarpet have been strictly maintained due to known breaking changes.
 
+Note, the GitHub Pages gem does not yet support Ruby 3.x. If you're running Ruby 3.x, be sure to install [the WEBrick gem](https://rubygems.org/gems/webrick) or add it to your Gemfile.
+
 ## Changelog
 
 See [all releases](https://github.com/github/pages-gem/releases).
