@@ -1,5 +1,7 @@
 on: push
 name: cibuild on push
+permissions:
+  contents: read
 jobs:
   build:
     name: "GitHub Pages Tests"
