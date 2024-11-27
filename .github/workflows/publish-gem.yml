@@ -4,6 +4,9 @@ on:
   release:
     types: [released]
 
+permissions:
+  contents: read
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -11,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@a2bbe5b1b236842c1cb7dd11e8e3b51e0a616acc
         with:
           ruby-version: "3.3"
       - name: Build gem
@@ -19,6 +22,6 @@ jobs:
           gem build github-pages.gemspec
       - name: Publish gem
         env:
-          GEM_HOST_API_KEY: ${{ secrets.PAGES_GEM_PUBLISH }}  
+          GEM_HOST_API_KEY: ${{ secrets.PAGES_GEM_PUBLISH }}
         run: |
           gem push github-pages-*.gem
