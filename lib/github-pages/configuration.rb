@@ -22,6 +22,8 @@ module GitHubPages
         "input" => "GFM",
         "hard_wrap" => false,
         "gfm_quirks" => "paragraph_end",
+        "math_engine" => "mathjax",
+        "syntax_highlighter" => "rouge",
         "syntax_highlighter_opts" => {
           "default_lang" => "plaintext",
         },
@@ -54,8 +56,6 @@ module GitHubPages
       "highlighter" => "rouge",
       "kramdown" => {
         "template" => "",
-        "math_engine" => "mathjax",
-        "syntax_highlighter" => "rouge",
       },
       "gist" => {
         "noscript" => false,
@@ -135,11 +135,19 @@ module GitHubPages
       # Ensure we're using Kramdown or GFM.  Force to Kramdown if
       # neither of these.
       #
+      # Also override non-nil values for kramdown options math_engine and
+      # syntax_highlighter.
+      #
       # This can get called multiply on the same config, so try to
       # be idempotentish.
       def restrict_and_config_markdown_processor(config)
         config["markdown"] = "kramdown" unless \
           %w(kramdown gfm commonmarkghpages).include?(config["markdown"].to_s.downcase)
+
+        %w(math_engine syntax_highlighter).each do |opt|
+          config["kramdown"][opt] = \
+            config["kramdown"][opt] == "nil" ? nil : DEFAULTS["kramdown"][opt]
+        end
 
         return unless config["markdown"].to_s.casecmp("gfm").zero?
 
