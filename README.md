@@ -3,7 +3,17 @@
 A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a local Jekyll environment in sync with GitHub Pages.
 
 [![Gem Version](https://badge.fury.io/rb/github-pages.svg)](https://badge.fury.io/rb/github-pages)
-[![Build Status](https://img.shields.io/travis/github/pages-gem/master.svg)](https://travis-ci.org/github/pages-gem)
+[![Docker Build Status][docker-badge]][docker-workflow-url]
+[![Gem Build Status][gem-badge]][gem-workflow-url]
+[![CI Build on Push Status][push-badge]][push-workflow-url]
+
+[docker-workflow-url]: https://github.com/github/pages-gem/actions?query=branch%3Amaster+workflow%3A""Publish+to+Docker""
+[docker-badge]: https://github.com/github/pages-gem/actions/workflows/publish-docker.yml/badge.svg
+[gem-workflow-url]: https://github.com/github/pages-gem/actions?query=branch%3Amaster+workflow%3A""Publish+to+Docker""
+[gem-badge]: https://github.com/github/pages-gem/actions/workflows/publish-gem.yml/badge.svg
+[push-workflow-url]: https://github.com/github/pages-gem/actions?query=workflow%3A""cibuild+on+push""
+[push-badge]: https://github.com/github/pages-gem/actions/workflows/push.yml/badge.svg?branch=master
+
 
 ## Usage
 
@@ -120,7 +130,7 @@ It will also create prs in the relevant repos and assign them to you. It is your
 1. update the version of the gem in those repos
 2. deploy those services as needed
 
-The relevant repos are: 
+The relevant repos are:
 1. [github-pages](https://github.com/github/pages)
 2. [jekyll-build-pages](https://github.com/actions/jekyll-build-pages/blob/main/Gemfile)
 3. [pages.github.com](https://github.com/github/pages.github.com)
