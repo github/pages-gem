@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Ruby
-        uses: ruby/setup-ruby@a2bbe5b1b236842c1cb7dd11e8e3b51e0a616acc
+        uses: ruby/setup-ruby@1287d2b408066abada82d5ad1c63652e758428d9
         with:
           ruby-version: "3.3"
       - name: Build gem
