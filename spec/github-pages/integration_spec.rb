@@ -269,7 +269,7 @@ RSpec.describe "Pages Gem Integration spec" do
 
     context "jekyll-octicons" do
       it "plops in the octicon" do
-        expect(contents).to match('<svg height="32"')
+        expect(contents).to match(/<svg\b[^>]*\sheight="32"/)
         expect(contents).to match('class="octicon octicon-alert right left"')
         expect(contents).to match('aria-label="hi"')
       end
